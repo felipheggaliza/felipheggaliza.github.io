@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,600' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <script data-js="root" src="../js/jquery.js"></script>
+    <script data-js="root" src="../js/consent.js"></script>
+
+    <!-- blog stuff -->
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to this page..." href="http://feeds.feedburner.com/WaitingForTheJobsToFinish" />
+	<link rel="stylesheet" href="main.css" type="text/css" />
+	<link rel="stylesheet" href="blog.css" type="text/css" />
+    <!-- /blog stuff -->
+<title>Why the centralization of the Internet is a bad idea</title>
+<meta name='twitter:card' content='summary' />
+<meta name='twitter:site' content='@cfenollosa' />
+<meta name='twitter:title' content='Why the centralization of the Internet is a bad idea' />
+<meta name='twitter:description' content=" You probably know that the Internet was born as a military project. That its goal was to have a computer network that survived a nuclear attack. Therefore, the pipes that make the Internet work are scattered through all the world. Every computer is " />
+</head><body>
+
+<div id="cookieBanner">
+    <div id="cookieBannerClose"><a href="javascript:;">x</a></div>
+    This website uses third party cookies exclusively to collect analytics data.
+    If you continue browsing or close this notice, you will accept their use.
+    The EU now requires all sites to display this banner which confuses users
+    and does nothing, actually, to improve your privacy.<br/>
+    <div id="cookieBannerActions">
+        <a class="noconsent" href="http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html">Read more on why this law is ignorant</a> &mdash; 
+        <a class="noconsent" href="http://cfenollosa.com/cookies.html">Learn about this website's cookies</a> &mdash; 
+        <a class="denyConsent noconsent" href="javascript:;">Disallow cookies</a>
+    </div>
+</div>
+
+
+<div class="headerbig"><div class="head">
+	<div class="headerleft">
+		<img data-img="root" src="../img/cfenollosa-small.png" alt="Carlos Fenollosa" class="foto" />
+	</div>
+
+	<div class="headerright">
+        <div id="headername">
+            <h1 class="nomargin name">Carlos Fenollosa</h1>
+
+            <div class="description">
+                <div class="position">Engineer, developer, entrepreneur</div>
+            </div>
+        </div>
+
+        <div class="add" id="contact">
+            <a href="mailto:cf@cfenollosa.com">cf@cfenollosa.com</a> <i class="fa fa-envelope fa-fw"></i><br/>
+            <a href="http://twitter.com/cfenollosa">@cfenollosa</a> <i class="fa fa-twitter fa-fw"></i><br/>
+            Barcelona area <i class="fa fa-map-marker fa-fw"></i>
+        </div>
+
+        <div class="clear"></div>			
+	</div> <!-- headerright -->
+<div class="clear"></div>
+</div></div> <!-- header && headerholder -->
+
+
+<div id="navbar" class="bound">
+    <div data-id="idblog" class="navitem navitem-first navitem-current"><a href="index.html">Blog</a></div>
+    <div data-id="idabout" class="navitem"><a href="../about.html">About</a></div>
+    <div data-id="idfunnypapers" class="navitem"><a href="../funnypapers/index.html">Funny papers</a></div>
+    <div data-id="idpuput" class="navitem"><a href="http://puput.io">Puput</a></div>
+    <div class="navitem"><a href="http://github.com/cfenollosa">Github</a></div>
+    <div data-id="idlinkedin" class="navitem navitem-last"><a href="https://www.linkedin.com/in/cfenollosa">LinkedIn</a></div>
+    <div class="clear"></div>
+</div>
+<div id="divbodyholder">
+<div class="headerholder"><div class="header">
+<div id="title">
+<h1 class="nomargin"><a class="ablack" href="http://cfenollosa.com/blog/index.html">Carlos Fenollosa &#x2014; Blog</a></h1>
+<div id="description">Thoughts on science and tips for researchers who use computers</div>
+</div></div></div>
+<div id="divbody"><div class="content">
+<!-- entry begin -->
+<h3><a class="ablack" href="why-the-centralization-of-the-internet-is-a-bad-idea.html">
+Why the centralization of the Internet is a bad idea
+</a></h3>
+<!-- bashblog_timestamp: #201602291523.00# -->
+<div class="subtitle">February 29, 2016 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>You probably know that the Internet was born as a military project. That its goal was to have a computer network that survived a nuclear attack. Therefore, the pipes that make the Internet work are scattered through all the world. Every computer is connected to each other in a grid, more or less.</p>
+
+<p>In theory, it’s easy: to go from computer A to C, go to B. If B is down, you can probably be routed through D and F and reach C nonetheless. To learn which is the best route, you ask a router. Apply recursively, and that’s the Internet!</p>
+
+<p>However, the Internet is a technology, not an application. The applications we use are email, the Web, the Usenet, etc. Many popular services are nothing else than an API running on the Web. And most are centralized: to use Gmail you need to connect to the Gmail server. Makes sense, right?</p>
+
+<p>In fact, that is not necessarily so; it has traditionally been the exact opposite, especially with email.</p>
+
+<p>Email, along with web pages, it is the last bastion of decentralization on the Internet. You can install some software and send a message from your email server to another on the other side of the world without any meddling from third party servers — routers aside.</p>
+
+<p>Most users don’t do that, though. Centralized systems are convenient. Managing a private server is complicated, and it forces you to have a computer running 24/7 at home, or rent one. Why should you handle this? Let the professionals do it, and end users can connect to centralized servers when they need to access a service.</p>
+
+<p>There is a decentralized Facebook, called Diaspora, and a decentralized Twitter called Twister. BitTorrent is a decentralized file sharing system, Aether is a decentralized discussion forum, and there is even a decentralized currency called Bitcoin.</p>
+
+<p>With them, you can have your data on your personal computer, or a machine you trust, and send specific pieces to your friends computers, without going through a central server. These services aren’t very popular at the moment, but due to increasing espionage, data selling, moderation abuse and others, their usage will probably increase, and pave the way for similar solutions soon.</p>
+
+<p>Let’s get back to email for a minute because, unfortunately, its decentralization is jeopardized by a few powerful actors. There are strong reasons to trust big email providers, especially to avoid spam and fraud. Sadly, some of the measures used to filter potentially harmful emails also hurt small, honest servers, who see how their emails get rejected or delivered directly to the spam folder.</p>
+
+<p>I’ve experimented with email servers since I was in college. Back in 2001, you could install an MTA and start sending emails without much trouble. However, for recent projects like Puput, installing and maintaining the email server has been nightmarish.</p>
+
+<p>We are preparing the details for a future post, but to summarize, after installing postfix, no fewer than eight steps were required to get our emails successfully delivered into our users inboxes.</p>
+
+<p>Both startups and the big players offer email delivery services, and I admit that had it not been for my obstinacy, we probably would’ve used some of them.</p>
+
+<p>However, being as we are a bit old-school, used that your server could be a first-class node of the internet, that proved to us a serious ethical dilemma. Either you succumb to using one of the few “trusted email servers” or you essentially risk getting banned from delivering your own email. It is not yet blackmail, but it’s close.</p>
+
+<p>I don’t want to be dishonest, there are genuine reasons for this. Trying to recentralize email may probably be just a measure to combat spam. <em>Probably</em>. Because when the big players have such large incentives to kill their competition and become The One Email Provider in the world, each barrier counts. It is not far-fetched to think that, at least, there are conflicts of interest among these big players.</p>
+
+<p>Some sysadmins capitulate and end up using XYZ Apps for Business, surrendering a bit of the Internet’s decentralization to that company. Again, it makes sense, both technical and economical. Don’t reinvent the wheel. But every small decision we take contributes to create the world we want to live in.</p>
+
+<p>Being a monopoly is tempting, and XYZ already has a history of embracing services like the Usenet, chat and RSS to kill them shortly afterward and force users to move to their proprietary solutions. In the 90s, XYZ was Microsoft. Nowadays, it is the formerly not evil company — ironic value of this left to the reader’s criterion.</p>
+
+<p>With the de-facto death of Jabber, email and The Web are essentially the only popular services that you can still run from your private box and interact with the outside world. IM and social networks have been taken over by a dozen of centralized and isolated services; we can’t let email suffer the same fate.</p>
+
+<p>Maybe the future of communications is just around the corner. When all devices are permanently connected to the Internet in a robust way, we will probably carry an <em>internet node</em> in our pocket. Meanwhile, we will keep using just an <em>internet access device</em> and reaching a central server to get our data, trusting that this machine doesn’t misuse it.</p>
+
+<p><em>This post was originally posted on <a href="https://medium.com/@puput_io/why-the-centralization-of-the-internet-is-a-bad-idea-a79d698a37f3">Puput blog</a></em></p>
+
+<p>Tags: <a href='tag_internet.html'>internet</a></p>
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/why-the-centralization-of-the-internet-is-a-bad-idea.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/why-the-centralization-of-the-internet-is-a-bad-idea.html'><span id='count-20732'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/why-the-centralization-of-the-internet-is-a-bad-idea.html",
+            dataType: "jsonp", success: function(data){ $("#count-20732").html("(" + data.count + ")"); }}); </script>
+<!-- entry end -->
+</div>
+<div id="footer">CC by-nc-nd 2008-2016 <a href="http://cfenollosa.com">Carlos Fenollosa</a> &mdash; <a href="mailto:cf&#64;cfenollosa&#46;com">cf&#64;cfenollosa&#46;com</a><br/>
+Generated with <a href="https://github.com/cfenollosa/bashblog">bashblog</a>, a single bash script to easily create blogs like this one<br/>
+<a href="../cookies.html">Cookies policy</a> &mdash; <a href="the-ignorant-eu-cookie-law.html">Learn why this cookies law is ignorant</a></div>
+</div></div>
+</body></html>

@@ -1,0 +1,833 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,600' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <script data-js="root" src="../js/jquery.js"></script>
+    <script data-js="root" src="../js/consent.js"></script>
+
+    <!-- blog stuff -->
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to this page..." href="http://feeds.feedburner.com/WaitingForTheJobsToFinish" />
+	<link rel="stylesheet" href="main.css" type="text/css" />
+	<link rel="stylesheet" href="blog.css" type="text/css" />
+    <!-- /blog stuff -->
+<title>Carlos Fenollosa &#x2014; Blog &mdash; Posts tagged "programming"</title>
+<meta name='twitter:card' content='summary' />
+<meta name='twitter:site' content='@cfenollosa' />
+<meta name='twitter:title' content='Carlos Fenollosa &#x2014; Blog &mdash; Posts tagged "programming"' />
+<meta name='twitter:description' content=" The Elixir of concurrency   May 23, 2016 &mdash;  Carlos Fenollosa    Elixir is a fairly young language that was born when José and a few Rails developers tried to create a modern language optimized for concurrent, distributed, lightweight processe" />
+<meta name='twitter:image' content='http://cfenollosa.com/blog/img/the-best-programming-font-001.png' />
+</head><body>
+
+<div id="cookieBanner">
+    <div id="cookieBannerClose"><a href="javascript:;">x</a></div>
+    This website uses third party cookies exclusively to collect analytics data.
+    If you continue browsing or close this notice, you will accept their use.
+    The EU now requires all sites to display this banner which confuses users
+    and does nothing, actually, to improve your privacy.<br/>
+    <div id="cookieBannerActions">
+        <a class="noconsent" href="http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html">Read more on why this law is ignorant</a> &mdash; 
+        <a class="noconsent" href="http://cfenollosa.com/cookies.html">Learn about this website's cookies</a> &mdash; 
+        <a class="denyConsent noconsent" href="javascript:;">Disallow cookies</a>
+    </div>
+</div>
+
+
+<div class="headerbig"><div class="head">
+	<div class="headerleft">
+		<img data-img="root" src="../img/cfenollosa-small.png" alt="Carlos Fenollosa" class="foto" />
+	</div>
+
+	<div class="headerright">
+        <div id="headername">
+            <h1 class="nomargin name">Carlos Fenollosa</h1>
+
+            <div class="description">
+                <div class="position">Engineer, developer, entrepreneur</div>
+            </div>
+        </div>
+
+        <div class="add" id="contact">
+            <a href="mailto:cf@cfenollosa.com">cf@cfenollosa.com</a> <i class="fa fa-envelope fa-fw"></i><br/>
+            <a href="http://twitter.com/cfenollosa">@cfenollosa</a> <i class="fa fa-twitter fa-fw"></i><br/>
+            Barcelona area <i class="fa fa-map-marker fa-fw"></i>
+        </div>
+
+        <div class="clear"></div>			
+	</div> <!-- headerright -->
+<div class="clear"></div>
+</div></div> <!-- header && headerholder -->
+
+
+<div id="navbar" class="bound">
+    <div data-id="idblog" class="navitem navitem-first navitem-current"><a href="index.html">Blog</a></div>
+    <div data-id="idabout" class="navitem"><a href="../about.html">About</a></div>
+    <div data-id="idfunnypapers" class="navitem"><a href="../funnypapers/index.html">Funny papers</a></div>
+    <div data-id="idpuput" class="navitem"><a href="http://puput.io">Puput</a></div>
+    <div class="navitem"><a href="http://github.com/cfenollosa">Github</a></div>
+    <div data-id="idlinkedin" class="navitem navitem-last"><a href="https://www.linkedin.com/in/cfenollosa">LinkedIn</a></div>
+    <div class="clear"></div>
+</div>
+<div id="divbodyholder">
+<div class="headerholder"><div class="header">
+<div id="title">
+<h1 class="nomargin"><a class="ablack" href="http://cfenollosa.com/blog/index.html">Carlos Fenollosa &#x2014; Blog</a></h1>
+<div id="description">Thoughts on science and tips for researchers who use computers</div>
+</div></div></div>
+<div id="divbody"><div class="content">
+<h3><a class="ablack" href="the-elixir-of-concurrency.html">
+The Elixir of concurrency
+</a></h3>
+<!-- bashblog_timestamp: #201605231955.55# -->
+<div class="subtitle">May 23, 2016 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p><a href="http://elixir-lang.org">Elixir</a> is a <a href="https://en.wikipedia.org/wiki/Elixir_(programming_language)">fairly young</a> language that was born when <a href="https://github.com/josevalim">José and a few Rails developers</a>
+tried to create a modern language optimized for concurrent, distributed, lightweight processes</p>
+
+<p>They wanted a modern Ruby-like syntax with a well-tested process manager, the <a href="https://en.wikipedia.org/wiki/Erlang_(programming_language)">Erlang VM</a>.
+The result is Elixir, defined as <em>a dynamic, functional language designed for building scalable and maintainable applications</em>,
+a correct but vague affirmation which doesn't do justice to its power and elegancy.</p>
+
+<p>I recently <a href="https://lobste.rs/s/pej1vc/moving_away_from_python_2/comments/1txpzt#c_1txpzt">compared</a> the move to Elixir from Python as a similar leapfrog to
+moving to Python from Java. It feels like something new, modern, powerful, with killer features that you don't want to
+renounce to. </p>
+
+<p>In Python I found a REPL, list comprehensions, a super clean syntax and decorators. Elixir brings lightweight supervised
+processes, pattern matching, a fully functional programming language, pipes and a terrific build tool: <code>mix</code></p>
+
+<p>If you've never written functional code, the jump is significant. I took a <a href="https://www.coursera.org/course/progfun">Scala course</a> a couple years ago
+and I've needed almost two full weeks to write production code in Elixir. The language is young, Stack Overflow is of no help
+&mdash;no kidding, that is a big deal&mdash;, and there are few libraries in Github.</p>
+
+<p>A small community also comes with some upsides: people are more motivated and willing to help, centralized tools like forums
+and IRC channels are still manageable, and you may even suggest changes to the language for upcoming versions.</p>
+
+<h4>What is Elixir for?</h4>
+
+<p>I had a middle school teacher who said that you can't define something by stating <em>what is't not</em>. However, in programming,
+mentioning use cases which are not suitable for the language is a good way to start.</p>
+
+<p>Elixir is probably not the first choice for single core software: math calculus, CPU-intensive apps or desktop applications. 
+Since it's very high level, systems programming is also out of the picture.</p>
+
+<p>Elixir is great for web applications, standalone or using the <a href="http://www.phoenixframework.org">Phoenix framework</a> &mdash;Elixir's Rails&mdash;. 
+It really shines for building highly scalable, fault-tolerant network applications, like chats, telecommunications or
+generic web services.</p>
+
+<p>Why is that? Thanks to the Erlang VM, processes are really tiny, each one is garbage collected with a low latency,
+they communicate by sending location-independent messages over the network using the VMs 
+(you can run <code>result = Machine2.Module.function(params)</code> on Machine1),
+and spawning and managing these processes is effortless thanks to some of its abstractions.</p>
+
+<p>Finally, Elixir's basic modules also shine: <code>Plug</code> and <code>Router</code> for managing HTTP requests, <code>Ecto</code> for relational databases and
+<code>ETS</code> and <code>Mnesia</code> for distributed in-memory databases. </p>
+
+<p>Many recommend Elixir if only for Phoenix, but I found that for most backend applications it is enough to use <code>Plug</code> and <code>Router</code>.
+Phoenix is impressive but I believe it's a mistake to jump right into it without trying the base modules first, so my recommendation for 
+beginners is to hold on Phoenix until you really need it.</p>
+
+<p>Elixir's novelty, the pipe operator, is a fantastic approach to working with state in a functional manner. Instead of running 
+<code>readlines(fopen(user_input(), "r")).uppercase().split()</code>, try the more readable <code>user_input |&gt; fopen("r") |&gt; readlines |&gt; uppercase |&gt; split</code>.</p>
+
+<p>It is a language which was clearly designed to stand on the shoulders of giants, while providing modern capabilities
+for developers.</p>
+
+<h4>Elixir's abstractions</h4>
+
+<p>To store centralized &lt;key, value&gt;-like data, instead of a Singleton, 
+Elixir's provides an <code>Agent</code>. It keeps state in memory and many processes can access and modify it without concurrency issues.</p>
+
+<p>The language can spawn processes much like threads, using <code>spawn_link</code>, but you probably don't want to do that. You'd
+rather use a <code>Task</code>, which is basically <code>async/await</code>, or a <code>Gen(eric)Server</code>, a very cool abstraction that receives requests
+from other processes, spawns helper mini-servers and processes the results in parallel, for free.</p>
+
+<p>All tasks can be controlled using the <code>Supervisor</code>, which holds other abstractions as its "children" and automatically restarts
+them when they crash.</p>
+
+<p>Finally, your code is contained inside a single <code>project</code> which can manage different <code>apps</code>, with modules that hold functions. 
+No packages, no classes, no objects. Modules, functions, structs and basic data types.</p>
+
+<p>Dependency management is
+straightforward thanks to <code>mix</code>; builds and testing are handled by <code>mix</code> too. As opposed to other multi-tools like <code>gradle</code>, this
+one is really fast.</p>
+
+<p>Is that too much to process? I felt that at first, too. Give it some time and your brain will eventually think in terms of
+<code>Supervisor</code>s which manage <code>GenServer</code>s which spawn <code>Agent</code>s and <code>Task</code>s when needed.</p>
+
+<h4>Let it crash</h4>
+
+<p>Elixir's mantra is to let processes crash. I found it shocking and counter-intuitive, but with some explanation it makes a lot of sense.</p>
+
+<p>Neither developers want their code to crash nor Elixir promotes writing bad code. 
+However, let's agree that there are
+many reasons besides bad programming which can make a software crash. 
+If we have a server which runs stuff and at some point we have, say, 100 connections every second, one might crash eventually
+because of a bug in any component, hardware issues, a cosmic ray, or Murphy's law.</p>
+
+<p>The question is: in the event of an unfortunate, unavoidable crash, how will your system react?</p>
+
+<ol>
+<li>Bring everything down?</li>
+<li>Try to capture the error and recover?</li>
+<li>Kill the crashed process and launch another one in its place?</li>
+</ol>
+
+<p>For example, C uses approach 1. Most modern languages with Exceptions like Java and Python use 2. 
+Elixir uses 3. This is not suitable for all environments, but it is
+perfect for those use cases which fit Elixir: concurrent network processes.</p>
+
+<p>With Elixir, a single failure never brings the system down. What's more, it automatically restarts the crashed process, so the 
+client can instantly retry and, unless there is a reproducible bug in your code, the fresh process will finish without an issue.</p>
+
+<p>The bottom line is: a single client may be unlucky and crash at some point, but the rest of the system will never notice.</p>
+
+<h4>How to start?</h4>
+
+<p>Let's get our hands dirty. After reading many sites, watching hours of video and following a dozen tutorials, here are the resources
+I found the most valuable. I'd suggest following this order.</p>
+
+<p><strong>Getting started</strong></p>
+
+<ol>
+<li><a href="https://www.youtube.com/watch?v=dZV4_uNw72A">Madrid Elixir Meetup 2016-03</a>. If you understand Spanish, this is the best intro to Elixir. Otherwise, watch 
+<a href="https://www.youtube.com/watch?v=5kYmOyJjGDM">All aboard the Elixir Express!</a> which is a bit outdated but very comprehensive.</li>
+<li><a href="http://elixir-lang.org/getting-started/introduction.html">Official "Getting Started" guide</a>. It's the best and the most current. Follow it from start to finish, including the 
+advanced chapters.</li>
+<li><a href="https://elixirschool.com">Elixir School</a>. A nice complement to the official guide. Most things are very similar, but the different approach
+on OTP will help you understand it better.</li>
+<li><a href="https://medium.com/@StevenLeiva1/understanding-elixir-s-genserver-a8d5756e6848#.a2yytqrbe">Understanding Elixir's GenServer</a> and <a href="https://medium.com/@StevenLeiva1/elixir-supervisors-a-conceptual-understanding-ee0825f70cbe#.zbyjhdg0u">Elixir's supervisors, a conceptual understanding</a> are two short reads
+with yet another explanation of OTP features.</li>
+<li><a href="https://www.dropbox.com/s/lr1t87rw4wfnyb3/elixir-cheat-sheet-v2.pdf?dl=0">Elixir Cheat Sheet</a>. The best one out there</li>
+</ol>
+
+<p><strong>First projects</strong></p>
+
+<ol>
+<li><a href="https://github.com/gregpardo/vim-elixir-ide">vim-elixir-ide</a>. Elixir support for <code>vim</code>, not the best plugin but suitable for beginners.</li>
+<li><a href="https://elixir-examples.github.io">Elixir examples</a>. The Elixir guide covers all these, but it's handy to have common idioms on a single page: "string to list", "concatenate list", "optional function parameters", etc.</li>
+<li><a href="http://howistart.org/posts/elixir/1">Portal Game by José Valim</a>. A complement to the sample project on the official guide.</li>
+<li><a href="http://elixirkoans.io">Elixir Koans</a> and <a href="http://exercism.io/languages/elixir">Exercism</a> are mini exercises that you can use to improve your Elixir agility. On the same line,
+<a href="http://elixirgolf.com">Elixir Golf</a> proposes weekly puzzles to solve.</li>
+<li><a href="http://learningelixir.joekain.com">Learning Elixir</a>. Joseph Kain has a ton of content with mini projects and examples you can follow. Top quality. </li>
+<li><a href="https://excasts.com/episodes">Excasts</a> and <a href="http://elixirsips.com/">Elixir sips</a> have short screencasts that you can check out for reference</li>
+<li><a href="https://www.youtube.com/playlist?list=PLWbHc_FXPo2gB7HUE-2H61HAEyszAph3H">ElixirConf videos</a> contain very interesting talks which may be overwhelming for beginners, but are worth
+a look later on.</li>
+<li><a href="https://gist.github.com/likethesky/abb00e5aedc38ee9f711">Install Elixir and Phoenix on OSX</a>. If you want to use Phoenix on OSX, you may need this help</li>
+<li><a href="http://www.phoenixframework.org/docs/overview">Phoenix Official Guide</a>. Phoenix isn't necessary for simple web services, you can use <code>Plug</code>. But for 
+large projects you'll need a framework. Nothing like the official guide.</li>
+</ol>
+
+<p><strong>Getting help</strong></p>
+
+<ol>
+<li><a href="https://github.com/h4cc/awesome-elixir">Awesome Elixir</a>. A list of Elixir resources, where I found many of these.</li>
+<li><a href="https://twitter.com/ElixirTip">Elixir Tip</a> and <a href="https://twitter.com/elixirstatus">Elixir Status</a> regularly link to Elixir-related articles and videos, and 
+<a href="http://blog.plataformatec.com.br/tag/elixir/">Plataformatec Elixir posts</a> is where the language authors share news and tips.</li>
+<li>If you have questions about code, try the <a href="http://elixirforum.com">Elixir forum</a> first, the <a href="irc://irc.freenode.net/elixir-lang">IRC channel</a>
+or <a href="https://elixir-slackin.herokuapp.com/">Slack</a>. The developers would like to transition all help requests out of the <a href="https://groups.google.com/group/elixir-lang-talk">Mailing list</a>,
+which you can use for language-related discussions.</li>
+<li><a href="https://www.reddit.com/r/elixir">/r/elixir</a> if you're into Reddit</li>
+</ol>
+
+<h4>Closing thoughts</h4>
+
+<p>I think that's all for the moment. I hope this post can help some beginners to get their hands on the language and start
+writing production code as soon as possible. </p>
+
+<p>For anyone who wants to know what's all the Elixir fuss about, it's difficult to explain, especially for somebody like me
+who has been programming in imperative languages all his life.</p>
+
+<p>When I recommended Elixir to a friend, he replied, "A highly concurrent, functional language using the Erlang VM? 
+Don't you have something more exotic?". That's right. Elixir is exotic and use-case specific. </p>
+
+<p>Unlike Python, which is my favorite imperative language and ecosystem, I can't recommend Elixir for everyone.
+Not everybody can spare a couple weeks to get started. Many libraries for common use cases are missing: 
+there is nothing
+equivalent to Numpy or Matplotlib, and modern
+applications are built on top of dozens of libs, not everyone has the time or will to write library code.
+Fortunately, at <a href="http://paradoxa.io">Paradoxa</a> I am my own boss and I make the tech decisions :)</p>
+
+<p>For hackers or tinkerers it's definitely worth a look, it "won't change your perspective" like Lisp, but
+it will make you see that writing concurrent code doesn't need to be difficult, and that better tooling is definitely possible.</p>
+
+<p>I bet Elixir will be the foundation of most devops stacks in a few years, when developers realize that the 
+future's bottleneck won't be the CPU, but rather the number of concurrent processes and connections your backend can manage.
+With Elixir you only need to boot another machine in your network and let the exotic Erlang VM handle the rest.</p>
+
+<p>Tags: <a href='tag_programming.html'>programming</a>, <a href='tag_learning.html'>learning</a></p>
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/the-elixir-of-concurrency.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/the-elixir-of-concurrency.html'><span id='count-19356'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/the-elixir-of-concurrency.html",
+            dataType: "jsonp", success: function(data){ $("#count-19356").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="the-best-programming-font.html">
+The best programming font
+</a></h3>
+<!-- bashblog_timestamp: #201506161707.00# -->
+<div class="subtitle">June 16, 2015 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>Us programmers like to customize our programming environment to the maximum. If arguing about text editors
+and <a href="/blog/unix-tricks-you-should-be-using.html">customizing your .bashrc</a> weren't enough,
+we also <a href="/blog/hacking-your-keyboard.html">modify a 20 year old Apple Extended II keyboard</a> to change its
+keyswitch tone, <a href="/blog/redefining-your-keyboard.html">remap our keyboard layout</a>
+to redefine the CapsLock key, and of course
+<a href="/blog/which-is-the-best-programming-language.html">decide on which programming language to use</a>
+for our projects.</p>
+
+<p>For those who really like customization, however, there are more aspects to it. One of those is, of course,
+<a href="http://www.reddit.com/r/programming/comments/39wz4l/hey_reddit_developers_what_is_your_favorite_text/">the programming font choice</a>.
+Leaving aside the fact that unless you're using a monospaced font you're a monster, some people like
+the classics, like Courier (New), others use the default ones, and some of us really like the retro visuals
+and opt for one of the nostalgic typefaces.</p>
+
+<p>My favorite one is <a href="http://www.viste-family.net/mateusz/dos/en/dosega.htm">DOS/EGA</a>, by Mateusz Viste.
+Just make sure that your text editor supports rendering typefaces without anti aliasing and that you
+don't need many non-ASCII characters. Most are implemented but some editors screw either the line size or
+the kerning and make text look very ugly.</p>
+
+<p>There are other versions of the same font, but Mateusz's is the best one and has the least annoyances.</p>
+
+<p>I don't use it everywhere because of rendering problems with some IDEs, 
+but OSX's terminal seems to handle them
+well, and it plays perfectly with a black background. Truly retro but, I think, 
+an excellent programming font.</p>
+
+<p><a href="http://cfenollosa.com/blog/img/the-best-programming-font-001.png">
+<img src="http://cfenollosa.com/blog/img/the-best-programming-font-001.png" width="700px" alt="DOS/EGA in action" />
+</a></p>
+
+<p>Tags: <a href='tag_programming.html'>programming</a>, <a href='tag_retro.html'>retro</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/the-best-programming-font.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/the-best-programming-font.html'><span id='count-910'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/the-best-programming-font.html",
+            dataType: "jsonp", success: function(data){ $("#count-910").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="craftsmanship.html">
+Craftsmanship
+</a></h3>
+<!-- bashblog_timestamp: #201501101910.00# -->
+<div class="subtitle">January 10, 2015 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>As an engineer, I enjoy fixing things, 
+disassembling gear and learning how it works. I'm sure many of you opened watches, pens or other
+small electronics as a child, only to find that there is "that extra piece" after reassembling them.</p>
+
+<p>My grandfather was an artisan, and I still have some of his pieces. They are sensational
+and reflect not only the image he was trying to create, but also his general mood, recognizable by
+observing the strokes, edges and paths that the gouges followed. That's why I prefer looking at an 
+artist's collection rather than a compilation, 
+it's easy and shocking how they&mdash;and their environment&mdash;evolve over time by looking at their works.</p>
+
+<p>For me, however, fixing a Game Boy does not resemble creating a beautiful sculpture from a piece of
+wood. Basically, I've never had the manual ability nor
+the tools to build real-world things from scratch, and that's a skill I envy. Fixing or improving existing
+things <em>&agrave; la</em> McGyver is one thing, but producing something from scratch is an entirely different expertise.
+That's why I love looking at other people's projects at the <a href="http://www.reddit.com/r/diy">DIY subreddit</a>. </p>
+
+<p>But, in some way, programmers are DIY masters, especially for small weekend projects meant to scratch an itch. 
+In the zeros and ones
+world, crafting can mean writing a script to automatically parse gmail for youtube links you send to yourself
+from your cell phone, downloading them in the background, converting them to mp4 and saving them into iTunes,
+so that they automatically get pushed to your iPad and are ready to watch when at home.</p>
+
+<p>Not only the result may be notable, it also carries a little bit of
+yourself in the code. Which language did you use? Did you feel lazy and wrote it in Bash, or wanted it
+to be robust and wrote some Python? Is it all on a single function or split into modules? How did you
+name the variables? Are there comments and documentation or is it a quick hack?</p>
+
+<p>Comparing code to other art forms is a clich&eacute;, granted. But when I look at my <code>/usr/local/bin/</code> folder,
+I don't only see some scripts, I also see my own evolution regarding programming languages, project ideas,
+organization, skill, and why not, my attitude.</p>
+
+<p>Ah! I see that around 2011 I stopped using backticks in Bash scripts and replaced them with 
+command substitution. Then in 2012 Python scripts start replacing Bash. Around that time I learned Git, 
+because I can see a lot of helper scripts there. I guess I didn't like it
+back then since I see a lot of "wtf" comments.</p>
+
+<p>There are some unfinished projects. I know because the files aren't executable. Upon opening them, yes,
+the code is only half written. Will I pick them up someday? I really don't know, but I love remembering
+that three years ago I was working on an audio synchronization project. I had completely forgotten.</p>
+
+<p>A programmer won't likely get his code displayed at an art gallery, it probably wouldn't even make sense
+except for a few other programmers. But observing the evolution of your work 
+is a good self-reflection exercise. Reading other people's code is probably a must, but reading your own,
+even if it makes you cringe a bit&mdash;God, was I really using Hungarian notation?&mdash; will let
+you see how far you've come. It's like looking at that famous <a href="http://blog.codinghorror.com/microsoft-1978/">Microsoft staff in 1978</a> picture. A bit shameful, but necessary to let us all remember
+that even Bill Gates worked his way up from the bottom.</p>
+
+<p>Take some time to look at your crafts from some years ago, and take pride in them. They may not be a 
+beautiful table or lamp, but they treasure a little bit of yourself from the past.</p>
+
+<p>Tags: <a href='tag_art.html'>art</a>, <a href='tag_programming.html'>programming</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/craftsmanship.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/craftsmanship.html'><span id='count-26523'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/craftsmanship.html",
+            dataType: "jsonp", success: function(data){ $("#count-26523").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="you-only-do-it-when-nobody-else-will-do-it.html">
+You only do it when nobody else will do it
+</a></h3>
+<!-- bashblog_timestamp: #201410031615.00# -->
+<div class="subtitle">October 03, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>Maybe the difference between a junior and a senior programmer is that the first will sometimes
+say "I don't know how to do this", while the second will always say "Give me a week".</p>
+
+<p>When you finish college with a computer engineering degree, everything seems possible.
+You just learned how to design a computer from the zeros and ones up to the applications.
+From logic gates up to a CPU, from TCP to HTTP, from assembler to Java.</p>
+
+<p>Then, time passes, you get a regular job, and regardless of its awesomeness you start forgetting stuff. Furthermore, you discover super smart
+people who are light years ahead of you, and for some reason, your mind thinks of them
+as superheroes, almost magical creatures who can <a href="http://wiki.qemu.org/Main_Page">write an ultrafast x86 emulator</a>
+or <a href="https://www.youtube.com/watch?v=yHJOz_y9rZE">make a 
+disk drive play the Imperial March</a></p>
+
+<p>Don't get me wrong, these are amazing feats. But psychologically you start to feel
+dumber and dumber up to the point where you believe that the only thing you can aspire to
+is write webpages and some normal stuff. Even if you have great skills and do a great job
+at a great company, it's difficult not to feel just a tiny peg of the machine.</p>
+
+<p>I didn't know how to do anything else, and I thought I'd fail if I tried. In college, I suffered
+a lot with some courses, and to date I still don't know how I passed. But the truth is that
+college is very dense, and without all the stress from exams and projects, and thanks to
+age and experience, things actually get easier to learn.</p>
+
+<p>That's why side projects are important.</p>
+
+<p>Three years ago I launched my first successful project to the Internet, <a href="http://cfenollosa.com/blog/creating-a-simple-blog-system-with-a-500-line-bash-script.html">bashblog</a>.
+It's no big deal, but it's a commitment. People use it, contribute patches, discuss ideas, and I have the responsibility
+to make it work.</p>
+
+<p>Then I started learning things that have always tickled my curiosity. It started with
+<a href="https://class.coursera.org/progfun-002">functional programming</a>, one of the academic topics
+which has been discussed since the 60s but never took off. Then I did more courses on astrophysics
+and statistics. </p>
+
+<p>This year I left my job to take a sabbatical and start new projects. In some countries it's normal
+to take a sabbatical before starting college to travel and learn. But almost nobody thinks about
+a sabbatical when you're 30. You can choose a wrong career path when you're 18 and fix it, but the
+30s are critical and one needs to be really sure that they want to spend the rest of their life
+doing what they love.</p>
+
+<p>I have recently found, don't know how to put it, some change of mind, new strength, inspiration.
+<a href="https://github.com/cfenollosa/os-tutorial">I want to learn how to write an OS</a>. I started writing
+mobile apps. I want to <a href="http://feenbox.com">launch a product</a>. I'm contributing to an industrial patent
+to do really cool stuff with cellphones.</p>
+
+<p>As usual, every of these projects hides many challenges. I've had to read RFCs,
+learn how to extract voice patterns from an audio file, write device drivers, deal with lawyers and read
+formal documents <sup>1</sup></p>
+
+<p>We live in the information age. There are plenty of resources, some of those <a href="http://cfenollosa.com/blog/learn-new-stuff-online-for-free.html">University-grade</a>,
+to learn new skills. <a href="http://cfenollosa.com/blog/tips-to-work-from-home.html">Discipline and planning</a> can go a long way.
+There is no excuse.</p>
+
+<p>Github and other websites have also made it effortless to collaborate with total strangers. It really makes me
+happy and proud to see other people commenting on things I've done. Years ago you had to go to a computer
+hobbyist meeting to show your work, now you can do it online... and others will improve it. </p>
+
+<p>Stack Overflow will provide code samples and guidance. I've now
+started hearing undergrads utter "Did you really code programs without Stack Overflow?" in the same way
+that I used to say "Did you code programs without the internet?" to people who had to read manuals and go to
+a library.</p>
+
+<p>Hacker News and Reddit can guide you on what's cool nowadays. 
+<a href="http://www.paulgraham.com/startupideas.html">Live in the future, then build what's missing</a>.</p>
+
+<p>I guess that it's comfortable to dismiss some ideas just because "we don't know how to do it".
+And that's a waste of our university degrees. We have some responsibility to do cool stuff.
+If we don't build it, who will? If we can build it, why wait? If you don't have the skills,
+learn them. Just Google it. Work on it for a week, and you will succeed.</p>
+
+<p>Do you miss the adrenaline rush that you used to get when you first discovered something?
+The "oooh" and the "aaah"? Learn something new, something radical, something cool and futuristic.
+Start a project, and release it. It doesn't need to be complete.</p>
+
+<p>The greatest force that pushes us to build things is the knowledge that nobody else will build them for us.</p>
+
+<p>~~~~~</p>
+
+<p>[1] One of the multiple things that managers usually do and engineers don't appreciate enough</p>
+
+<p>Tags: <a href='tag_programming.html'>programming</a>, <a href='tag_life.html'>life</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/you-only-do-it-when-nobody-else-will-do-it.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/you-only-do-it-when-nobody-else-will-do-it.html'><span id='count-25191'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/you-only-do-it-when-nobody-else-will-do-it.html",
+            dataType: "jsonp", success: function(data){ $("#count-25191").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="chat-wars.html">
+Chat wars
+</a></h3>
+<!-- bashblog_timestamp: #201405151447.00# -->
+<div class="subtitle">May 15, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<blockquote>
+  <p>Coming in each morning to see whether the client still worked with AOL was thrilling [...]
+One day, I came in to see this embedded in a message from the AOL server: "HI. -MARK." 
+It was a little communication from engineer to engineer, underneath the corporate, media, 
+and PR worlds that were arguing over us. I felt some solidarity with him even though we were on opposing sides.</p>
+</blockquote>
+
+<p><a href="https://nplusonemag.com/issue-19/essays/chat-wars/">A great story</a> from David Auerbach, 
+who was in the original MSN Messenger team, explaining reverse-engineering AIM's protocol
+to be able to interoperate with them.</p>
+
+<p>As someone who used Messenger for many years, the piece brought me back in time. Well written,
+interesting, and entertaining.</p>
+
+<p>Tags: <a href='tag_retro.html'>retro</a>, <a href='tag_programming.html'>programming</a>, <a href='tag_web.html'>web</a>
+</p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/chat-wars.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/chat-wars.html'><span id='count-20555'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/chat-wars.html",
+            dataType: "jsonp", success: function(data){ $("#count-20555").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="sqlite-a-standalone-database-for-your-application.html">
+SQLite: a standalone database for your application
+</a></h3>
+<!-- bashblog_timestamp: #201111101000.00# -->
+<div class="subtitle">November 10, 2011 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>Us researchers are used to store data in plain text formats, because it's very
+easy to parse and work with. While this is appropriate for some data types&mdash;and,
+I'd add, very useful to send later to <tt>R</tt>&mdash;, in some cases disk access is slow or just
+inefficient.</p>
+
+<p>This topic is actually very important for some projects, as storing records into a plain text file
+is very slow to <i>query</i> afterwards. And this is the key question to ask ourselves before considering
+to use a database. Databases are great for complex, unordered queries, but not so great for sequential
+access of raw data. Let's see an example.</p>
+
+<p>There is a data file which stores atom coordinates, for example, from a Molecular Dynamics simulation.
+This data is very likely to be read once, sequentially, then processed in memory. The information
+represents a matrix which will be processed by mathematic functions.
+This is the classic example where data files (either binary of plain text) are used correctly.</p>
+
+<p>But now let's think of a list of proteins and some properties, for example, molecular weight
+and number of available 3D structures. All these objects are independent, they have their own entity.
+While you can store a text file with one line per <tt>&lt;protein, weight, structures&gt;</tt>, it makes
+more sense to store it on a database.</p>
+
+<p>Databases allow complex queries to be resolved very quickly. For example,
+<i>give me all proteins with molecular weight > 50,000 </i>, <i>list
+all proteins which have no crystal structures</i>, or <i>print all the proteins
+which have duplicate structures</i>. Were we working with a text file, we would need to process it
+completely every time we perform
+a query. That's very, very slow. Databases internally store the information in such a way that queries
+don't need to go through all elements to get the answer. Namely, they store data on trees by indices.</p>
+
+<p>How do indices work? It's a complex issue but let's think of a very basic example.
+Let's say you have three protein structures
+<tt>(1BCD, 2KI5, 1AGI)</tt> which you want to index by name and molecular weight.
+The system will then automatically build
+a protein binary tree where <tt>1BCD</tt> is the parent, the left child is <tt>1AGI</tt> and
+<tt>2KI5</tt> is the right child. Then, it will create another tree where the left child is
+the lightest protein, the parent is the middle one, and the right child is the heaviest one.</p>
+
+<p>If the index tree is always sorted where the left child is alphabetically
+inferior than the parent, and the right child is always superior to the parent, then we can access any
+element or group of elements not only without checking every item but also in logarithmic time.
+Databases do this once for every index you configure, so complex queries can be solved super fast
+because for each of them the system only needs to process a few items of the many millions you might
+have stored in the DB. That's because every time you jump to a child element, the system
+is avoiding to process half of the database, then a half of this half (1/4), then 1/8, etc.</p>
+
+<p>To summarize, if you have some data where each record has its own entity (i.e. can be thought of
+as an "object") and you think you'll make queries which retrieve an arbitrary number of the
+elements, then you need to use a database. Databases have even more advantages, like relationships
+between objects (e.g. each crystal structure has its own entity, and can be related to a protein), but
+database design is a complex topic and this article will cover only the basic data storage.</p>
+
+<p>However, databases are usually configured by the system administrator and
+handled by a daemon&mdash;<tt>oracle</tt>, <tt>mysql</tt>, <tt>postgresql</tt>. Here I will talk about
+yet another way of creating databases, without the need to start any daemons, have any user privileges
+and, more importantly, easily portable. This is done via <tt>sqlite</tt>.</p>
+
+<p><a href="http://www.sqlite.org/index.html">SQLite</a>
+is a library that implements a SQL engine inside your own application. This means that while
+the database is persistent inside a file, all the querying infrastructure is deployed along with your
+code and stopped when the code finishes running. The databases can be created very easily, making it
+easy to have multiple DBs for testing, and without the need to bother the system administrator.</p>
+
+<p><tt>sqlite</tt> has bindings for almost all popular languages and also a commandline interface
+which is handy for testing and debugging. The data is stored on a single file which can be deployed
+with your application without needing to install any standalone servers. Obviously, it is not a
+replacement for Oracle's solutions, but it can speed up a lot some applications which need to work
+querying data and don't have access to one.</p>
+
+<p>Most popular software uses some kind of database to store data, as this is a super fast way to
+access preferences and other items. For scientific programs, it is always necessary
+to think twice before using one, as database design is an art on its own, and as said before,
+it does not suit all needs.</p>
+
+<p>When used properly, a small ad-hoc database like <tt>sqlite</tt> can speed up
+software, make data access very easy and allow the manipulation of large, objectified,
+in-related data collections with simple queries instead of writing long and slow algorithms
+which process all the data when you only need one item.</p>
+
+<p>Tags: <a href="tag_software.html">software</a>, <a href="tag_programming.html">programming</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/sqlite-a-standalone-database-for-your-application.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/sqlite-a-standalone-database-for-your-application.html'><span id='count-13686'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/sqlite-a-standalone-database-for-your-application.html",
+            dataType: "jsonp", success: function(data){ $("#count-13686").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="which-is-the-best-programming-language.html">
+Which is the best programming language?
+</a></h3>
+<!-- bashblog_timestamp: #201109231000.00# -->
+<div class="subtitle">September 23, 2011 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>This classic question from beginners who start coding their own tools for research has only one
+correct answer: <b>it depends</b>.</p>
+
+<p>If there is no language which is clearly better than the others, why do I have this very
+simple table on my <a href="http://mmb.pcb.ub.es/~carlesfe/#unix">Unix section?</a>
+
+<ol>
+<li>Bash, awk are your first choice</li>
+<li>PHP if you require more power</li>
+<li>C only if you know why</li>
+<li>Use Java &amp; Eclipse</li>
+</ol>
+
+<p>Don't get me wrong, this table has been compiled from quite a few years of experience, and there are
+huge assumptions behind it. The first one is that you still don't know what language you should use. If there
+is no doubt, either because there are some requirements for the project or because there is a language that is
+designed specifically for that task (e.g. <code>CLIPS</code> for declarative programming), then you need to
+ask yourself some questions.</p>
+
+<p>I'll start by enumerating the most popular language choices and some of their features</p>
+
+
+<h4>Scripting languages</h4>
+
+<p>Scripting languages are good for small or medium projects, because they fit very well with the
+line of thought of the programmer. This means you can program while you think, which isn't the best for
+cleanliness, but it gets the work done quickly</p>
+
+<ul>
+<li><code><b>bash</b></code> is always your first choice. You already know how to run stuff in the command
+line, right? So this is basically the same. <code>bash</code> can handle functions and arrays, but that's
+pretty much all it can do. However, that's usually good enough for small routines, and you can
+always call other Unix tools. It also avoids the overhead of running another binary (<code>perl</code>,
+<code>php</code>) as it is already in memory.</li>
+
+<li><code><b>perl</b></code> is great to parse text, but slow for anything else. If you need to parse
+text <b>and</b> do math, use <code>php</code>, which has a faster math engine. It also lacks objects.
+However, there are very
+good scientific libraries for it, so you might be forced to use this language anyway.</li>
+
+<li><code><b>php</b></code> has nice libraries to connect to databases and in general do web stuff. It is
+also object oriented, so it is a suitable candidate for small-medium projects which can benefit from
+object orientation but don't need all the infrastructure from <code>java</code> or <code>C++</code>. In general,
+unless you are tied to <code>perl</code>, <code>php</code> is a better choice.</li>
+
+<li><code><b>python</b></code> is, well, another scripting language. It's way better than <code>perl</code>, and
+functionally similar to <code>php</code>, so you might want to use it if you like its clean syntax or
+need to call other <code>python</code> libraries.<br/>
+<i>Edit: after having used python for a long time, it is the first language I'd recommend for most
+use cases</i>
+</li>
+
+<li><code><b>ruby</b></code> is so painfully slow that you should avoid it at any costs. I am including it
+here only to warn other people against using it.</li>
+</ul>
+
+<h4>Compiled languages</h4>
+
+<p>Once you start compiling code, things get complicated. However, the results are usually great, fast,
+and very maintainable. Let's discuss the alternatives.</p>
+
+<ul>
+<li><code><b>java</b></code> why <code>java</code> first? Because it's the most appropriate. It has great
+developing tools (Eclipse), it checks a lot of stuff in compile time, it does not
+need that the programmer uses pointers&mdash;it uses pointers internally, but transparently&mdash;and
+in general is a modern, object-oriented language, which doesn't require legacy stuff like headers. Yes,
+it is a bit slower than pure <code>C</code>, but the latest versions of the java virtual machine
+compile to machine code on runtime and achieve great performance. Most computer scientists have
+mastered it and in general it is widely extended. It is versatile and can be used from simple routines
+to implement web pages with <code>JSP</code>, to CRMs. Yes, I like <code>java</code>.</li>
+
+<li><code><b>C</b></code> is the mother of all programming languages, but this does not mean that it's the
+best one. It's old, doesn't have objects, and for every byte optimization which earns 1 second of
+execution time, the programmer needs to waste ten minutes. Optimizations should be done at the compiler
+level, not the code level. However, <code>C</code> has great compilers, from the good-enough <code>gcc</code>
+to the awesome <code>icc</code>. <br/>
+My recommendation is that you use it only if you know what you're doing. It's
+awful to parse strings in <code>C</code>, it lacks many scientific libraries compared to
+<code>perl</code> or <code>java</code>&mdash;except math functions, but that's what <code>R</code> is for&mdash;and
+the segmentation faults in general can make you waste several days
+looking into the code because you declared a variable incorrectly and you have a pagination issue.<br/>
+Some might argue that <code>C</code> is as good as the programmer is, but honestly, it makes good
+programmers waste a lot of time because of small issues.</li>
+
+<li><code><b>C++</b></code> is the alternative if you need to use <code>C</code> in an object-oriented
+environment. The compiler is also able to run more checks in compile time, so you'll waste less time,
+but I'd go for <code>java</code> anyway. There is no reason to choose <code>C++</code> a priori but execution
+speed</li>
+
+<li><code><b>objective-C</b></code> Apple users are sometimes tempted to write <code>obj-C</code> code, because
+of the excellent development tools on a Mac, but keep in mind that probably there is nobody else
+who can look at that code afterwards and understand it, because almost nobody uses <code>obj-C</code>.
+So I'd suggest not to use it unless you're in a hardcore Mac environment or are planning to develop
+a GUI for a Mac afterwards.</li>
+
+<li><code><b>fortran</b></code> there are only two kinds of people who use <code>fortran</code>: physicists
+and the poor fellows who have to maintain their code afterwards. It was designed for the 50s computers,
+which means that using it nowadays would be like using steering wheels from John Ford on today's cars.
+It is easier to understand <code>f2c</code> generated code than the original one. There is not a single
+reason to use
+<code>fortran</code>. If you need raw speed use <code>C</code>. If you want to write unmaintainable code,
+well, use obfuscated <code>perl</code>.</li>
+</ul>
+
+
+<h4>Choosing a language</h4>
+
+<p>Now for the difficult task of choosing a language. If you look again at the four items on top of
+this post, having read the language descriptions above, you might start to see what's going on. This is
+basically a matter of choosing the right language for your specific task, with some decisions.</p>
+
+<p><b>Which are my time constraints?</b> Beginner programmers often forget that, for homemade software,
+the total time constraint is <i>the time you spend programming</i> plus <i>the time you spend running it</i>.
+If the routine is expected to take 10 minutes, don't waste two hours writing a C program with pointers, write
+a simple script.</p>
+
+<p><b>Can I solve it with a simple script?</b> If the answer is yes, use <code>bash</code>. It's a great
+scripting language, and you can build on top of other Unix tools, like <code>awk</code>, <code>sed</code>, etc.</p>
+
+<p>However, keep in mind that every time you call an external program, the system needs to <code>fork()</code>
+and, for large loops, this can be a huge overhead. Be rational, and think again of the execution time.
+Instead to launch 10,000 <code>sed</code> to parse lines, it might be better to write a <code>php</code> script, which
+is more powerful than <code>bash</code>, it won't need to <code>fork()</code> and the code will probably be simpler.</code>
+
+<p><b>Will I need to maintain it or reuse the code? Will the code grow?</b> If you think this code can be
+reused as a library, or integrated into other modules, think of making it into an actual <code>C</code> library
+or <code>java</code> class. Running scripts within scripts within a big project is generally a bad idea. And
+please keep in mind that, in a research environment, at some point another person will need to look
+at your code, so besides writing clean and understandable code, try not to use obscure languages or tools
+which only you know of.</p>
+
+<p><b>Do I need to achieve the maximum speed and/or optimizations?</b> Keeping in mind that the latest
+versions of the <code>java</code> virtual machine are pretty fast, yes, the winner here is <code>C</code>. But we're
+talking about software which can take you two weeks to code, and which would take months to run if written
+in <code>perl</code>, but only takes three hours when coded in <code>C</code>. When this happens, choose <code>C</code>.</p>
+
+<p><b>Will it need to run on different platforms?</b> <code>java</code> and the scripting languages are the only
+ones which guarantee perfect execution on every environment: Windows, Mac, Linux, Solaris, BSD and others.
+<code>C</code> can be compiled in different architectures but it's sometimes hard to replace <code>mmap</code>'s
+on Windows or compile against different versions of the <code>libc</code> in different flavors of Linux.</p>
+
+<h4>Summary</h4>
+
+<p>Let's review the four initial points again.</p>
+
+<ol>
+<li><code><b>bash</b></code> is a great initial choice for small projects which will take about 20 minutes
+to run and you don't want to waste three hours programming them</li>
+<li><code><b>php</b></code> is appropriate for medium projects, which use objects, parse text and do math.
+<code>perl</code> is another good choice at this point.</li>
+<li><code><b>C</b></code> is better left for experts or people who need hardcore optimizations. The rest
+of us will leave optimizations for the compiler/interpreter and just try to write good code
+which runs in O(n) if possible.</li>
+<li><code><b>java</b></code> is the king of tools and libraries, multi-platform, scales great for big
+projects, is surprisingly fast and very respectful with novices. Its only drawback is the need of
+a <code>java</code> virtual machine, but hey, if you use <code>perl</code> you will need its libraries
+installed, too.</li>
+</ol>
+
+<p>In the end, everyone has their preferred languages, which is fine. It is far more important to write good
+code than it is to choose the language which fits best for a task. However, failing to foresee the importance
+of a math routine in the and writing it in <code>perl</code> can lead to the whole research group wasting
+time until somebody else writes it in <code>C</code> and makes it 1000x faster. Yep, true story.
+So choose wisely.</p>
+
+<p>Tags: <a href="tag_programming.html">programming</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/which-is-the-best-programming-language.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/which-is-the-best-programming-language.html'><span id='count-15074'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/which-is-the-best-programming-language.html",
+            dataType: "jsonp", success: function(data){ $("#count-15074").html("(" + data.count + ")"); }}); </script>
+</div>
+<div id="footer">CC by-nc-nd 2008-2016 <a href="http://cfenollosa.com">Carlos Fenollosa</a> &mdash; <a href="mailto:cf&#64;cfenollosa&#46;com">cf&#64;cfenollosa&#46;com</a><br/>
+Generated with <a href="https://github.com/cfenollosa/bashblog">bashblog</a>, a single bash script to easily create blogs like this one<br/>
+<a href="../cookies.html">Cookies policy</a> &mdash; <a href="the-ignorant-eu-cookie-law.html">Learn why this cookies law is ignorant</a></div>
+</div></div>
+</body></html>

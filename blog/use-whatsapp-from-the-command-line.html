@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,600' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <script data-js="root" src="../js/jquery.js"></script>
+    <script data-js="root" src="../js/consent.js"></script>
+
+    <!-- blog stuff -->
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to this page..." href="http://feeds.feedburner.com/WaitingForTheJobsToFinish" />
+	<link rel="stylesheet" href="main.css" type="text/css" />
+	<link rel="stylesheet" href="blog.css" type="text/css" />
+    <!-- /blog stuff -->
+<title>Use whatsapp from the command line</title>
+<meta name='twitter:card' content='summary' />
+<meta name='twitter:site' content='@cfenollosa' />
+<meta name='twitter:title' content='Use whatsapp from the command line' />
+<meta name='twitter:description' content=" Update Oct 2014: Whatsapp changed their protocol and third party clients like yoswup may not work     anymore. In this post I'm going to show you how to run a commandline Whatsapp client. It can be very useful to connect it to a unix pipe and automa" />
+</head><body>
+
+<div id="cookieBanner">
+    <div id="cookieBannerClose"><a href="javascript:;">x</a></div>
+    This website uses third party cookies exclusively to collect analytics data.
+    If you continue browsing or close this notice, you will accept their use.
+    The EU now requires all sites to display this banner which confuses users
+    and does nothing, actually, to improve your privacy.<br/>
+    <div id="cookieBannerActions">
+        <a class="noconsent" href="http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html">Read more on why this law is ignorant</a> &mdash; 
+        <a class="noconsent" href="http://cfenollosa.com/cookies.html">Learn about this website's cookies</a> &mdash; 
+        <a class="denyConsent noconsent" href="javascript:;">Disallow cookies</a>
+    </div>
+</div>
+
+
+<div class="headerbig"><div class="head">
+	<div class="headerleft">
+		<img data-img="root" src="../img/cfenollosa-small.png" alt="Carlos Fenollosa" class="foto" />
+	</div>
+
+	<div class="headerright">
+        <div id="headername">
+            <h1 class="nomargin name">Carlos Fenollosa</h1>
+
+            <div class="description">
+                <div class="position">Engineer, developer, entrepreneur</div>
+            </div>
+        </div>
+
+        <div class="add" id="contact">
+            <a href="mailto:cf@cfenollosa.com">cf@cfenollosa.com</a> <i class="fa fa-envelope fa-fw"></i><br/>
+            <a href="http://twitter.com/cfenollosa">@cfenollosa</a> <i class="fa fa-twitter fa-fw"></i><br/>
+            Barcelona area <i class="fa fa-map-marker fa-fw"></i>
+        </div>
+
+        <div class="clear"></div>			
+	</div> <!-- headerright -->
+<div class="clear"></div>
+</div></div> <!-- header && headerholder -->
+
+
+<div id="navbar" class="bound">
+    <div data-id="idblog" class="navitem navitem-first navitem-current"><a href="index.html">Blog</a></div>
+    <div data-id="idabout" class="navitem"><a href="../about.html">About</a></div>
+    <div data-id="idfunnypapers" class="navitem"><a href="../funnypapers/index.html">Funny papers</a></div>
+    <div data-id="idpuput" class="navitem"><a href="http://puput.io">Puput</a></div>
+    <div class="navitem"><a href="http://github.com/cfenollosa">Github</a></div>
+    <div data-id="idlinkedin" class="navitem navitem-last"><a href="https://www.linkedin.com/in/cfenollosa">LinkedIn</a></div>
+    <div class="clear"></div>
+</div>
+<div id="divbodyholder">
+<div class="headerholder"><div class="header">
+<div id="title">
+<h1 class="nomargin"><a class="ablack" href="http://cfenollosa.com/blog/index.html">Carlos Fenollosa &#x2014; Blog</a></h1>
+<div id="description">Thoughts on science and tips for researchers who use computers</div>
+</div></div></div>
+<div id="divbody"><div class="content">
+<!-- entry begin -->
+<h3><a class="ablack" href="use-whatsapp-from-the-command-line.html">
+Use whatsapp from the command line
+</a></h3>
+<!-- bashblog_timestamp: #201403101908.00# -->
+<div class="subtitle">March 10, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p><i>Update Oct 2014: Whatsapp changed their protocol and third party clients like yoswup may not work
+    anymore.</i></p>
+<p>In this post I'm going to show you how to run a commandline Whatsapp client. It can be very useful
+to connect it to a unix pipe and automatically get messages from your server, via Whatsapp. Also, it's cool B-)</p>
+
+<p>Disclaimer: Whatsapp is sending DMCAs to take down <a href="https://gitorious.org/wazapp-desktop/yowsup">Yowsup's Github repos</a>, so either the software or the
+process may break with any update of their protocol. However, to date, I've been using it for a couple of months
+with no hassle.</p>
+
+<ol>
+<li><a href="https://gitorious.org/wazapp-desktop/yowsup">Download Yoswup from Gitorious</a> and extract it somewhere</li>
+<li>Edit the config file and input your cc, phone and id. Leave the password blank</li>
+<li>We are going to force a re-auth on your phone's whatsapp in order to cache the password.
+Authenticate with yowsup: <code>./yowsup-cli -c config -r sms</code> and wait for the SMS</li>
+<li>Second step of the authentication: <code>./yowsup-cli -c config -R [6-digit sms code]</code></li>
+<li>Now your phone's Whatsapp is disabled. Open the app and re-auth with either a SMS or a phone call, whatever
+is available first. You may have to wait some minutes. </li>
+<li>Download <a href="http://www.i-funbox.com">iFunBox</a></li>
+<li>Connect your phone, open the iFunBox app in your computer, and navigate to <code>whatsapp/Library/Caches/net.whatsapp.WhatsApp</code></li>
+<li>Copy all files named Cache.db* to some place</li>
+<li>Download <a href="http://sqlitestudio.pl/?act=download">SQLiteStudio</a></li>
+<li>Open SQLiteStudio, and open the database on Cache.db. Navigate to the table <code>cfurl_cache_receiver_data</code> and scroll to the end. You will see a large json string. This is your current authentication data.</li>
+<li>Look on the json string for <code>pw:XXXXXXX</code>. That's your password. Copy it to yowsup's config file</li>
+<li>We are ready! <code>./yowsup-cli -c config -s [cc][phonenumber] "I'm texting you from a terminal"</code></li>
+</ol>
+
+<p>Enjoy! Yowsup can also be used for full conversations, send messages to yourself which you'll receive on your phone or, as mentioned in the beginning of this post, pipe some other command to your phone.</p>
+
+<p>Tags: <a href='tag_software.html'>software</a>, <a href='tag_tricks.html'>tricks</a></p>
+</p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/use-whatsapp-from-the-command-line.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/use-whatsapp-from-the-command-line.html'><span id='count-24218'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/use-whatsapp-from-the-command-line.html",
+            dataType: "jsonp", success: function(data){ $("#count-24218").html("(" + data.count + ")"); }}); </script>
+<!-- entry end -->
+</div>
+<div id="footer">CC by-nc-nd 2008-2016 <a href="http://cfenollosa.com">Carlos Fenollosa</a> &mdash; <a href="mailto:cf&#64;cfenollosa&#46;com">cf&#64;cfenollosa&#46;com</a><br/>
+Generated with <a href="https://github.com/cfenollosa/bashblog">bashblog</a>, a single bash script to easily create blogs like this one<br/>
+<a href="../cookies.html">Cookies policy</a> &mdash; <a href="the-ignorant-eu-cookie-law.html">Learn why this cookies law is ignorant</a></div>
+</div></div>
+</body></html>

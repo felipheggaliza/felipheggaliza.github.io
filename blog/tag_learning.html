@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,600' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <script data-js="root" src="../js/jquery.js"></script>
+    <script data-js="root" src="../js/consent.js"></script>
+
+    <!-- blog stuff -->
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to this page..." href="http://feeds.feedburner.com/WaitingForTheJobsToFinish" />
+	<link rel="stylesheet" href="main.css" type="text/css" />
+	<link rel="stylesheet" href="blog.css" type="text/css" />
+    <!-- /blog stuff -->
+<title>Carlos Fenollosa &#x2014; Blog &mdash; Posts tagged "learning"</title>
+<meta name='twitter:card' content='summary' />
+<meta name='twitter:site' content='@cfenollosa' />
+<meta name='twitter:title' content='Carlos Fenollosa &#x2014; Blog &mdash; Posts tagged "learning"' />
+<meta name='twitter:description' content=" The Elixir of concurrency   May 23, 2016 &mdash;  Carlos Fenollosa    Elixir is a fairly young language that was born when José and a few Rails developers tried to create a modern language optimized for concurrent, distributed, lightweight processe" />
+</head><body>
+
+<div id="cookieBanner">
+    <div id="cookieBannerClose"><a href="javascript:;">x</a></div>
+    This website uses third party cookies exclusively to collect analytics data.
+    If you continue browsing or close this notice, you will accept their use.
+    The EU now requires all sites to display this banner which confuses users
+    and does nothing, actually, to improve your privacy.<br/>
+    <div id="cookieBannerActions">
+        <a class="noconsent" href="http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html">Read more on why this law is ignorant</a> &mdash; 
+        <a class="noconsent" href="http://cfenollosa.com/cookies.html">Learn about this website's cookies</a> &mdash; 
+        <a class="denyConsent noconsent" href="javascript:;">Disallow cookies</a>
+    </div>
+</div>
+
+
+<div class="headerbig"><div class="head">
+	<div class="headerleft">
+		<img data-img="root" src="../img/cfenollosa-small.png" alt="Carlos Fenollosa" class="foto" />
+	</div>
+
+	<div class="headerright">
+        <div id="headername">
+            <h1 class="nomargin name">Carlos Fenollosa</h1>
+
+            <div class="description">
+                <div class="position">Engineer, developer, entrepreneur</div>
+            </div>
+        </div>
+
+        <div class="add" id="contact">
+            <a href="mailto:cf@cfenollosa.com">cf@cfenollosa.com</a> <i class="fa fa-envelope fa-fw"></i><br/>
+            <a href="http://twitter.com/cfenollosa">@cfenollosa</a> <i class="fa fa-twitter fa-fw"></i><br/>
+            Barcelona area <i class="fa fa-map-marker fa-fw"></i>
+        </div>
+
+        <div class="clear"></div>			
+	</div> <!-- headerright -->
+<div class="clear"></div>
+</div></div> <!-- header && headerholder -->
+
+
+<div id="navbar" class="bound">
+    <div data-id="idblog" class="navitem navitem-first navitem-current"><a href="index.html">Blog</a></div>
+    <div data-id="idabout" class="navitem"><a href="../about.html">About</a></div>
+    <div data-id="idfunnypapers" class="navitem"><a href="../funnypapers/index.html">Funny papers</a></div>
+    <div data-id="idpuput" class="navitem"><a href="http://puput.io">Puput</a></div>
+    <div class="navitem"><a href="http://github.com/cfenollosa">Github</a></div>
+    <div data-id="idlinkedin" class="navitem navitem-last"><a href="https://www.linkedin.com/in/cfenollosa">LinkedIn</a></div>
+    <div class="clear"></div>
+</div>
+<div id="divbodyholder">
+<div class="headerholder"><div class="header">
+<div id="title">
+<h1 class="nomargin"><a class="ablack" href="http://cfenollosa.com/blog/index.html">Carlos Fenollosa &#x2014; Blog</a></h1>
+<div id="description">Thoughts on science and tips for researchers who use computers</div>
+</div></div></div>
+<div id="divbody"><div class="content">
+<h3><a class="ablack" href="the-elixir-of-concurrency.html">
+The Elixir of concurrency
+</a></h3>
+<!-- bashblog_timestamp: #201605231955.55# -->
+<div class="subtitle">May 23, 2016 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p><a href="http://elixir-lang.org">Elixir</a> is a <a href="https://en.wikipedia.org/wiki/Elixir_(programming_language)">fairly young</a> language that was born when <a href="https://github.com/josevalim">José and a few Rails developers</a>
+tried to create a modern language optimized for concurrent, distributed, lightweight processes</p>
+
+<p>They wanted a modern Ruby-like syntax with a well-tested process manager, the <a href="https://en.wikipedia.org/wiki/Erlang_(programming_language)">Erlang VM</a>.
+The result is Elixir, defined as <em>a dynamic, functional language designed for building scalable and maintainable applications</em>,
+a correct but vague affirmation which doesn't do justice to its power and elegancy.</p>
+
+<p>I recently <a href="https://lobste.rs/s/pej1vc/moving_away_from_python_2/comments/1txpzt#c_1txpzt">compared</a> the move to Elixir from Python as a similar leapfrog to
+moving to Python from Java. It feels like something new, modern, powerful, with killer features that you don't want to
+renounce to. </p>
+
+<p>In Python I found a REPL, list comprehensions, a super clean syntax and decorators. Elixir brings lightweight supervised
+processes, pattern matching, a fully functional programming language, pipes and a terrific build tool: <code>mix</code></p>
+
+<p>If you've never written functional code, the jump is significant. I took a <a href="https://www.coursera.org/course/progfun">Scala course</a> a couple years ago
+and I've needed almost two full weeks to write production code in Elixir. The language is young, Stack Overflow is of no help
+&mdash;no kidding, that is a big deal&mdash;, and there are few libraries in Github.</p>
+
+<p>A small community also comes with some upsides: people are more motivated and willing to help, centralized tools like forums
+and IRC channels are still manageable, and you may even suggest changes to the language for upcoming versions.</p>
+
+<h4>What is Elixir for?</h4>
+
+<p>I had a middle school teacher who said that you can't define something by stating <em>what is't not</em>. However, in programming,
+mentioning use cases which are not suitable for the language is a good way to start.</p>
+
+<p>Elixir is probably not the first choice for single core software: math calculus, CPU-intensive apps or desktop applications. 
+Since it's very high level, systems programming is also out of the picture.</p>
+
+<p>Elixir is great for web applications, standalone or using the <a href="http://www.phoenixframework.org">Phoenix framework</a> &mdash;Elixir's Rails&mdash;. 
+It really shines for building highly scalable, fault-tolerant network applications, like chats, telecommunications or
+generic web services.</p>
+
+<p>Why is that? Thanks to the Erlang VM, processes are really tiny, each one is garbage collected with a low latency,
+they communicate by sending location-independent messages over the network using the VMs 
+(you can run <code>result = Machine2.Module.function(params)</code> on Machine1),
+and spawning and managing these processes is effortless thanks to some of its abstractions.</p>
+
+<p>Finally, Elixir's basic modules also shine: <code>Plug</code> and <code>Router</code> for managing HTTP requests, <code>Ecto</code> for relational databases and
+<code>ETS</code> and <code>Mnesia</code> for distributed in-memory databases. </p>
+
+<p>Many recommend Elixir if only for Phoenix, but I found that for most backend applications it is enough to use <code>Plug</code> and <code>Router</code>.
+Phoenix is impressive but I believe it's a mistake to jump right into it without trying the base modules first, so my recommendation for 
+beginners is to hold on Phoenix until you really need it.</p>
+
+<p>Elixir's novelty, the pipe operator, is a fantastic approach to working with state in a functional manner. Instead of running 
+<code>readlines(fopen(user_input(), "r")).uppercase().split()</code>, try the more readable <code>user_input |&gt; fopen("r") |&gt; readlines |&gt; uppercase |&gt; split</code>.</p>
+
+<p>It is a language which was clearly designed to stand on the shoulders of giants, while providing modern capabilities
+for developers.</p>
+
+<h4>Elixir's abstractions</h4>
+
+<p>To store centralized &lt;key, value&gt;-like data, instead of a Singleton, 
+Elixir's provides an <code>Agent</code>. It keeps state in memory and many processes can access and modify it without concurrency issues.</p>
+
+<p>The language can spawn processes much like threads, using <code>spawn_link</code>, but you probably don't want to do that. You'd
+rather use a <code>Task</code>, which is basically <code>async/await</code>, or a <code>Gen(eric)Server</code>, a very cool abstraction that receives requests
+from other processes, spawns helper mini-servers and processes the results in parallel, for free.</p>
+
+<p>All tasks can be controlled using the <code>Supervisor</code>, which holds other abstractions as its "children" and automatically restarts
+them when they crash.</p>
+
+<p>Finally, your code is contained inside a single <code>project</code> which can manage different <code>apps</code>, with modules that hold functions. 
+No packages, no classes, no objects. Modules, functions, structs and basic data types.</p>
+
+<p>Dependency management is
+straightforward thanks to <code>mix</code>; builds and testing are handled by <code>mix</code> too. As opposed to other multi-tools like <code>gradle</code>, this
+one is really fast.</p>
+
+<p>Is that too much to process? I felt that at first, too. Give it some time and your brain will eventually think in terms of
+<code>Supervisor</code>s which manage <code>GenServer</code>s which spawn <code>Agent</code>s and <code>Task</code>s when needed.</p>
+
+<h4>Let it crash</h4>
+
+<p>Elixir's mantra is to let processes crash. I found it shocking and counter-intuitive, but with some explanation it makes a lot of sense.</p>
+
+<p>Neither developers want their code to crash nor Elixir promotes writing bad code. 
+However, let's agree that there are
+many reasons besides bad programming which can make a software crash. 
+If we have a server which runs stuff and at some point we have, say, 100 connections every second, one might crash eventually
+because of a bug in any component, hardware issues, a cosmic ray, or Murphy's law.</p>
+
+<p>The question is: in the event of an unfortunate, unavoidable crash, how will your system react?</p>
+
+<ol>
+<li>Bring everything down?</li>
+<li>Try to capture the error and recover?</li>
+<li>Kill the crashed process and launch another one in its place?</li>
+</ol>
+
+<p>For example, C uses approach 1. Most modern languages with Exceptions like Java and Python use 2. 
+Elixir uses 3. This is not suitable for all environments, but it is
+perfect for those use cases which fit Elixir: concurrent network processes.</p>
+
+<p>With Elixir, a single failure never brings the system down. What's more, it automatically restarts the crashed process, so the 
+client can instantly retry and, unless there is a reproducible bug in your code, the fresh process will finish without an issue.</p>
+
+<p>The bottom line is: a single client may be unlucky and crash at some point, but the rest of the system will never notice.</p>
+
+<h4>How to start?</h4>
+
+<p>Let's get our hands dirty. After reading many sites, watching hours of video and following a dozen tutorials, here are the resources
+I found the most valuable. I'd suggest following this order.</p>
+
+<p><strong>Getting started</strong></p>
+
+<ol>
+<li><a href="https://www.youtube.com/watch?v=dZV4_uNw72A">Madrid Elixir Meetup 2016-03</a>. If you understand Spanish, this is the best intro to Elixir. Otherwise, watch 
+<a href="https://www.youtube.com/watch?v=5kYmOyJjGDM">All aboard the Elixir Express!</a> which is a bit outdated but very comprehensive.</li>
+<li><a href="http://elixir-lang.org/getting-started/introduction.html">Official "Getting Started" guide</a>. It's the best and the most current. Follow it from start to finish, including the 
+advanced chapters.</li>
+<li><a href="https://elixirschool.com">Elixir School</a>. A nice complement to the official guide. Most things are very similar, but the different approach
+on OTP will help you understand it better.</li>
+<li><a href="https://medium.com/@StevenLeiva1/understanding-elixir-s-genserver-a8d5756e6848#.a2yytqrbe">Understanding Elixir's GenServer</a> and <a href="https://medium.com/@StevenLeiva1/elixir-supervisors-a-conceptual-understanding-ee0825f70cbe#.zbyjhdg0u">Elixir's supervisors, a conceptual understanding</a> are two short reads
+with yet another explanation of OTP features.</li>
+<li><a href="https://www.dropbox.com/s/lr1t87rw4wfnyb3/elixir-cheat-sheet-v2.pdf?dl=0">Elixir Cheat Sheet</a>. The best one out there</li>
+</ol>
+
+<p><strong>First projects</strong></p>
+
+<ol>
+<li><a href="https://github.com/gregpardo/vim-elixir-ide">vim-elixir-ide</a>. Elixir support for <code>vim</code>, not the best plugin but suitable for beginners.</li>
+<li><a href="https://elixir-examples.github.io">Elixir examples</a>. The Elixir guide covers all these, but it's handy to have common idioms on a single page: "string to list", "concatenate list", "optional function parameters", etc.</li>
+<li><a href="http://howistart.org/posts/elixir/1">Portal Game by José Valim</a>. A complement to the sample project on the official guide.</li>
+<li><a href="http://elixirkoans.io">Elixir Koans</a> and <a href="http://exercism.io/languages/elixir">Exercism</a> are mini exercises that you can use to improve your Elixir agility. On the same line,
+<a href="http://elixirgolf.com">Elixir Golf</a> proposes weekly puzzles to solve.</li>
+<li><a href="http://learningelixir.joekain.com">Learning Elixir</a>. Joseph Kain has a ton of content with mini projects and examples you can follow. Top quality. </li>
+<li><a href="https://excasts.com/episodes">Excasts</a> and <a href="http://elixirsips.com/">Elixir sips</a> have short screencasts that you can check out for reference</li>
+<li><a href="https://www.youtube.com/playlist?list=PLWbHc_FXPo2gB7HUE-2H61HAEyszAph3H">ElixirConf videos</a> contain very interesting talks which may be overwhelming for beginners, but are worth
+a look later on.</li>
+<li><a href="https://gist.github.com/likethesky/abb00e5aedc38ee9f711">Install Elixir and Phoenix on OSX</a>. If you want to use Phoenix on OSX, you may need this help</li>
+<li><a href="http://www.phoenixframework.org/docs/overview">Phoenix Official Guide</a>. Phoenix isn't necessary for simple web services, you can use <code>Plug</code>. But for 
+large projects you'll need a framework. Nothing like the official guide.</li>
+</ol>
+
+<p><strong>Getting help</strong></p>
+
+<ol>
+<li><a href="https://github.com/h4cc/awesome-elixir">Awesome Elixir</a>. A list of Elixir resources, where I found many of these.</li>
+<li><a href="https://twitter.com/ElixirTip">Elixir Tip</a> and <a href="https://twitter.com/elixirstatus">Elixir Status</a> regularly link to Elixir-related articles and videos, and 
+<a href="http://blog.plataformatec.com.br/tag/elixir/">Plataformatec Elixir posts</a> is where the language authors share news and tips.</li>
+<li>If you have questions about code, try the <a href="http://elixirforum.com">Elixir forum</a> first, the <a href="irc://irc.freenode.net/elixir-lang">IRC channel</a>
+or <a href="https://elixir-slackin.herokuapp.com/">Slack</a>. The developers would like to transition all help requests out of the <a href="https://groups.google.com/group/elixir-lang-talk">Mailing list</a>,
+which you can use for language-related discussions.</li>
+<li><a href="https://www.reddit.com/r/elixir">/r/elixir</a> if you're into Reddit</li>
+</ol>
+
+<h4>Closing thoughts</h4>
+
+<p>I think that's all for the moment. I hope this post can help some beginners to get their hands on the language and start
+writing production code as soon as possible. </p>
+
+<p>For anyone who wants to know what's all the Elixir fuss about, it's difficult to explain, especially for somebody like me
+who has been programming in imperative languages all his life.</p>
+
+<p>When I recommended Elixir to a friend, he replied, "A highly concurrent, functional language using the Erlang VM? 
+Don't you have something more exotic?". That's right. Elixir is exotic and use-case specific. </p>
+
+<p>Unlike Python, which is my favorite imperative language and ecosystem, I can't recommend Elixir for everyone.
+Not everybody can spare a couple weeks to get started. Many libraries for common use cases are missing: 
+there is nothing
+equivalent to Numpy or Matplotlib, and modern
+applications are built on top of dozens of libs, not everyone has the time or will to write library code.
+Fortunately, at <a href="http://paradoxa.io">Paradoxa</a> I am my own boss and I make the tech decisions :)</p>
+
+<p>For hackers or tinkerers it's definitely worth a look, it "won't change your perspective" like Lisp, but
+it will make you see that writing concurrent code doesn't need to be difficult, and that better tooling is definitely possible.</p>
+
+<p>I bet Elixir will be the foundation of most devops stacks in a few years, when developers realize that the 
+future's bottleneck won't be the CPU, but rather the number of concurrent processes and connections your backend can manage.
+With Elixir you only need to boot another machine in your network and let the exotic Erlang VM handle the rest.</p>
+
+<p>Tags: <a href='tag_programming.html'>programming</a>, <a href='tag_learning.html'>learning</a></p>
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/the-elixir-of-concurrency.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/the-elixir-of-concurrency.html'><span id='count-19356'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/the-elixir-of-concurrency.html",
+            dataType: "jsonp", success: function(data){ $("#count-19356").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="startup-school.html">
+Startup school
+</a></h3>
+<!-- bashblog_timestamp: #201412051312.00# -->
+<div class="subtitle">December 05, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>The amazing <a href="http://startupclass.samaltman.com">How to start a startup</a> class just finished today.</p>
+
+<p>How fortunate we are to live in a world where the most successful minds of our time can teach
+the whole planet through the Internet, and decide to allow that possibility.</p>
+
+<p>Open education isn't just a fad, it's been a fight for a long time, and now it's starting
+to root strongly. Thanks to all who have joined on this fight, the world is becoming
+a better place.</p>
+
+<p>If you're interested in education as a source of progress, don't miss the 
+<a href="http://fourhourworkweek.com/2014/10/07/global-learning-xprize/">XPRIZE</a> episode of the 
+Tim Ferriss podcast, definitely <a href="http://cfenollosa.com/blog/my-favorite-podcasts.html">my favorite podcast now</a></p>
+
+<p>Tags: <a href='tag_learning.html'>learning</a>, <a href='tag_startups.html'>startups</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/startup-school.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/startup-school.html'><span id='count-5169'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/startup-school.html",
+            dataType: "jsonp", success: function(data){ $("#count-5169").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="learn-new-stuff-online-for-free.html">
+Learn new stuff, online, for free
+</a></h3>
+<!-- bashblog_timestamp: #201306051256.00# -->
+<div class="subtitle">June 05, 2013 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>These last months I've been quite busy learning new stuff. Researchers always need
+to keep an eye on the state of the art by reading papers, but multi-disciplinar sciences
+usually require a strong background in two or more areas, like biology, chemistry, math,
+physics or the always present computer science.</p>
+
+<p>While we can appreciate a good book, it is not the ideal way to learn new skills. Books
+don't force you to follow a schedule, do the assignments, and obviously don't evaluate you.
+We all have work to do and, with no deadlines, we never invest enough time on learning new tools
+in depth. Most books and tutorials are abandoned at chapter 4.</p>
+
+<h4>University-grade learning</h4>
+<p>If you want to follow an university-like learning methodology, you will need to invest
+university-like time and money, enrolling in short courses or traditional Masters
+degrees. They are fine, but cost a lot of time and money. What happens if you just want to learn
+one specific tool or technique and not a whole curriculum?</p>
+
+<p>Many universities offer workshops and non-official courses, typically for 3-5 days,
+which don't cost much money, but they are usually full-time and not really compatible with
+a daily job, unless you get permission from your supervisor.</p>
+
+<p>In 2011, and especially in 2012, a new learning tool appeared on the internet: the MOOCs,
+or Massive Open Online Courses. Their format varies, but most of them cover one or half a university
+class (7-15 weeks) in depth, with video lectures, assignments, deadlines, and real interaction
+with other students, TAs and professors.</p>
+
+<p>In learning, it isn't worth to to cheat at solitaire. A hard deadline is the only way to
+assure we won't lag behind the class, and while nobody will be watching whether we finish
+the course or drop it, it is up to us to decide if we want to take that opportunity to learn
+or not.</p>
+
+<h4>Resources to learn online</h4>
+<p>If you need some pointers I'd recommend to try <a href='https://www.coursera.org/'>Coursera</a>
+first, since it has the best methodology, for my taste, and the one which resembles a college
+the most. If I'm not mistaken, it's also the website with the most number of courses. A good
+alternative is <a href="https://www.udacity.com/">Udacity</a>, which doesn't have as many advanced
+topics as Coursera, but it's great for beginners. Finally, the last generalistic site is
+<a href='https://www.khanacademy.org/'>Khan Academy</a>, but unfortunately, it doesn't provide
+the same assignments-and-deadline mechanism that the former have. It basically contains video
+lectures. As a non-website, we can't forget <a href='http://www.apple.com/education/itunes-u/'>
+iTunes U</a>, Apple's video lectures directory, with classes directly recorded from campus.</p>
+
+<p>Other self-learning resources, while not strictly MOOCs, are
+<a href='http://www.codeschool.com/'>Codeschool</a> and <a href='http://www.codecademy.com'>
+Codeacademy</a> for programming, and <a href='http://www.memrise.com/home/'>Memrise</a> for
+languages. The number of education websites is growing, so make a quick search on Google
+to check if there is anything else you could be interested in.</p>
+
+<h4>Effort, pace and cost</h4>
+<p>MOOCs surprisingly compare to real online universities in terms of quality and
+material level, however, real interaction with the professor is difficult and only through
+public forums. The number of makes up for that, as usually there is somebody which
+can answer you. It is really a collaborative effort.</p>
+
+<p>Besides the obvious "knowledge for all" motto, there's another big advantage for me, as you can study at your own pace. Good MOOCs have
+precise deadlines which allow you some margin if you have a hard week at work or home, but
+they are not so far enough as to let you lag behind.</p>
+
+<p>Now, the question is, who pays for that? Posting video lectures online has a marginal cost,
+but what about the TAs and professor's time? Most of the assignments are corrected by a computer
+or other students, but the organizers have to invest a significant amount of money.</p>
+
+<p>I don't have the answer, but probably, since those courses are sponsored by a university,
+it probably fits into their social community service. Some professors advertise their books
+on the subject, which is perfectly reasonable, and finally, there is usually some self interest
+and promotion goal.</p>
+
+<p>Whoever pays for the courses with their time and money, thank you.</p>
+
+<p>Go check these links out, especially Coursera, and see if there's anything that catches
+your eye. Be brave, enroll, and prepare for a university-like effort. You'll learn
+university-like knowledge, for free.</p>
+
+<p>Tags: <a href="tag_learning.html">learning</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/learn-new-stuff-online-for-free.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/learn-new-stuff-online-for-free.html'><span id='count-2070'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/learn-new-stuff-online-for-free.html",
+            dataType: "jsonp", success: function(data){ $("#count-2070").html("(" + data.count + ")"); }}); </script>
+</div>
+<div id="footer">CC by-nc-nd 2008-2016 <a href="http://cfenollosa.com">Carlos Fenollosa</a> &mdash; <a href="mailto:cf&#64;cfenollosa&#46;com">cf&#64;cfenollosa&#46;com</a><br/>
+Generated with <a href="https://github.com/cfenollosa/bashblog">bashblog</a>, a single bash script to easily create blogs like this one<br/>
+<a href="../cookies.html">Cookies policy</a> &mdash; <a href="the-ignorant-eu-cookie-law.html">Learn why this cookies law is ignorant</a></div>
+</div></div>
+</body></html>

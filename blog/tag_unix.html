@@ -1,0 +1,707 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,600' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <script data-js="root" src="../js/jquery.js"></script>
+    <script data-js="root" src="../js/consent.js"></script>
+
+    <!-- blog stuff -->
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to this page..." href="http://feeds.feedburner.com/WaitingForTheJobsToFinish" />
+	<link rel="stylesheet" href="main.css" type="text/css" />
+	<link rel="stylesheet" href="blog.css" type="text/css" />
+    <!-- /blog stuff -->
+<title>Carlos Fenollosa &#x2014; Blog &mdash; Posts tagged "unix"</title>
+<meta name='twitter:card' content='summary' />
+<meta name='twitter:site' content='@cfenollosa' />
+<meta name='twitter:title' content='Carlos Fenollosa &#x2014; Blog &mdash; Posts tagged "unix"' />
+<meta name='twitter:description' content=" OpenBSD from a veteran Linux user perspective   June 26, 2015 &mdash;  Carlos Fenollosa    For the first time I installed a BSD box on a machine I control. The experience has been eye-opening, especially since I consider myself an 'old-school' Linux" />
+</head><body>
+
+<div id="cookieBanner">
+    <div id="cookieBannerClose"><a href="javascript:;">x</a></div>
+    This website uses third party cookies exclusively to collect analytics data.
+    If you continue browsing or close this notice, you will accept their use.
+    The EU now requires all sites to display this banner which confuses users
+    and does nothing, actually, to improve your privacy.<br/>
+    <div id="cookieBannerActions">
+        <a class="noconsent" href="http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html">Read more on why this law is ignorant</a> &mdash; 
+        <a class="noconsent" href="http://cfenollosa.com/cookies.html">Learn about this website's cookies</a> &mdash; 
+        <a class="denyConsent noconsent" href="javascript:;">Disallow cookies</a>
+    </div>
+</div>
+
+
+<div class="headerbig"><div class="head">
+	<div class="headerleft">
+		<img data-img="root" src="../img/cfenollosa-small.png" alt="Carlos Fenollosa" class="foto" />
+	</div>
+
+	<div class="headerright">
+        <div id="headername">
+            <h1 class="nomargin name">Carlos Fenollosa</h1>
+
+            <div class="description">
+                <div class="position">Engineer, developer, entrepreneur</div>
+            </div>
+        </div>
+
+        <div class="add" id="contact">
+            <a href="mailto:cf@cfenollosa.com">cf@cfenollosa.com</a> <i class="fa fa-envelope fa-fw"></i><br/>
+            <a href="http://twitter.com/cfenollosa">@cfenollosa</a> <i class="fa fa-twitter fa-fw"></i><br/>
+            Barcelona area <i class="fa fa-map-marker fa-fw"></i>
+        </div>
+
+        <div class="clear"></div>			
+	</div> <!-- headerright -->
+<div class="clear"></div>
+</div></div> <!-- header && headerholder -->
+
+
+<div id="navbar" class="bound">
+    <div data-id="idblog" class="navitem navitem-first navitem-current"><a href="index.html">Blog</a></div>
+    <div data-id="idabout" class="navitem"><a href="../about.html">About</a></div>
+    <div data-id="idfunnypapers" class="navitem"><a href="../funnypapers/index.html">Funny papers</a></div>
+    <div data-id="idpuput" class="navitem"><a href="http://puput.io">Puput</a></div>
+    <div class="navitem"><a href="http://github.com/cfenollosa">Github</a></div>
+    <div data-id="idlinkedin" class="navitem navitem-last"><a href="https://www.linkedin.com/in/cfenollosa">LinkedIn</a></div>
+    <div class="clear"></div>
+</div>
+<div id="divbodyholder">
+<div class="headerholder"><div class="header">
+<div id="title">
+<h1 class="nomargin"><a class="ablack" href="http://cfenollosa.com/blog/index.html">Carlos Fenollosa &#x2014; Blog</a></h1>
+<div id="description">Thoughts on science and tips for researchers who use computers</div>
+</div></div></div>
+<div id="divbody"><div class="content">
+<h3><a class="ablack" href="openbsd-from-a-veteran-linux-user-perspective.html">
+OpenBSD from a veteran Linux user perspective
+</a></h3>
+<!-- bashblog_timestamp: #201506261919.00# -->
+<div class="subtitle">June 26, 2015 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>For the first time I installed a BSD box on a machine I control. The experience has been eye-opening, especially
+since I consider myself an "old-school" Linux admin, and I've felt out of place with the latest changes on the
+system administration. </p>
+
+<p>Linux is now easier to use than ever, 
+but administration has become more difficult. There are many components, most of which
+are interconnected in modern ways. I'm not against progress, but I needed a bit of recycling. So instead of
+adapting myself to the new tools, I thought, why not look for modern tools which behave like old ones?</p>
+
+<p>This article discusses some of the main differences between OpenBSD and Linux, from a Linux admin perspective.</p>
+
+<p>There are some texts on the net discussing the philosophical differences between BSDs and Linux, but
+not many of them are really hands-on. <a href="https://www.over-yonder.net/~fullermd/rants/bsd4linux/01">This one</a> is the best,
+and I recommend you to read it along with this one.</p>
+
+<p>Since I am new to OpenBSD, I may get some things wrong. Please email me any corrections.
+However, my goal is to point out my first impressions, so if there are any Linux users reading and thinking about making the jump, 
+they can know what to expect.</p>
+
+<p><em>Final update: I've received a huge amount of feedback from this article, overwhelmingly
+positive, and very welcoming from the OpenBSD community.</em></p>
+
+<p><em>This text's goal is to discuss an OpenBSD newbie's first impressions and, as such, I'm
+realizing that some parts aren't totally accurate. However, I want to keep that perspective,
+so in the future I'll prepare a more technical guide on how to migrate to OpenBSD for Linux users.
+Thanks everyone!</em></p>
+
+<h4>The "RAMDAC" running joke</h4>
+
+<p>First, some background about my Linux experience.</p>
+
+<p>My first computer was a 386 with DOS and Windows 3.1. I had played with Spectrums, Commodores, and
+IBM PCs (8086). I followed the traditional Windows path: 3.1 -> 95 -> 98 -> ME -> 98 -> 2000. But
+I always liked computers, and the most visible part of them, besides the hardware, is the OS.</p>
+
+<p>I tried to install my first Linux distro on 1999. It was a Red Hat Linux 5.2, if I remember correctly, 
+and I got the CD from a magazine because I was still running a dial-up. I was 15 and I thought I knew
+computers, after all, I had assembled my own, an AMD K6-2 box, from parts.</p>
+
+<p>Red Hat proved me wrong.</p>
+
+<ul>
+<li><em>Which is your chipset?</em></li>
+<li>Man, I don't know</li>
+<li><em>Which is the model of your RAMDAC?</em></li>
+<li>What is a RAMDAC?</li>
+<li><em>I need <a href="http://archive.download.redhat.com/pub/redhat/linux/7.1/kr/doc/RH-DOCS/rhl-ig-itanium-en-7.1/figs/textmode/monitor.gif">your monitor modelines</a>. Don't get them wrong or you will physically damage your CRT</em></li>
+<li>Dude, I'm 15, I can't afford to break anything!</li>
+</ul>
+
+<p>In the end I didn't break my monitor, but
+got a black screen which said <code>login:</code>, and didn't know what to do, so I booted back
+into Windows and played a bit of Warcraft 2.</p>
+
+<p>In that age we only had one computer, so if you were installing something and needed
+help, you had to stop, reboot into Windows, dial up the modem, search the Usenet or forums, write down
+the solution on a piece of paper&mdash;no ubiquitous printers&mdash;, hope you got the commands right, reboot, start the installation over,
+reach the point where you previously were, and apply that solution. Not practical at all. </p>
+
+<p>The best
+help we had were books, and those were expensive and difficult to find on a small town bookstore.
+For those of us not fortunate enough to buy/find books, we had hobbyist magazines. In Spain there were a few
+imported and poorly translated magazines which were expensive, but carried some CDs, the only practical
+way to get distros.</p>
+
+<p>The first Linux I really was able to use was Mandrake 6.0. It had a graphical installer&mdash;not that having graphics
+made any real difference on the final result&mdash; but it auto detected my hardware correctly and booted into X. Yeah! 
+<a href="http://www.betaarchive.com/imageupload/2014-12/1419415455.or.26035.png">Old Linux software</a>! 
+A game called Nethack which had nothing to do with hacking! <code>sysconfig</code>!</p>
+
+<p>Unfortunately, I couldn't connect to the internet because of my Winmodem, so after a few days of tinkering, Mandrake 
+was wiped too.</p>
+
+<p>Months later, I got myself a BeOS CD. It was like Linux, which for me, then, meant it was not Windows. The setup ran totally
+effortless and it even detected my Winmodem. The internet ran faster than on Windows. It had a great
+internet browser, mail and newsgroups clients. Oh, boy! I used BeOS for a long time almost exclusively
+and only booted Windows to play some games.</p>
+
+<p>A couple years later I started Computer Engineering on college, so I wiped out everything and installed Linux.
+I got a new machine and a real network connection.</p>
+
+<p>I've run lots of Debians, Red Hats, Mandrakes, Gentoos and Slackwares. We used Solaris and even some VAXes.
+I ran some servers for student organizations, and finally settled on Debian as "the best" distro: stable,
+easy to use, no need to compile on our 486, nice hardware detection and with a big community.</p>
+
+<p>Finally, I moved to Ubuntu if only because its LTS releases. Around 2006 I got into Macs, which at first seemed like a nicer Linux, and
+now I appreciate the hardware+software combo for which I know I won't have to fight with its drivers. </p>
+
+<p>In summary, I've seen a lot of UNIX, even more Linux, and administered a good chunk of them. My servers have
+always run some sort of Debian.</p>
+
+<p>You could say that as I grew older I also grew tired of fighting with RAMDACs, modelines and Winmodems.
+Each age brought new "RAMDACs": CD recording, wireless card support, laptop hibernation, webcams, divx playing,
+DVD playing, NTFS support...</p>
+
+<p>Linux always worked in the server but had some quirks in the desktop which made it somewhat unattractive for daily use,
+even when I run it exclusively on my laptop.</p>
+
+<p>Nowadays, Macs offer a UNIX with some peace of mind, and the current status of Linux is good enough. Some of the friends I
+evangelized long ago&mdash;I quit doing that&mdash;still use Ubuntu and are happy with it. Linux may never triumph
+on the desktop (or laptop), but it's good enough for most.</p>
+
+<h4>Upgrading a G4 Mac Mini</h4>
+
+<p>Now jump to 2015. My home server, a G4 Mac Mini, was already two Debians behind. Some packages weren't ported to
+<em>powerpc</em>. I needed to perform a clean install and upgrade the whole system either way. But this time I didn't want to use a Linux
+installation which wants me to reboot every 5 days because of some critical patch. I'm looking at you, Ubuntu.</p>
+
+<p>As you can imagine my operating system fascination didn't fade out, only my time. I had been closely following the BSDs and
+using <a href="http://cfenollosa.com/blog/the-sdf-public-access-unix-system----est-1987.html">a NetBSD shell account</a>, installed Plan 9
+on a virtual machine,
+and even wrote <a href="https://github.com/cfenollosa/os-tutorial">a toy OS project</a>. </p>
+
+<p>I'm not afraid of compiling stuff&mdash;I do it for a living&mdash; and may even be open 
+to modifying some code if needed. Why not try something new?</p>
+
+<p>Since I had the weird <em>powerpc</em> requirement, I ruled out most operating systems. Finally I decided to play relatively
+safe and go for a BSD. FreeBSD is the most popular, has
+more online HOWTOs, and probably more features (ZFS, Jails), though I probably would not be using them. OpenBSD
+is more hackable, seems to have better documentation, and some cool people I know use it. I didn't want to quit using a pot
+to start using a kettle, so I downloaded OpenBSD's <code>install57.iso</code></p>
+
+<p>It was impossible to boot the Mini with a USB stick; I'm unsure if it's the firmware's fault
+or the fact that I was <code>dd</code>'ing the .iso file into the USB instead of the .fs one which doesn't seem to be available
+for macppc.</p>
+
+<p>I found some blank DVDs on a closet, borrowed a computer 
+with a DVD drive&mdash;another medium I hadn't touched in years&mdash;, and burned the ISO image. 
+The fact that I recorded the first disk with the ISO file on the root folder
+instead of properly burning the contents into the DVD warned me that this was going to be hard, but fun... </p>
+
+<p>Surprisingly, the installation was straightforward, it detected the 10-yr-old hardware, and by following the instructions
+I managed to partition the disks and install the boot loader. The box was up and running.</p>
+
+<p>Well, that wasn't so hard, was it? Now, to restore my old installation.</p>
+
+<p>Hm, first of all, 
+<code>bash</code> needs to be installed from packages and goes into <code>/usr/local/bin</code>, so I had to
+modify a lot of scripts which pointed to <code>#!/usr/bin/env bash</code>. The <code>ps</code> and <code>tar</code> commands have slightly different
+switches which broke other scripts. 
+The base services are different; OpenBSD includes its own HTTP, SMTP and NTP servers. Configuration files
+are in different places. Here goes my week...</p>
+
+<h4>GNU is really not UNIX</h4>
+
+<p>A quick note on the GNU/Linux naming discussion, since GNU is entering the equation now.
+I use the term "Linux" for simplicity. I know that's the kernel name. It also happens to be
+the popular name, even if not totally correct&mdash;according to some.</p>
+
+<p>Here is some food for thought; why does the FSF deserve more credit on the name than, say, the Apache Foundation, 
+or the FreeDesktop project, or BSD, for that matter? Why don't we include every key component on the name 
+and call it GNU/FreeDesktop/Apache/OSI/BSD/.../Linux? Including only GNU would be unfair
+to other big contributors, wouldn't it? So let's please stop this fight.</p>
+
+<p>That being said, the GNU tools and design philosophy make a noticeable difference in administration and userspace, and one can only appreciate
+it when switching to a different environment.</p>
+
+<p>I don't want to overstate it, though. Thanks to POSIX, a Linux admin
+can run BSD with little extra effort, since most of the things are similar. There are, in fact, more similarities than
+differences. If FreeBSD and OpenBSD are brothers, then Linux is a close cousin.</p>
+
+<p><code>ls</code> is always <code>ls</code>. <code>mkdir</code> is <code>mkdir</code>.
+But when you're being used to <code>/dev/hda</code>, <code>free -m</code> and <code>cat /proc/cpuinfo</code> you realize that having a different
+kernel is naturally going to change some of the administration tools.</p>
+
+<p>Some say that the GNU tools <a href="http://suckless.org/sucks">are bloated</a> and that the BSD toolchain is more "pure UNIX".
+The reality is that it depends on the specific GNU tool, I've personally found that GNU tools are more complex because
+they're more powerful, though they are less UNIX-like <em>(do one thing only and do it well)</em> and more like complete
+solutions. That's fine; different, but fine. After all, GNU is not Unix!</p>
+
+<p>In recent years, the Linux environment has grown in the GNU toolchain fashion, not the UNIX fashion. One may even say
+it has grown in the <em>Windows fashion</em>: be practical, be accommodating to all, be fast, be modern.</p>
+
+<p>There have always been debates
+about "bloated and complex code". More recently, systemd. Previously, Apache, sysconfig, iptables/iptools.... 
+The list goes on and on. Wheel out comp.os.linux and look at the flame wars.</p>
+
+<p>No software fits all nor should be shamed for its design decisions. In the end, with
+a few critical exceptions like <a href="https://en.wikipedia.org/wiki/Heartbleed">OpenSSL and the Heartbleed bug</a>, it is just
+a matter of taste: does the admin prefer simple, pluggable services, or bit monolithic suites? Compatibility or modernness?
+Familiarity or <a href="http://www.jwz.org/doc/cadt.html">shiny new things</a>? Standards or <a href="https://en.wikipedia.org/wiki/Not_invented_here">NIH</a>?</p>
+
+<p>I had been riding the Linux wave for years, until I recently realized that my admin skills needed a total
+recycling. In a few years we've gone from <code>/etc/init.d/sshd restart</code> to <code>service sshd restart</code> to <code>systemctl start sshd</code>.
+That's a bit fast in my opinion, but I understand it's the price of progress, aimed to make computers boot
+faster and theoretically easier to administer for newcomers. Old admins, on the other hand, have a harder time adapting.</p>
+
+<p>Having to choose between recycling into an always changing Linux or a more stable UNIX environment, I chose OpenBSD.
+Given my history of trying all possible OSs, 
+Let me state again that I'm not against the recent Linux direction. I just wanted to go out and see if there is a different way
+to do things.</p>
+
+<h4>Differences between OpenBSD and Linux</h4>
+
+<p>Maybe you're reading this article for its practical value and not for my ramblings, sorry.
+I thought I had to provide some context. I'm used to googling, I'm used to RTFMing, I'm used
+to reading source code to learn what software does. This context is important to judge if
+you would notice the same differences as I did.</p>
+
+<p>Here's a list of things that surprised me the most after completing an OpenBSD install, adapting
+my old setup to the new environment and running it for a few days.</p>
+
+<p><strong>Simplicity</strong></p>
+
+<p>First of all, everything is much simpler, like the Linux old days. Not necessarily easier, but
+simpler. More minimalistic. I found this plays well with my mind. OpenBSD follows <a href="http://www.catb.org/esr/writings/taoup/html/ch01s06.html">the UNIX 
+philosophy</a> 
+more closely: lots of small components that do one thing and 
+talk between them by passing text.</p>
+
+<p>Because of that, some base components are not as feature-rich, on purpose. Since 99% of the servers don't need
+the flexibility of Apache, OpenBSD's httpd will work fine, be more secure, and probably faster.
+For those who need the big boys, just install Apache from the packages. </p>
+
+<p>Having a developer-chosen default option for many servers is a time saver. The admin knows it will be
+well supported and documented, and tightly integrated with other components. The alternative, the
+Linux way, is to just use what everybody else uses (Apache), or choose one of the multiple options, always
+wondering if it's the right one&mdash;nginx? lighttpd? thttpd? You know what... <em>nobody got ever fired
+for choosing Apache</em></p>
+
+<p><strong>Design decisions</strong></p>
+
+<p>Picking up on that thought,
+the system is very opinionated. When the community decides that some module sucks, they develop
+a new one from scratch. OpenBSD has its own NTPd, SMTPd and, more recently, HTTPd. They work
+great.</p>
+
+<p>Likewise, the standard shell is <code>pdksh</code>. The <a href="http://www.openbsd.org/faq/faq9.html">OpenBSD FAQ</a> states that 
+<em>"Users familiar with bash are encouraged to try ksh(1) before loading bash on their system -- it does what most people desire of bash."</em>,
+which is a bit too bold. ksh does not support history substitution (<code>sudo !!:1</code>) which I use a lot, though I agree
+that for many users it will be enough. Many people hate bash for a reason, I am not one of them.
+Having a super powerful shell has saved me from writing perl scripts for system administration.
+Bash can always be installed from packages, anyway.</p>
+
+<p>This is a big difference from Linux, which is more like a "consensus" operating system. Developers have
+to keep compatibility and whenever there is a controversial design decision like systemd, dozens of
+projects <a href="https://xkcd.com/927/">decide to fork</a>. Not good.</p>
+
+<p>Strong opinions, on the other hand also lead to less support for some, like ext4, ZFS or Linux binary compatibility.
+For example, ext4 is officially supported read-only but in my case it didn't read some folders properly.
+FreeBSD plays better on that regard, though they also have more developer manpower. This leads to some use cases, 
+like an OpenBSD desktop, being possible but not the best choice for this OS.</p>
+
+<p>Finally, other decisions make little sense. According to disklabel(8), the /usr partition takes
+about 2G of disk space, not including /usr/src or /usr/obj. This means that there is little
+space to hold what is essentially the whole system plus ports. I had trouble compiling large ports
+since /usr ran out of disk space. If a large number of users will be compiling some ports, why not
+set a larger /usr by default?</p>
+
+<p><strong>Documentation</strong></p>
+
+<p>The man pages are excellent, a delight. Unlike Linux, they
+are not just a list of switches for the software, but a comprehensive guide to the tool, with
+lots of examples. They are much, much better&mdash;thankfully, because unlike Linux, again,
+there are not tons of help on public forums.</p>
+
+<p>OpenBSD's man pages are so nice that RTFMing somebody on the internet is not condescending but selfless.</p>
+
+<p>Granted, I wouldn't make a UNIX novice run OpenBSD from man pages, but for an experienced admin, they contain
+exactly the information they need.</p>
+
+<p><strong>Small differences in common tools</strong></p>
+
+<p>Using the BSD toolchain instead the GNU one means there are small differences between tools. 
+For example, some <code>ps</code> switches are missing, like the useful <code>-f</code>. The <code>tar</code> options for reading from stdin
+are also slightly different. When <code>ls</code> is run by root, it automatically appends all hidden files.</p>
+
+<p><code>df</code> has <code>-h</code> (human) and <code>-k</code> (kilobytes), but no <code>-m</code> for megabytes.</p>
+
+<p>If you've used MacOS you probably know a few of these.</p>
+
+<p><strong>Packages</strong></p>
+
+<p>OpenBSD has packages, like Linux. Unlike it, packages are only available for 3rd party software, not the base
+system. </p>
+
+<p>OpenBSD's base system is more or less what gets installed from the CDs: kernel, shell, coreutils,
+a small part of X and essential servers (http, ntp, smtp, etc.) Everything else must be installed from packages.</p>
+
+<p>The documentation recommends using packages, since it is not worth it to compile from ports&mdash;the package
+sources. However, packages don't get security updates. The only way to patch bugs is to compile the ports.</p>
+
+<p>Fortunately, there is a simple way to use the best of both worlds: add <code>FETCH_PACKAGES=yes</code> to <code>/etc/mk.conf</code>
+and install software from ports. The system will automatically fetch the package and save the compilation 
+time if there is a current binary available.</p>
+
+<p>Another interesting tool is <code>/usr/ports/infrastructure/bin/out-of-date</code>, which checks which ports need
+an update, so you can go to <code>/usr/ports/&lt;portname&gt;</code> and <code>make update</code>. This command plays well with previously
+installed packages, so you don't have to worry deleting them first.</p>
+
+<p>In summary, after you install the release, if you're interested in getting security updates until next
+release, the officially recommended path is to <a href="http://www.openbsd.org/stable.html">follow -stable</a>, use <code>FETCH_PACKAGES</code> and work from ports.
+This is not very clear in the documentation but the folks at <a href="irc://freenode.net/openbsd">#openbsd</a>
+helped me figure it out.</p>
+
+<p>As a colophon, if you're using x86 or amd64, <a href="https://stable.mtier.org">m:tier</a> provides binary updates
+for the base system and packages, much like Linux does. Otherwise, if 
+there is any bug in the base system you'll need to
+recompile that part yourself. The amount of compiling needed will be determined
+by the patched component and any related software, so just read the
+instructions on the patch.</p>
+
+<p><strong>Configuration files</strong></p>
+
+<p>The base system config files are properly centralized in <code>/etc</code>, but
+not the ports. The porting quality is excellent, better than any Linux distro. Every port is adapted
+to the OpenBSD system and made sure it behaves correctly. However, some maintainers decide that all
+the port files need to be contained in some folder, like <em>transmission-daemon</em>, which stores its
+config into <code>/var/transmission/.config/transmission-daemon/settings.json</code>. It's a bit crazy to store
+a system-wide daemon config file into <code>/var</code> which, according to <code>man hier</code>, contains
+<em>Multi-purpose log, temporary, transient, and spool files</em>. </p>
+
+<p>Apparently some daemons are chrooted by default, and there is a global "catch-all" README folder
+on <code>/usr/local/share/doc/pkg-readmes</code> which contains specific info about packages. transmission-daemon
+had no related info, so maybe I'll contact the maintainer.</p>
+
+<p><strong>Chroot</strong></p>
+
+<p>Speaking of roots, nearly all daemons in the base system are chrooted and
+privstep by default. The base system has a lot of hardening by default,
+which is one of the main reasons why OpenBSD has almost no remote holes
+on the default installation.</p>
+
+<p>Since chrooting software in Linux can be cumbersome, it's very convenient
+to get it done for you, so thanks!</p>
+
+<p><strong>Experienced community</strong></p>
+
+<p>I feel like the learning curve
+is a feature, not a bug, intended to keep newcomers away. OpenBSD is unapologetically elitist.
+Honestly, I don't mind that. I've been administering systems for more than a decade
+and not all environments are for everybody.</p>
+
+<p>OpenBSD <em>can afford</em> to be elitist because it is a small system, with a clear direction, the documentation
+is crystal clear, and it doesn't make vague promises.</p>
+
+<h4>make build</h4>
+
+<p>As you can see there is a big <em>con</em> to using OpenBSD coming from a Linux world, 
+the process for patching security issues. On Linux I was used to
+run a single command and let any part of the system (base or 3rd party) update itself. With
+OpenBSD, it takes a lot more effort and time, especially in my old machine.</p>
+
+<p>This process leaves the admin only one realistic option: follow the -stable branch, which is basically the same
+code as the CD release with small patches, and recompile stuff regularly. Otherwise, the installed
+system will be exposed to potential security holes until the next release.</p>
+
+<p>I feel that this needs to be more prominent in the OpenBSD docs, especially on the <a href="http://www.openbsd.org/faq/faq9.html">Migrating to OpenBSD</a>
+section: <em>if you want an updated and stable
+system you'll need to recompile stuff constantly, there is no equivalent to <code>apt-get upgrade</code></em>.</p>
+
+<p>To get a secure production system with OpenBSD, the officially recommended path is to:</p>
+
+<ol>
+<li>Install the CD release</li>
+<li>Download the source code</li>
+<li>Recompile the kernel (recommended by "following -stable")</li>
+<li>Recompile userland</li>
+<li>Download ports tree</li>
+<li>Add <code>FETCH_PACKAGES=yes</code> to <code>/etc/mk.conf</code> to let ports fetch packages, if available,
+and install software using the ports syntax.</li>
+<li>Recompile when there is a security issue which affects
+your setup, though you may skip some compiling if using m:tier.</li>
+</ol>
+
+<p>Of course, this is a feature, not a bug, but it's the biggest admin change from old Linux users.
+That's a lot of effort compared to <code>apt-get update &amp;&amp; apt-get upgrade</code>. Honestly, had I known it,
+I would've more strongly considered keeping my Debian installation. I read all the online documentation before
+installing OpenBSD, and I felt like this point wasn't really clear.</p>
+
+<p>Since you can safaly use -stable ports/packages with a -release base system, 
+steps 3-4 can be avoided or shortened if you don't want to update your base to -stable. That's
+what I would recommend to former Linux users, but take this newbie's advice with a grain of salt.</p>
+
+<p>In any case, for low-performing machines like mine, maybe the "recommended" path to follow -stable
+and rebuild the source for every errata is not the best one. For small fixes it may be better
+to just apply the patch and follow its instructions. Apparently in faster machines it's just
+more convenient to recompile the base system since it takes just a few minutes. 
+Had I been using x86 or amd64, I'd have totally gone for m:tier, so you can dismiss this section.</p>
+
+<p>To be totally fair, it's rare for OpenBSD to have remote holes on the CD release, so one could
+be relatively safe by only upgrading from release to release. But the truth is that there is
+no simple way to binary patch for critical updates.</p>
+
+<p>With that it mind, to summarize, there are the following options:</p>
+
+<ul>
+<li>Use a -release base and -stable ports (with <code>FETCH_PACKAGES=YES</code>), 
+cherry-picking patches from base and updating ports by <code>make update</code>.
+This may be the recommended path for low-performing machines</li>
+<li>Use a -stable base, too. You can then update the whole system with a 
+handful of commands and won't need to follow patch instructions</li>
+<li>Use -release and update from m:tier</li>
+<li>Keep using -release until a next -release comes, unless there is
+an unlikely remote hole that forces you to recompile the base. This
+may be the best option for newbies if the only person using the box 
+is the admin, so there is no way to suffer local attacks.</li>
+</ul>
+
+<h4>Conclusion</h4>
+
+<p>From a user perspective all of this is transparent; OpenBSD has a UNIX terminal or Xwindows session
+and everything works as expected. But a Linux admin will need to adapt to these new tools and
+allocate some more time for administration.</p>
+
+<p>OpenBSD has pros and cons. Personally, my main pros are the excellent documentation, its minimalism and
+the choice of default daemons. The only con is the need to recompile to patch errata.
+If I had just one wish for OpenBSD, it would be a more straightforward updating system for 
+security errata.</p>
+
+<p>Now, the dreaded question. <em>Is it worth it?</em></p>
+
+<p>Honestly, I wasted too much time. Some of it was to be expected, since I needed to learn a different
+environment. Had I been 10 years younger, this wouldn't have been a problem, but
+I want a hassle-free environment. The fact that I needed to compile things on an old machine
+probably didn't help. Keep that in mind when considering a BSD for an old, weird architecture.</p>
+
+<p>After the initial investment, I want to see if maintenance is easier and release upgrades
+are smoother than with Debian. Manually upgrading things is a pain in the neck, but all other
+factors lead me to think that OpenBSD is a great server OS.</p>
+
+<p>Maybe I was expecting something else from the docs I read? It 
+is probably my fault, though. Anyway, I want to contribute to the available documentation by
+writing this document so that other Linux admins can make a more informed decision.</p>
+
+<p>On the other hand, my geeky side is content. OpenBSD rocks. It is a different&mdash;a real&mdash;UNIX
+and I've really come to appreciate simple code and software. As an admin, having minimalistic, default
+servers is a blessing.</p>
+
+<p>Again, should you try OpenBSD? The answer is yes, though be careful if you're either in a rush or have 
+specific software requirements. The first days are a bit hard,
+and recompiling on a slow machine takes time.</p>
+
+<p>If you like UNIX, it will open your eyes
+to the fact that there is more than one way to do things, and that system administration
+can still be simple while modern.</p>
+
+<p><em>Revised with contributions from <a href="http://www.bsdnow.tv">TJ</a> and <a href="https://mike-burns.com">Mike</a>. Thanks!</em></p>
+
+<p>Tags: <a href='tag_software.html'>software</a>, <a href='tag_unix.html'>unix</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/openbsd-from-a-veteran-linux-user-perspective.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/openbsd-from-a-veteran-linux-user-perspective.html'><span id='count-8960'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/openbsd-from-a-veteran-linux-user-perspective.html",
+            dataType: "jsonp", success: function(data){ $("#count-8960").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="the-sdf-public-access-unix-system----est-1987.html">
+The SDF Public Access UNIX System -- Est 1987!
+</a></h3>
+<!-- bashblog_timestamp: #201405191913.00# -->
+<div class="subtitle">May 19, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>I just recently discovered the <a href="http://sdf.org">SDF Public Access UNIX System</a>, an organization that provides
+free, functional UNIX shells to users, plus webmail, LAMP and other servers to paid users. Check out their
+plans, they are very cheap.</p>
+
+<p>If you grew up on the <em>old</em> (not <em>ancient</em>) internet where you read news at the newsgroups, chatted on IRC,
+played MUDs at college computers and nethack at home since you didn't have internet there, this is your place.</p>
+
+<p>They have a modern service, and provide Minecraft servers too.</p>
+
+<p>If you like their service, don't forget to donate! They accept Paypal and Bitcoin.</p>
+
+<p>Tags: <a href='tag_unix.html'>unix</a>, <a href='tag_retro.html'>retro</a>
+</p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/the-sdf-public-access-unix-system----est-1987.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/the-sdf-public-access-unix-system----est-1987.html'><span id='count-19607'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/the-sdf-public-access-unix-system----est-1987.html",
+            dataType: "jsonp", success: function(data){ $("#count-19607").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="unix-tricks-you-should-be-using.html">
+Unix tricks you should be using
+</a></h3>
+<!-- bashblog_timestamp: #201402171809.00# -->
+<div class="subtitle">February 17, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>Some time ago I started a <a href="http://cfenollosa.com/misc/tricks.txt">compilation of unix tricks</a> regarding bash completion, obscure tools
+and some ssh magic.</p>
+
+<p>The list grew bit by bit until it was <a href="http://news.ycombinator.com/item?id=5337558">posted to Hacker News</a> and quickly exploded. It got about 200k visits
+the first day and has been accessed and linked frequently since then.</p>
+
+<p>I still maintain it, and I'd like to share it again, as the first post of this blog's new era. I have been tempted
+to re-write it as a longer blog post many times, but I believe that many people were attracted to the simplicity
+of the original text file.</p>
+<p>Tags: <a href="tag_unix.html">unix</a>, <a href="tag_tricks.html">tricks</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/unix-tricks-you-should-be-using.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/unix-tricks-you-should-be-using.html'><span id='count-11643'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/unix-tricks-you-should-be-using.html",
+            dataType: "jsonp", success: function(data){ $("#count-11643").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="the-advantages-of-using-screen.html">
+The advantages of using 'screen'
+</a></h3>
+<!-- bashblog_timestamp: #201109221000.00# -->
+<div class="subtitle">September 22, 2011 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>There's a reason I posted a <a href="http://mmb.pcb.ub.es/~carlesfe/unix/screen.pdf">screen cheat sheet</a>
+on my home page, and it's because I use <code>screen</code> so much that I actually needed one for myself.</p>
+
+<p><code>screen</code> is a tool which isn't suited for all audiences. <a href="http://www.gnu.org/s/screen/">Its
+home page</a> states that it is a "window manager" which multiplexes terminals. That basically means it's a
+terminal manager, and all graphical environments have terminal managers, right? So why do we need another
+one which has complicated keybindings and doesn't let us use the mouse?</p>
+
+<p>Well, each one might have their reasons, but for scientists there is one very clear advantage:
+working on the same shells from different terminals. What? Let's look at an example:</p>
+
+<p>You usually have a computer from which you work every day. From that computer you <code>ssh</code> into
+different servers, clusters, etc. So, in the end, most of us have a monitor full of <code>xterms</code>&mdash;or
+any other terminal emulator. That's fine. But then we arrive home and want to check if that job we launched
+has crashed, because we need the results tomorrow morning. So what do we do? We <code>ssh</code> into our
+machine, or the server, open <b>another session</b> (that's the key here) and run some commands.</p>
+
+<p>The problem is, you already had your sessions configured, maybe even set some environment variables,
+had the history full of commands and the terminal buffer with some output, and now you can't recover that.
+How about if you could <b>restore the same sessions and windows we had at our work computer</b> without
+the need to open a VNC or any other graphical screen-sharing tools? That's what <code>screen</code> does.</p>
+
+<p>To put it plainly, <code>screen</code> is a daemon that handles terminal connections, which means that you
+can always request the same session that you had open before. Obviously it can't manage sessions unless you
+open them via <code>screen</code>, so it's a good idea to always run your terminals through it, just in case
+you might need to access them afterwards.</p>
+
+<p>Besides ubiquitous access to your sessions, <code>screen</code> also provides other interesting features
+that make it useful even if you don't need terminal multiplexing. The first is notifications for
+terminals which are in background, for example, a visual message appears in your screen if there is a new
+output in a hidden window. This is very appropriate to avoid constantly checking minimized windows.</p>
+
+<p>It also provides window managing, i.e. many terminals in a single window, and quick switching. Finally,
+even on today's GUI world, sometimes you need to copy&amp;paste without a mouse, backwards buffer management,
+perform text "screenshots", etc.</p>
+
+<p>I'll end up with a quick tutorial by an example that actually happened yesterday.</p>
+
+<ul>
+<li><code><b>carlesfe@work:~$</b> screen</code></li>
+<li><code>[screen opens, and gives me a shell]</code></li>
+<li><code><b>carlesfe@work:~$</b> ssh server.com</code></li>
+<li><code><b>carlesfe@server:~$</b> work on some commands... run scripts...</code></li>
+<li><code><b>carlesfe@server:~$</b> launch_a_job.sh</code></li>
+<li><code>[output is being generated]</code></li>
+</ul>
+
+<p>Then I left work and went home. Notice that the output is still being generated, but only in the
+window that I had opened at work. Usually there are some other ways to check if the job is still running,
+but what if it crashes? At home I wouldn't normally be able to recover the error message that was printed
+on the screen. But with <code>screen</code> session management, I can do this:</p>
+
+<ul>
+<li><code><b>carlesfe@home:~$</b> ssh work</code></li>
+<li><code><b>carlesfe@work:~$</b> screen -x</code></li>
+</ul>
+
+<p>And voil&agrave;! I can see the exact same window with the same session I had at work. Now I can monitor
+what's happening, relaunch the command easily if it crashed, and see any error messages that were output
+on the screen.</p>
+
+<p>I started by saying that <code>screen</code> isn't a very user-friendly tool, but if you feel comfortable
+with many of the Unix tools out there, you'll get used to it very quickly. Check out
+<a href="http://news.softpedia.com/news/GNU-Screen-Tutorial-44274.shtml">this tutorial</a> for a beginner's
+introduction and give it a try for some days. Once you get used to the basic <code>C-a</code> keystrokes
+and terminal management, you'll wonder why didn't you discover it years ago.</p>
+
+<p>Tags: <a href="tag_unix.html">unix</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/the-advantages-of-using-screen.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/the-advantages-of-using-screen.html'><span id='count-20684'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/the-advantages-of-using-screen.html",
+            dataType: "jsonp", success: function(data){ $("#count-20684").html("(" + data.count + ")"); }}); </script>
+</div>
+<div id="footer">CC by-nc-nd 2008-2016 <a href="http://cfenollosa.com">Carlos Fenollosa</a> &mdash; <a href="mailto:cf&#64;cfenollosa&#46;com">cf&#64;cfenollosa&#46;com</a><br/>
+Generated with <a href="https://github.com/cfenollosa/bashblog">bashblog</a>, a single bash script to easily create blogs like this one<br/>
+<a href="../cookies.html">Cookies policy</a> &mdash; <a href="the-ignorant-eu-cookie-law.html">Learn why this cookies law is ignorant</a></div>
+</div></div>
+</body></html>

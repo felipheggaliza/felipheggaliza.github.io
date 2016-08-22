@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,600' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <script data-js="root" src="../js/jquery.js"></script>
+    <script data-js="root" src="../js/consent.js"></script>
+
+    <!-- blog stuff -->
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to this page..." href="http://feeds.feedburner.com/WaitingForTheJobsToFinish" />
+	<link rel="stylesheet" href="main.css" type="text/css" />
+	<link rel="stylesheet" href="blog.css" type="text/css" />
+    <!-- /blog stuff -->
+<title>A simple script to postpone your own email</title>
+<meta name='twitter:card' content='summary' />
+<meta name='twitter:site' content='@cfenollosa' />
+<meta name='twitter:title' content='A simple script to postpone your own email' />
+<meta name='twitter:description' content=" I somewhat use email as a task manager. Honestly, I believe we all do. We process emails in the inbox, then archive or delete them when we are done with them.  However, keeping track of emails that need a follow-up on a specific date can be difficul" />
+</head><body>
+
+<div id="cookieBanner">
+    <div id="cookieBannerClose"><a href="javascript:;">x</a></div>
+    This website uses third party cookies exclusively to collect analytics data.
+    If you continue browsing or close this notice, you will accept their use.
+    The EU now requires all sites to display this banner which confuses users
+    and does nothing, actually, to improve your privacy.<br/>
+    <div id="cookieBannerActions">
+        <a class="noconsent" href="http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html">Read more on why this law is ignorant</a> &mdash; 
+        <a class="noconsent" href="http://cfenollosa.com/cookies.html">Learn about this website's cookies</a> &mdash; 
+        <a class="denyConsent noconsent" href="javascript:;">Disallow cookies</a>
+    </div>
+</div>
+
+
+<div class="headerbig"><div class="head">
+	<div class="headerleft">
+		<img data-img="root" src="../img/cfenollosa-small.png" alt="Carlos Fenollosa" class="foto" />
+	</div>
+
+	<div class="headerright">
+        <div id="headername">
+            <h1 class="nomargin name">Carlos Fenollosa</h1>
+
+            <div class="description">
+                <div class="position">Engineer, developer, entrepreneur</div>
+            </div>
+        </div>
+
+        <div class="add" id="contact">
+            <a href="mailto:cf@cfenollosa.com">cf@cfenollosa.com</a> <i class="fa fa-envelope fa-fw"></i><br/>
+            <a href="http://twitter.com/cfenollosa">@cfenollosa</a> <i class="fa fa-twitter fa-fw"></i><br/>
+            Barcelona area <i class="fa fa-map-marker fa-fw"></i>
+        </div>
+
+        <div class="clear"></div>			
+	</div> <!-- headerright -->
+<div class="clear"></div>
+</div></div> <!-- header && headerholder -->
+
+
+<div id="navbar" class="bound">
+    <div data-id="idblog" class="navitem navitem-first navitem-current"><a href="index.html">Blog</a></div>
+    <div data-id="idabout" class="navitem"><a href="../about.html">About</a></div>
+    <div data-id="idfunnypapers" class="navitem"><a href="../funnypapers/index.html">Funny papers</a></div>
+    <div data-id="idpuput" class="navitem"><a href="http://puput.io">Puput</a></div>
+    <div class="navitem"><a href="http://github.com/cfenollosa">Github</a></div>
+    <div data-id="idlinkedin" class="navitem navitem-last"><a href="https://www.linkedin.com/in/cfenollosa">LinkedIn</a></div>
+    <div class="clear"></div>
+</div>
+<div id="divbodyholder">
+<div class="headerholder"><div class="header">
+<div id="title">
+<h1 class="nomargin"><a class="ablack" href="http://cfenollosa.com/blog/index.html">Carlos Fenollosa &#x2014; Blog</a></h1>
+<div id="description">Thoughts on science and tips for researchers who use computers</div>
+</div></div></div>
+<div id="divbody"><div class="content">
+<!-- entry begin -->
+<h3><a class="ablack" href="a-simple-script-to-postpone-your-own-email.html">
+A simple script to postpone your own email
+</a></h3>
+<!-- bashblog_timestamp: #201601141736.00# -->
+<div class="subtitle">January 14, 2016 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>I somewhat use email as a task manager. Honestly, I believe we all do. We process emails in the inbox, then archive or delete them when we are done with them.</p>
+
+<p>However, keeping track of emails that need a follow-up on a specific date can be difficult.</p>
+
+<p>Around 2011 I wrote a script to perform that task. It is a very simple IMAP parser that searches for a folder with today's date and moves all its contents to a special folder named "Today".</p>
+
+<p>Let me tell you my email workflow. I understand that not everybody works in the same way, but maybe you can get some ideas to improve your email handling.</p>
+
+<p>My email folder structure looks like this. The interesting part is in bold.</p>
+
+<pre>
+Inbox
+\_ Mailing lists
+\_ Project folders
+\_ ...
+<strong>
+\_ Deadlines
+     \_ Today
+     \_ Tomorrow
+     \_ 2016-01-19
+     \_ 2016-02-02
+     ...
+     \_ 2017-08-01
+</strong>
+</pre>
+
+<p>I follow the GTD methodology, which essentially states that tasks should either be done on the spot, delegated, or deferred. Thus, my inbox is exclusively for new tasks. A couple of times a day I process incoming email and, like most of us, either delete it, reply to it, forward it or &mdash;this is the interesting part&mdash; move it to one of the "Deadlines" folders.</p>
+
+<p>Instead of using the inbox as the "email task manager", I use a folder named "Today". I've tried both alternatives, and I find that it works best for me. Since it separates new tasks from tasks I've already processed, I can work my entire day on "Today" and totally forget about the Inbox, even if new email is arriving.</p>
+
+<p>The "Tomorrow" folder is just a shortcut so that I don't need to create a new folder with tomorrow's date every day.</p>
+
+<p>As you may have guessed, the script runs once a day in a crontab, at 6 AM, and moves all mail from "Tomorrow" and the folder with tomorrow's date to "Today". That's it. And that "simple trick", as fishy marketers like to say, saves me a lot of time and headaches every day.</p>
+
+<p>There is currently a commercial alternative, <a href="http://www.boomeranggmail.com">Boomerang</a>, which you may find interesting if you aren't comfortable with programming. I haven't used it, so I can't comment on that. In any case, I usually prefer writing a small script rather than using a third-party service.</p>
+
+<p>Update: <a href="https://github.com/kapravel/snoozegmail">this script</a> by Alex Kapravelos does something very similar, 
+and it integrates with Google Apps Scripts.</p>
+
+<p><a href="https://gist.github.com/cfenollosa/79c22e2ecbb2bdfee15b">Here it is, as a Gist</a>. 
+The code is definitely not the best in the world, but it works. Feel free to use it, modify it (BSD license), give feedback and leave comments.</p>
+
+<p>I hope that you can introduce some ideas from this methodology to your daily workflow. it can be as useful as it's been for me.</p>
+
+<script src="https://gist.github.com/cfenollosa/79c22e2ecbb2bdfee15b.js"></script>
+
+<p>Tags: <a href='tag_software.html'>software</a>, <a href='tag_tricks.html'>tricks</a>, <a href='tag_productivity.html'>productivity</a></p>
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/a-simple-script-to-postpone-your-own-email.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/a-simple-script-to-postpone-your-own-email.html'><span id='count-15855'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/a-simple-script-to-postpone-your-own-email.html",
+            dataType: "jsonp", success: function(data){ $("#count-15855").html("(" + data.count + ")"); }}); </script>
+<!-- entry end -->
+</div>
+<div id="footer">CC by-nc-nd 2008-2016 <a href="http://cfenollosa.com">Carlos Fenollosa</a> &mdash; <a href="mailto:cf&#64;cfenollosa&#46;com">cf&#64;cfenollosa&#46;com</a><br/>
+Generated with <a href="https://github.com/cfenollosa/bashblog">bashblog</a>, a single bash script to easily create blogs like this one<br/>
+<a href="../cookies.html">Cookies policy</a> &mdash; <a href="the-ignorant-eu-cookie-law.html">Learn why this cookies law is ignorant</a></div>
+</div></div>
+</body></html>

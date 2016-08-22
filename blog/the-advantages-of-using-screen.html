@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,600' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <script data-js="root" src="../js/jquery.js"></script>
+    <script data-js="root" src="../js/consent.js"></script>
+
+    <!-- blog stuff -->
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to this page..." href="http://feeds.feedburner.com/WaitingForTheJobsToFinish" />
+	<link rel="stylesheet" href="main.css" type="text/css" />
+	<link rel="stylesheet" href="blog.css" type="text/css" />
+    <!-- /blog stuff -->
+<title>The advantages of using 'screen'</title>
+<meta name='twitter:card' content='summary' />
+<meta name='twitter:site' content='@cfenollosa' />
+<meta name='twitter:title' content='The advantages of using 'screen'' />
+<meta name='twitter:description' content=" There's a reason I posted a screen cheat sheet on my home page, and it's because I use screen so much that I actually needed one for myself.  screen is a tool which isn't suited for all audiences. Its home page states that it is a 'window manager' w" />
+</head><body>
+
+<div id="cookieBanner">
+    <div id="cookieBannerClose"><a href="javascript:;">x</a></div>
+    This website uses third party cookies exclusively to collect analytics data.
+    If you continue browsing or close this notice, you will accept their use.
+    The EU now requires all sites to display this banner which confuses users
+    and does nothing, actually, to improve your privacy.<br/>
+    <div id="cookieBannerActions">
+        <a class="noconsent" href="http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html">Read more on why this law is ignorant</a> &mdash; 
+        <a class="noconsent" href="http://cfenollosa.com/cookies.html">Learn about this website's cookies</a> &mdash; 
+        <a class="denyConsent noconsent" href="javascript:;">Disallow cookies</a>
+    </div>
+</div>
+
+
+<div class="headerbig"><div class="head">
+	<div class="headerleft">
+		<img data-img="root" src="../img/cfenollosa-small.png" alt="Carlos Fenollosa" class="foto" />
+	</div>
+
+	<div class="headerright">
+        <div id="headername">
+            <h1 class="nomargin name">Carlos Fenollosa</h1>
+
+            <div class="description">
+                <div class="position">Engineer, developer, entrepreneur</div>
+            </div>
+        </div>
+
+        <div class="add" id="contact">
+            <a href="mailto:cf@cfenollosa.com">cf@cfenollosa.com</a> <i class="fa fa-envelope fa-fw"></i><br/>
+            <a href="http://twitter.com/cfenollosa">@cfenollosa</a> <i class="fa fa-twitter fa-fw"></i><br/>
+            Barcelona area <i class="fa fa-map-marker fa-fw"></i>
+        </div>
+
+        <div class="clear"></div>			
+	</div> <!-- headerright -->
+<div class="clear"></div>
+</div></div> <!-- header && headerholder -->
+
+
+<div id="navbar" class="bound">
+    <div data-id="idblog" class="navitem navitem-first navitem-current"><a href="index.html">Blog</a></div>
+    <div data-id="idabout" class="navitem"><a href="../about.html">About</a></div>
+    <div data-id="idfunnypapers" class="navitem"><a href="../funnypapers/index.html">Funny papers</a></div>
+    <div data-id="idpuput" class="navitem"><a href="http://puput.io">Puput</a></div>
+    <div class="navitem"><a href="http://github.com/cfenollosa">Github</a></div>
+    <div data-id="idlinkedin" class="navitem navitem-last"><a href="https://www.linkedin.com/in/cfenollosa">LinkedIn</a></div>
+    <div class="clear"></div>
+</div>
+<div id="divbodyholder">
+<div class="headerholder"><div class="header">
+<div id="title">
+<h1 class="nomargin"><a class="ablack" href="http://cfenollosa.com/blog/index.html">Carlos Fenollosa &#x2014; Blog</a></h1>
+<div id="description">Thoughts on science and tips for researchers who use computers</div>
+</div></div></div>
+<div id="divbody"><div class="content">
+<!-- entry begin -->
+<h3><a class="ablack" href="the-advantages-of-using-screen.html">
+The advantages of using 'screen'
+</a></h3>
+<!-- bashblog_timestamp: #201109221000.00# -->
+<div class="subtitle">September 22, 2011 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>There's a reason I posted a <a href="http://mmb.pcb.ub.es/~carlesfe/unix/screen.pdf">screen cheat sheet</a>
+on my home page, and it's because I use <code>screen</code> so much that I actually needed one for myself.</p>
+
+<p><code>screen</code> is a tool which isn't suited for all audiences. <a href="http://www.gnu.org/s/screen/">Its
+home page</a> states that it is a "window manager" which multiplexes terminals. That basically means it's a
+terminal manager, and all graphical environments have terminal managers, right? So why do we need another
+one which has complicated keybindings and doesn't let us use the mouse?</p>
+
+<p>Well, each one might have their reasons, but for scientists there is one very clear advantage:
+working on the same shells from different terminals. What? Let's look at an example:</p>
+
+<p>You usually have a computer from which you work every day. From that computer you <code>ssh</code> into
+different servers, clusters, etc. So, in the end, most of us have a monitor full of <code>xterms</code>&mdash;or
+any other terminal emulator. That's fine. But then we arrive home and want to check if that job we launched
+has crashed, because we need the results tomorrow morning. So what do we do? We <code>ssh</code> into our
+machine, or the server, open <b>another session</b> (that's the key here) and run some commands.</p>
+
+<p>The problem is, you already had your sessions configured, maybe even set some environment variables,
+had the history full of commands and the terminal buffer with some output, and now you can't recover that.
+How about if you could <b>restore the same sessions and windows we had at our work computer</b> without
+the need to open a VNC or any other graphical screen-sharing tools? That's what <code>screen</code> does.</p>
+
+<p>To put it plainly, <code>screen</code> is a daemon that handles terminal connections, which means that you
+can always request the same session that you had open before. Obviously it can't manage sessions unless you
+open them via <code>screen</code>, so it's a good idea to always run your terminals through it, just in case
+you might need to access them afterwards.</p>
+
+<p>Besides ubiquitous access to your sessions, <code>screen</code> also provides other interesting features
+that make it useful even if you don't need terminal multiplexing. The first is notifications for
+terminals which are in background, for example, a visual message appears in your screen if there is a new
+output in a hidden window. This is very appropriate to avoid constantly checking minimized windows.</p>
+
+<p>It also provides window managing, i.e. many terminals in a single window, and quick switching. Finally,
+even on today's GUI world, sometimes you need to copy&amp;paste without a mouse, backwards buffer management,
+perform text "screenshots", etc.</p>
+
+<p>I'll end up with a quick tutorial by an example that actually happened yesterday.</p>
+
+<ul>
+<li><code><b>carlesfe@work:~$</b> screen</code></li>
+<li><code>[screen opens, and gives me a shell]</code></li>
+<li><code><b>carlesfe@work:~$</b> ssh server.com</code></li>
+<li><code><b>carlesfe@server:~$</b> work on some commands... run scripts...</code></li>
+<li><code><b>carlesfe@server:~$</b> launch_a_job.sh</code></li>
+<li><code>[output is being generated]</code></li>
+</ul>
+
+<p>Then I left work and went home. Notice that the output is still being generated, but only in the
+window that I had opened at work. Usually there are some other ways to check if the job is still running,
+but what if it crashes? At home I wouldn't normally be able to recover the error message that was printed
+on the screen. But with <code>screen</code> session management, I can do this:</p>
+
+<ul>
+<li><code><b>carlesfe@home:~$</b> ssh work</code></li>
+<li><code><b>carlesfe@work:~$</b> screen -x</code></li>
+</ul>
+
+<p>And voil&agrave;! I can see the exact same window with the same session I had at work. Now I can monitor
+what's happening, relaunch the command easily if it crashed, and see any error messages that were output
+on the screen.</p>
+
+<p>I started by saying that <code>screen</code> isn't a very user-friendly tool, but if you feel comfortable
+with many of the Unix tools out there, you'll get used to it very quickly. Check out
+<a href="http://news.softpedia.com/news/GNU-Screen-Tutorial-44274.shtml">this tutorial</a> for a beginner's
+introduction and give it a try for some days. Once you get used to the basic <code>C-a</code> keystrokes
+and terminal management, you'll wonder why didn't you discover it years ago.</p>
+
+<p>Tags: <a href="tag_unix.html">unix</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/the-advantages-of-using-screen.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/the-advantages-of-using-screen.html'><span id='count-20684'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/the-advantages-of-using-screen.html",
+            dataType: "jsonp", success: function(data){ $("#count-20684").html("(" + data.count + ")"); }}); </script>
+<!-- entry end -->
+</div>
+<div id="footer">CC by-nc-nd 2008-2016 <a href="http://cfenollosa.com">Carlos Fenollosa</a> &mdash; <a href="mailto:cf&#64;cfenollosa&#46;com">cf&#64;cfenollosa&#46;com</a><br/>
+Generated with <a href="https://github.com/cfenollosa/bashblog">bashblog</a>, a single bash script to easily create blogs like this one<br/>
+<a href="../cookies.html">Cookies policy</a> &mdash; <a href="the-ignorant-eu-cookie-law.html">Learn why this cookies law is ignorant</a></div>
+</div></div>
+</body></html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,600' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <script data-js="root" src="../js/jquery.js"></script>
+    <script data-js="root" src="../js/consent.js"></script>
+
+    <!-- blog stuff -->
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to this page..." href="http://feeds.feedburner.com/WaitingForTheJobsToFinish" />
+	<link rel="stylesheet" href="main.css" type="text/css" />
+	<link rel="stylesheet" href="blog.css" type="text/css" />
+    <!-- /blog stuff -->
+<title>SQLite: a standalone database for your application</title>
+<meta name='twitter:card' content='summary' />
+<meta name='twitter:site' content='@cfenollosa' />
+<meta name='twitter:title' content='SQLite: a standalone database for your application' />
+<meta name='twitter:description' content=" Us researchers are used to store data in plain text formats, because it's very easy to parse and work with. While this is appropriate for some data types&mdash;and, I'd add, very useful to send later to R&mdash;, in some cases disk access is slow or" />
+</head><body>
+
+<div id="cookieBanner">
+    <div id="cookieBannerClose"><a href="javascript:;">x</a></div>
+    This website uses third party cookies exclusively to collect analytics data.
+    If you continue browsing or close this notice, you will accept their use.
+    The EU now requires all sites to display this banner which confuses users
+    and does nothing, actually, to improve your privacy.<br/>
+    <div id="cookieBannerActions">
+        <a class="noconsent" href="http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html">Read more on why this law is ignorant</a> &mdash; 
+        <a class="noconsent" href="http://cfenollosa.com/cookies.html">Learn about this website's cookies</a> &mdash; 
+        <a class="denyConsent noconsent" href="javascript:;">Disallow cookies</a>
+    </div>
+</div>
+
+
+<div class="headerbig"><div class="head">
+	<div class="headerleft">
+		<img data-img="root" src="../img/cfenollosa-small.png" alt="Carlos Fenollosa" class="foto" />
+	</div>
+
+	<div class="headerright">
+        <div id="headername">
+            <h1 class="nomargin name">Carlos Fenollosa</h1>
+
+            <div class="description">
+                <div class="position">Engineer, developer, entrepreneur</div>
+            </div>
+        </div>
+
+        <div class="add" id="contact">
+            <a href="mailto:cf@cfenollosa.com">cf@cfenollosa.com</a> <i class="fa fa-envelope fa-fw"></i><br/>
+            <a href="http://twitter.com/cfenollosa">@cfenollosa</a> <i class="fa fa-twitter fa-fw"></i><br/>
+            Barcelona area <i class="fa fa-map-marker fa-fw"></i>
+        </div>
+
+        <div class="clear"></div>			
+	</div> <!-- headerright -->
+<div class="clear"></div>
+</div></div> <!-- header && headerholder -->
+
+
+<div id="navbar" class="bound">
+    <div data-id="idblog" class="navitem navitem-first navitem-current"><a href="index.html">Blog</a></div>
+    <div data-id="idabout" class="navitem"><a href="../about.html">About</a></div>
+    <div data-id="idfunnypapers" class="navitem"><a href="../funnypapers/index.html">Funny papers</a></div>
+    <div data-id="idpuput" class="navitem"><a href="http://puput.io">Puput</a></div>
+    <div class="navitem"><a href="http://github.com/cfenollosa">Github</a></div>
+    <div data-id="idlinkedin" class="navitem navitem-last"><a href="https://www.linkedin.com/in/cfenollosa">LinkedIn</a></div>
+    <div class="clear"></div>
+</div>
+<div id="divbodyholder">
+<div class="headerholder"><div class="header">
+<div id="title">
+<h1 class="nomargin"><a class="ablack" href="http://cfenollosa.com/blog/index.html">Carlos Fenollosa &#x2014; Blog</a></h1>
+<div id="description">Thoughts on science and tips for researchers who use computers</div>
+</div></div></div>
+<div id="divbody"><div class="content">
+<!-- entry begin -->
+<h3><a class="ablack" href="sqlite-a-standalone-database-for-your-application.html">
+SQLite: a standalone database for your application
+</a></h3>
+<!-- bashblog_timestamp: #201111101000.00# -->
+<div class="subtitle">November 10, 2011 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>Us researchers are used to store data in plain text formats, because it's very
+easy to parse and work with. While this is appropriate for some data types&mdash;and,
+I'd add, very useful to send later to <tt>R</tt>&mdash;, in some cases disk access is slow or just
+inefficient.</p>
+
+<p>This topic is actually very important for some projects, as storing records into a plain text file
+is very slow to <i>query</i> afterwards. And this is the key question to ask ourselves before considering
+to use a database. Databases are great for complex, unordered queries, but not so great for sequential
+access of raw data. Let's see an example.</p>
+
+<p>There is a data file which stores atom coordinates, for example, from a Molecular Dynamics simulation.
+This data is very likely to be read once, sequentially, then processed in memory. The information
+represents a matrix which will be processed by mathematic functions.
+This is the classic example where data files (either binary of plain text) are used correctly.</p>
+
+<p>But now let's think of a list of proteins and some properties, for example, molecular weight
+and number of available 3D structures. All these objects are independent, they have their own entity.
+While you can store a text file with one line per <tt>&lt;protein, weight, structures&gt;</tt>, it makes
+more sense to store it on a database.</p>
+
+<p>Databases allow complex queries to be resolved very quickly. For example,
+<i>give me all proteins with molecular weight > 50,000 </i>, <i>list
+all proteins which have no crystal structures</i>, or <i>print all the proteins
+which have duplicate structures</i>. Were we working with a text file, we would need to process it
+completely every time we perform
+a query. That's very, very slow. Databases internally store the information in such a way that queries
+don't need to go through all elements to get the answer. Namely, they store data on trees by indices.</p>
+
+<p>How do indices work? It's a complex issue but let's think of a very basic example.
+Let's say you have three protein structures
+<tt>(1BCD, 2KI5, 1AGI)</tt> which you want to index by name and molecular weight.
+The system will then automatically build
+a protein binary tree where <tt>1BCD</tt> is the parent, the left child is <tt>1AGI</tt> and
+<tt>2KI5</tt> is the right child. Then, it will create another tree where the left child is
+the lightest protein, the parent is the middle one, and the right child is the heaviest one.</p>
+
+<p>If the index tree is always sorted where the left child is alphabetically
+inferior than the parent, and the right child is always superior to the parent, then we can access any
+element or group of elements not only without checking every item but also in logarithmic time.
+Databases do this once for every index you configure, so complex queries can be solved super fast
+because for each of them the system only needs to process a few items of the many millions you might
+have stored in the DB. That's because every time you jump to a child element, the system
+is avoiding to process half of the database, then a half of this half (1/4), then 1/8, etc.</p>
+
+<p>To summarize, if you have some data where each record has its own entity (i.e. can be thought of
+as an "object") and you think you'll make queries which retrieve an arbitrary number of the
+elements, then you need to use a database. Databases have even more advantages, like relationships
+between objects (e.g. each crystal structure has its own entity, and can be related to a protein), but
+database design is a complex topic and this article will cover only the basic data storage.</p>
+
+<p>However, databases are usually configured by the system administrator and
+handled by a daemon&mdash;<tt>oracle</tt>, <tt>mysql</tt>, <tt>postgresql</tt>. Here I will talk about
+yet another way of creating databases, without the need to start any daemons, have any user privileges
+and, more importantly, easily portable. This is done via <tt>sqlite</tt>.</p>
+
+<p><a href="http://www.sqlite.org/index.html">SQLite</a>
+is a library that implements a SQL engine inside your own application. This means that while
+the database is persistent inside a file, all the querying infrastructure is deployed along with your
+code and stopped when the code finishes running. The databases can be created very easily, making it
+easy to have multiple DBs for testing, and without the need to bother the system administrator.</p>
+
+<p><tt>sqlite</tt> has bindings for almost all popular languages and also a commandline interface
+which is handy for testing and debugging. The data is stored on a single file which can be deployed
+with your application without needing to install any standalone servers. Obviously, it is not a
+replacement for Oracle's solutions, but it can speed up a lot some applications which need to work
+querying data and don't have access to one.</p>
+
+<p>Most popular software uses some kind of database to store data, as this is a super fast way to
+access preferences and other items. For scientific programs, it is always necessary
+to think twice before using one, as database design is an art on its own, and as said before,
+it does not suit all needs.</p>
+
+<p>When used properly, a small ad-hoc database like <tt>sqlite</tt> can speed up
+software, make data access very easy and allow the manipulation of large, objectified,
+in-related data collections with simple queries instead of writing long and slow algorithms
+which process all the data when you only need one item.</p>
+
+<p>Tags: <a href="tag_software.html">software</a>, <a href="tag_programming.html">programming</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/sqlite-a-standalone-database-for-your-application.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/sqlite-a-standalone-database-for-your-application.html'><span id='count-13686'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/sqlite-a-standalone-database-for-your-application.html",
+            dataType: "jsonp", success: function(data){ $("#count-13686").html("(" + data.count + ")"); }}); </script>
+<!-- entry end -->
+</div>
+<div id="footer">CC by-nc-nd 2008-2016 <a href="http://cfenollosa.com">Carlos Fenollosa</a> &mdash; <a href="mailto:cf&#64;cfenollosa&#46;com">cf&#64;cfenollosa&#46;com</a><br/>
+Generated with <a href="https://github.com/cfenollosa/bashblog">bashblog</a>, a single bash script to easily create blogs like this one<br/>
+<a href="../cookies.html">Cookies policy</a> &mdash; <a href="the-ignorant-eu-cookie-law.html">Learn why this cookies law is ignorant</a></div>
+</div></div>
+</body></html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,600' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <script data-js="root" src="../js/jquery.js"></script>
+    <script data-js="root" src="../js/consent.js"></script>
+
+    <!-- blog stuff -->
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to this page..." href="http://feeds.feedburner.com/WaitingForTheJobsToFinish" />
+	<link rel="stylesheet" href="main.css" type="text/css" />
+	<link rel="stylesheet" href="blog.css" type="text/css" />
+    <!-- /blog stuff -->
+<title>Which is the best programming language?</title>
+<meta name='twitter:card' content='summary' />
+<meta name='twitter:site' content='@cfenollosa' />
+<meta name='twitter:title' content='Which is the best programming language?' />
+<meta name='twitter:description' content=" This classic question from beginners who start coding their own tools for research has only one correct answer: it depends.  If there is no language which is clearly better than the others, why do I have this very simple table on my Unix section?   " />
+</head><body>
+
+<div id="cookieBanner">
+    <div id="cookieBannerClose"><a href="javascript:;">x</a></div>
+    This website uses third party cookies exclusively to collect analytics data.
+    If you continue browsing or close this notice, you will accept their use.
+    The EU now requires all sites to display this banner which confuses users
+    and does nothing, actually, to improve your privacy.<br/>
+    <div id="cookieBannerActions">
+        <a class="noconsent" href="http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html">Read more on why this law is ignorant</a> &mdash; 
+        <a class="noconsent" href="http://cfenollosa.com/cookies.html">Learn about this website's cookies</a> &mdash; 
+        <a class="denyConsent noconsent" href="javascript:;">Disallow cookies</a>
+    </div>
+</div>
+
+
+<div class="headerbig"><div class="head">
+	<div class="headerleft">
+		<img data-img="root" src="../img/cfenollosa-small.png" alt="Carlos Fenollosa" class="foto" />
+	</div>
+
+	<div class="headerright">
+        <div id="headername">
+            <h1 class="nomargin name">Carlos Fenollosa</h1>
+
+            <div class="description">
+                <div class="position">Engineer, developer, entrepreneur</div>
+            </div>
+        </div>
+
+        <div class="add" id="contact">
+            <a href="mailto:cf@cfenollosa.com">cf@cfenollosa.com</a> <i class="fa fa-envelope fa-fw"></i><br/>
+            <a href="http://twitter.com/cfenollosa">@cfenollosa</a> <i class="fa fa-twitter fa-fw"></i><br/>
+            Barcelona area <i class="fa fa-map-marker fa-fw"></i>
+        </div>
+
+        <div class="clear"></div>			
+	</div> <!-- headerright -->
+<div class="clear"></div>
+</div></div> <!-- header && headerholder -->
+
+
+<div id="navbar" class="bound">
+    <div data-id="idblog" class="navitem navitem-first navitem-current"><a href="index.html">Blog</a></div>
+    <div data-id="idabout" class="navitem"><a href="../about.html">About</a></div>
+    <div data-id="idfunnypapers" class="navitem"><a href="../funnypapers/index.html">Funny papers</a></div>
+    <div data-id="idpuput" class="navitem"><a href="http://puput.io">Puput</a></div>
+    <div class="navitem"><a href="http://github.com/cfenollosa">Github</a></div>
+    <div data-id="idlinkedin" class="navitem navitem-last"><a href="https://www.linkedin.com/in/cfenollosa">LinkedIn</a></div>
+    <div class="clear"></div>
+</div>
+<div id="divbodyholder">
+<div class="headerholder"><div class="header">
+<div id="title">
+<h1 class="nomargin"><a class="ablack" href="http://cfenollosa.com/blog/index.html">Carlos Fenollosa &#x2014; Blog</a></h1>
+<div id="description">Thoughts on science and tips for researchers who use computers</div>
+</div></div></div>
+<div id="divbody"><div class="content">
+<!-- entry begin -->
+<h3><a class="ablack" href="which-is-the-best-programming-language.html">
+Which is the best programming language?
+</a></h3>
+<!-- bashblog_timestamp: #201109231000.00# -->
+<div class="subtitle">September 23, 2011 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>This classic question from beginners who start coding their own tools for research has only one
+correct answer: <b>it depends</b>.</p>
+
+<p>If there is no language which is clearly better than the others, why do I have this very
+simple table on my <a href="http://mmb.pcb.ub.es/~carlesfe/#unix">Unix section?</a>
+
+<ol>
+<li>Bash, awk are your first choice</li>
+<li>PHP if you require more power</li>
+<li>C only if you know why</li>
+<li>Use Java &amp; Eclipse</li>
+</ol>
+
+<p>Don't get me wrong, this table has been compiled from quite a few years of experience, and there are
+huge assumptions behind it. The first one is that you still don't know what language you should use. If there
+is no doubt, either because there are some requirements for the project or because there is a language that is
+designed specifically for that task (e.g. <code>CLIPS</code> for declarative programming), then you need to
+ask yourself some questions.</p>
+
+<p>I'll start by enumerating the most popular language choices and some of their features</p>
+
+
+<h4>Scripting languages</h4>
+
+<p>Scripting languages are good for small or medium projects, because they fit very well with the
+line of thought of the programmer. This means you can program while you think, which isn't the best for
+cleanliness, but it gets the work done quickly</p>
+
+<ul>
+<li><code><b>bash</b></code> is always your first choice. You already know how to run stuff in the command
+line, right? So this is basically the same. <code>bash</code> can handle functions and arrays, but that's
+pretty much all it can do. However, that's usually good enough for small routines, and you can
+always call other Unix tools. It also avoids the overhead of running another binary (<code>perl</code>,
+<code>php</code>) as it is already in memory.</li>
+
+<li><code><b>perl</b></code> is great to parse text, but slow for anything else. If you need to parse
+text <b>and</b> do math, use <code>php</code>, which has a faster math engine. It also lacks objects.
+However, there are very
+good scientific libraries for it, so you might be forced to use this language anyway.</li>
+
+<li><code><b>php</b></code> has nice libraries to connect to databases and in general do web stuff. It is
+also object oriented, so it is a suitable candidate for small-medium projects which can benefit from
+object orientation but don't need all the infrastructure from <code>java</code> or <code>C++</code>. In general,
+unless you are tied to <code>perl</code>, <code>php</code> is a better choice.</li>
+
+<li><code><b>python</b></code> is, well, another scripting language. It's way better than <code>perl</code>, and
+functionally similar to <code>php</code>, so you might want to use it if you like its clean syntax or
+need to call other <code>python</code> libraries.<br/>
+<i>Edit: after having used python for a long time, it is the first language I'd recommend for most
+use cases</i>
+</li>
+
+<li><code><b>ruby</b></code> is so painfully slow that you should avoid it at any costs. I am including it
+here only to warn other people against using it.</li>
+</ul>
+
+<h4>Compiled languages</h4>
+
+<p>Once you start compiling code, things get complicated. However, the results are usually great, fast,
+and very maintainable. Let's discuss the alternatives.</p>
+
+<ul>
+<li><code><b>java</b></code> why <code>java</code> first? Because it's the most appropriate. It has great
+developing tools (Eclipse), it checks a lot of stuff in compile time, it does not
+need that the programmer uses pointers&mdash;it uses pointers internally, but transparently&mdash;and
+in general is a modern, object-oriented language, which doesn't require legacy stuff like headers. Yes,
+it is a bit slower than pure <code>C</code>, but the latest versions of the java virtual machine
+compile to machine code on runtime and achieve great performance. Most computer scientists have
+mastered it and in general it is widely extended. It is versatile and can be used from simple routines
+to implement web pages with <code>JSP</code>, to CRMs. Yes, I like <code>java</code>.</li>
+
+<li><code><b>C</b></code> is the mother of all programming languages, but this does not mean that it's the
+best one. It's old, doesn't have objects, and for every byte optimization which earns 1 second of
+execution time, the programmer needs to waste ten minutes. Optimizations should be done at the compiler
+level, not the code level. However, <code>C</code> has great compilers, from the good-enough <code>gcc</code>
+to the awesome <code>icc</code>. <br/>
+My recommendation is that you use it only if you know what you're doing. It's
+awful to parse strings in <code>C</code>, it lacks many scientific libraries compared to
+<code>perl</code> or <code>java</code>&mdash;except math functions, but that's what <code>R</code> is for&mdash;and
+the segmentation faults in general can make you waste several days
+looking into the code because you declared a variable incorrectly and you have a pagination issue.<br/>
+Some might argue that <code>C</code> is as good as the programmer is, but honestly, it makes good
+programmers waste a lot of time because of small issues.</li>
+
+<li><code><b>C++</b></code> is the alternative if you need to use <code>C</code> in an object-oriented
+environment. The compiler is also able to run more checks in compile time, so you'll waste less time,
+but I'd go for <code>java</code> anyway. There is no reason to choose <code>C++</code> a priori but execution
+speed</li>
+
+<li><code><b>objective-C</b></code> Apple users are sometimes tempted to write <code>obj-C</code> code, because
+of the excellent development tools on a Mac, but keep in mind that probably there is nobody else
+who can look at that code afterwards and understand it, because almost nobody uses <code>obj-C</code>.
+So I'd suggest not to use it unless you're in a hardcore Mac environment or are planning to develop
+a GUI for a Mac afterwards.</li>
+
+<li><code><b>fortran</b></code> there are only two kinds of people who use <code>fortran</code>: physicists
+and the poor fellows who have to maintain their code afterwards. It was designed for the 50s computers,
+which means that using it nowadays would be like using steering wheels from John Ford on today's cars.
+It is easier to understand <code>f2c</code> generated code than the original one. There is not a single
+reason to use
+<code>fortran</code>. If you need raw speed use <code>C</code>. If you want to write unmaintainable code,
+well, use obfuscated <code>perl</code>.</li>
+</ul>
+
+
+<h4>Choosing a language</h4>
+
+<p>Now for the difficult task of choosing a language. If you look again at the four items on top of
+this post, having read the language descriptions above, you might start to see what's going on. This is
+basically a matter of choosing the right language for your specific task, with some decisions.</p>
+
+<p><b>Which are my time constraints?</b> Beginner programmers often forget that, for homemade software,
+the total time constraint is <i>the time you spend programming</i> plus <i>the time you spend running it</i>.
+If the routine is expected to take 10 minutes, don't waste two hours writing a C program with pointers, write
+a simple script.</p>
+
+<p><b>Can I solve it with a simple script?</b> If the answer is yes, use <code>bash</code>. It's a great
+scripting language, and you can build on top of other Unix tools, like <code>awk</code>, <code>sed</code>, etc.</p>
+
+<p>However, keep in mind that every time you call an external program, the system needs to <code>fork()</code>
+and, for large loops, this can be a huge overhead. Be rational, and think again of the execution time.
+Instead to launch 10,000 <code>sed</code> to parse lines, it might be better to write a <code>php</code> script, which
+is more powerful than <code>bash</code>, it won't need to <code>fork()</code> and the code will probably be simpler.</code>
+
+<p><b>Will I need to maintain it or reuse the code? Will the code grow?</b> If you think this code can be
+reused as a library, or integrated into other modules, think of making it into an actual <code>C</code> library
+or <code>java</code> class. Running scripts within scripts within a big project is generally a bad idea. And
+please keep in mind that, in a research environment, at some point another person will need to look
+at your code, so besides writing clean and understandable code, try not to use obscure languages or tools
+which only you know of.</p>
+
+<p><b>Do I need to achieve the maximum speed and/or optimizations?</b> Keeping in mind that the latest
+versions of the <code>java</code> virtual machine are pretty fast, yes, the winner here is <code>C</code>. But we're
+talking about software which can take you two weeks to code, and which would take months to run if written
+in <code>perl</code>, but only takes three hours when coded in <code>C</code>. When this happens, choose <code>C</code>.</p>
+
+<p><b>Will it need to run on different platforms?</b> <code>java</code> and the scripting languages are the only
+ones which guarantee perfect execution on every environment: Windows, Mac, Linux, Solaris, BSD and others.
+<code>C</code> can be compiled in different architectures but it's sometimes hard to replace <code>mmap</code>'s
+on Windows or compile against different versions of the <code>libc</code> in different flavors of Linux.</p>
+
+<h4>Summary</h4>
+
+<p>Let's review the four initial points again.</p>
+
+<ol>
+<li><code><b>bash</b></code> is a great initial choice for small projects which will take about 20 minutes
+to run and you don't want to waste three hours programming them</li>
+<li><code><b>php</b></code> is appropriate for medium projects, which use objects, parse text and do math.
+<code>perl</code> is another good choice at this point.</li>
+<li><code><b>C</b></code> is better left for experts or people who need hardcore optimizations. The rest
+of us will leave optimizations for the compiler/interpreter and just try to write good code
+which runs in O(n) if possible.</li>
+<li><code><b>java</b></code> is the king of tools and libraries, multi-platform, scales great for big
+projects, is surprisingly fast and very respectful with novices. Its only drawback is the need of
+a <code>java</code> virtual machine, but hey, if you use <code>perl</code> you will need its libraries
+installed, too.</li>
+</ol>
+
+<p>In the end, everyone has their preferred languages, which is fine. It is far more important to write good
+code than it is to choose the language which fits best for a task. However, failing to foresee the importance
+of a math routine in the and writing it in <code>perl</code> can lead to the whole research group wasting
+time until somebody else writes it in <code>C</code> and makes it 1000x faster. Yep, true story.
+So choose wisely.</p>
+
+<p>Tags: <a href="tag_programming.html">programming</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/which-is-the-best-programming-language.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/which-is-the-best-programming-language.html'><span id='count-15074'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/which-is-the-best-programming-language.html",
+            dataType: "jsonp", success: function(data){ $("#count-15074").html("(" + data.count + ")"); }}); </script>
+<!-- entry end -->
+</div>
+<div id="footer">CC by-nc-nd 2008-2016 <a href="http://cfenollosa.com">Carlos Fenollosa</a> &mdash; <a href="mailto:cf&#64;cfenollosa&#46;com">cf&#64;cfenollosa&#46;com</a><br/>
+Generated with <a href="https://github.com/cfenollosa/bashblog">bashblog</a>, a single bash script to easily create blogs like this one<br/>
+<a href="../cookies.html">Cookies policy</a> &mdash; <a href="the-ignorant-eu-cookie-law.html">Learn why this cookies law is ignorant</a></div>
+</div></div>
+</body></html>

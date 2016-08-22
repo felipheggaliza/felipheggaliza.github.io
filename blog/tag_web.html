@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,600' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <script data-js="root" src="../js/jquery.js"></script>
+    <script data-js="root" src="../js/consent.js"></script>
+
+    <!-- blog stuff -->
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to this page..." href="http://feeds.feedburner.com/WaitingForTheJobsToFinish" />
+	<link rel="stylesheet" href="main.css" type="text/css" />
+	<link rel="stylesheet" href="blog.css" type="text/css" />
+    <!-- /blog stuff -->
+<title>Carlos Fenollosa &#x2014; Blog &mdash; Posts tagged "web"</title>
+<meta name='twitter:card' content='summary' />
+<meta name='twitter:site' content='@cfenollosa' />
+<meta name='twitter:title' content='Carlos Fenollosa &#x2014; Blog &mdash; Posts tagged "web"' />
+<meta name='twitter:description' content=" My new project: Feenbox, feeds on your inbox   July 03, 2014 &mdash;  Carlos Fenollosa        I've always loved email. For me, even in the era of Whatsapp and Facetime, it is the ultimate form of communication. It can be personal or professional, he" />
+<meta name='twitter:image' content='http://cfenollosa.com/blog/img/feenbox-aa.png' />
+</head><body>
+
+<div id="cookieBanner">
+    <div id="cookieBannerClose"><a href="javascript:;">x</a></div>
+    This website uses third party cookies exclusively to collect analytics data.
+    If you continue browsing or close this notice, you will accept their use.
+    The EU now requires all sites to display this banner which confuses users
+    and does nothing, actually, to improve your privacy.<br/>
+    <div id="cookieBannerActions">
+        <a class="noconsent" href="http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html">Read more on why this law is ignorant</a> &mdash; 
+        <a class="noconsent" href="http://cfenollosa.com/cookies.html">Learn about this website's cookies</a> &mdash; 
+        <a class="denyConsent noconsent" href="javascript:;">Disallow cookies</a>
+    </div>
+</div>
+
+
+<div class="headerbig"><div class="head">
+	<div class="headerleft">
+		<img data-img="root" src="../img/cfenollosa-small.png" alt="Carlos Fenollosa" class="foto" />
+	</div>
+
+	<div class="headerright">
+        <div id="headername">
+            <h1 class="nomargin name">Carlos Fenollosa</h1>
+
+            <div class="description">
+                <div class="position">Engineer, developer, entrepreneur</div>
+            </div>
+        </div>
+
+        <div class="add" id="contact">
+            <a href="mailto:cf@cfenollosa.com">cf@cfenollosa.com</a> <i class="fa fa-envelope fa-fw"></i><br/>
+            <a href="http://twitter.com/cfenollosa">@cfenollosa</a> <i class="fa fa-twitter fa-fw"></i><br/>
+            Barcelona area <i class="fa fa-map-marker fa-fw"></i>
+        </div>
+
+        <div class="clear"></div>			
+	</div> <!-- headerright -->
+<div class="clear"></div>
+</div></div> <!-- header && headerholder -->
+
+
+<div id="navbar" class="bound">
+    <div data-id="idblog" class="navitem navitem-first navitem-current"><a href="index.html">Blog</a></div>
+    <div data-id="idabout" class="navitem"><a href="../about.html">About</a></div>
+    <div data-id="idfunnypapers" class="navitem"><a href="../funnypapers/index.html">Funny papers</a></div>
+    <div data-id="idpuput" class="navitem"><a href="http://puput.io">Puput</a></div>
+    <div class="navitem"><a href="http://github.com/cfenollosa">Github</a></div>
+    <div data-id="idlinkedin" class="navitem navitem-last"><a href="https://www.linkedin.com/in/cfenollosa">LinkedIn</a></div>
+    <div class="clear"></div>
+</div>
+<div id="divbodyholder">
+<div class="headerholder"><div class="header">
+<div id="title">
+<h1 class="nomargin"><a class="ablack" href="http://cfenollosa.com/blog/index.html">Carlos Fenollosa &#x2014; Blog</a></h1>
+<div id="description">Thoughts on science and tips for researchers who use computers</div>
+</div></div></div>
+<div id="divbody"><div class="content">
+<h3><a class="ablack" href="my-new-project-feenbox-feeds-on-your-inbox.html">
+My new project: Feenbox, feeds on your inbox
+</a></h3>
+<!-- bashblog_timestamp: #201407031605.00# -->
+<div class="subtitle">July 03, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<div style='text-align:center; width: 172px; margin: auto'>
+<a href='http://feenbox.com'><img src='http://feenbox.com/static/img/feenbox.png' alt='feenbox'></a>
+</div>
+
+<p>I've always loved email. For me, even in the era of Whatsapp and Facetime, it is the ultimate form of communication.
+It can be personal or professional, heartwarming or annoying, instantaneous or asynchronous, small or big, long or short,
+easy or godmode.
+There are very few times where I prefer a quick IM communication, of course, but the bulk of my day is email.</p>
+
+<p>My first internet on college got me reading email on <a href="http://www.washington.edu/pine/">Pine</a>
+on a linux terminal where we chatted using <code>write(1)</code> and <code>wall(1)</code>--that taught me how Ctrl-L refreshes the screen.
+I started reading newsgroups thanks to Pine, and from there, Gopher, the IRC and other text services. For many people,
+the internet is the browser; for me... well, I won't lie, but email comes a close second.</p>
+
+<p>Since the advent of RSS, I always wondered why couldn't feeds be read by email. So, long before Google Reader shut down, 
+I decided to get more control over my feeds, and created some scripts
+to receive them via email. 
+I've been using them privately for years and, some months ago, I thought I could extend them a bit
+and make a public service from them.</p>
+
+<p>You know the drill: "I have some scripts; surely it can't be that difficult to refactor some code and
+make it work for everyone". Months later, you're struggling with bugs, servers, feed providers and email clients.
+Right now, it is ready to talk about it. Not yet ready to show, not yet ready to launch, but let's go step by step.</p>
+
+<p>Personally, I love receiving RSS by email, probably because I'm a power user. Besides RSS, I've been scripting Gmail's
+IMAP service to schedule incoming and outgoing mails,
+and by using tags, I make items get out of the way and come back at a specific date and time. Yes, like 
+<a href="http://www.boomeranggmail.com">Boomerang</a>, only some time before it existed--sorry if this sounds hipsterish, I
+honestly had no idea there was a market for that.</p>
+
+<p>My inbox is always
+empty because all emails go to other folders, and a personally-crafted algorithm sorts them for me and floats
+important ones back to my inbox.</p>
+
+<p>However, I didn't have time then to create a service
+around by hacky scripts anyway because of my full-time job. Nowadays I'm on a sabbatical, so I thought it could be a good
+opportunity to learn how to launch and manage an online product, and maybe make a bit of much needed recurring income.</p>
+
+<h2>Email has its advantages</h2>
+
+<p>Even if you are not a developer, Gmail provides with smart filters that can be intelligently used to handle
+incoming email. For example, when I got back from holidays I had a lot feeds waiting for me, but I deleted
+old item which no longer applied with a few searches by date and source, saving a lot of time. <em>Managing emails
+is a solved problem.</em></p>
+
+<p>But probably the thing I love the most is that email is offline and always in sync. Feed readers get crazy trying
+to sync their websites, smartphone apps and feed providers, but if you think about it carefully, IMAP deals with this problem
+for us. Your smartphone and computer always have the same items, and thanks to push email,
+always available for reading either online or offline. When you read one, it is automatically marked as read everywhere.</p>
+
+<p>With Feenbox, I want to go one step further and provide much more metadata for email power users. For example, I'm working
+on attaching all images and small files to emails, because nothing is more infuriating than receiving a feed update
+where you can't read the actual comic or attached pdf document because it is only available online and 
+there is a server or internet problem. With Feenbox, if you get an email, you get its contents.</p>
+
+<p>Email has a widely known "share" feature: just forward it! Furthermore, most social websites, like Facebook and Flickr,
+have an incoming email gateway, so you can post anything to Facebook just by forwarding an email. That's pretty cool,
+but not many users know about that.</p>
+
+<p>Scripting and filtering emails is so easy and powerful that I want to apply it to feed reading.</p>
+
+<h2>Presenting feenbox</h2>
+
+<p><a href="http://feenbox.com">feenbox</a> is currently under development, still has some bugs, but the basic multi-user features
+are already implemented.</p>
+
+<p>I want to make a dual effort, both to provide a service but also to teach users how to use their email efficiently. 
+Every month there is a new post on Hacker News arguing that "we need to reinvent email", with which I usually disagree.
+Email is great, but we need to make an effort to educate users on how to make the most of it. The rest can be done
+with filters and IMAP scripting--and client-server programming, let's not forget the amount of work that Apple and Google are
+pushing towards the authentication side, data detection and such.</p>
+
+<p>Let's say that feeds are an excuse to learn how to filter out emails, share them and convert them to various formats.</p>
+
+<p>Finally, I go back to the beginning of my story. Since I love using terminals, Feenbox is built with delicate text/plain
+support. Right now it can convert images to ASCII art to let pine/mutt users get a quick preview of an image before opening
+their browser. I also have some more ideas on the pipeline, like
+the ability to automatically transform documents into text, OCR images and more. </p>
+
+<p>I want to build a service that geeks
+and hackers can fall in love with, avoiding breaking their workflow. I want to restrict to a reasonable minimum 
+the amount of external tools that are needed to process
+a single email, like web browsers, pdf readers, document editors, etc.</p>
+
+<p>To summarize, feeds are a great excuse to experiment with email scripting. Besides feed handling, about 60% of the code 
+are email parsers and data detectors and converters. By the way, for a guy who's been dealing with biological data for seven
+years, I don't know which is more difficult to parse, a human genome or a human email!</p>
+
+<p><img src="img/feenbox-aa.png" alt="feenbox-aa" style="centered" /></p>
+
+<p>In a few months, it will be ready for an alpha release, and I set up a mailing list for those interested. I have currently
+sent two emails, one each month, with an <a href="http://feenbox.com/list/2014-06-18">extended introduction</a> (in Spanish, but trust
+Google Translator) and <a href="http://feenbox.com/list/2014-07-03">a poll with the most requested features</a>. </p>
+
+<p>There is great communication
+with the subscribers and many have emailed me their suggestions. At the moment we are about 50, which is a tiny number, 
+but this is a one-man operation, and I am already learning a lot about launching a product. 
+I want it to be small and friendly.</p>
+
+<p>If you are interested in the development or may consider applying as an alpha user, please sign up. The list is handled by 
+<a href="http://mailchimp.com">Mailchimp</a>, so you will get no spam and can unsubscribe at any time if you don't find it interesting.</p>
+
+<!-- Begin MailChimp Signup Form -->
+
+<div id="mc_embed_signup" style="centered">
+    <form action="http://feenbox.us8.list-manage.com/subscribe/post?u=4dce7190eb00a58dc7f16adfa&amp;id=a3d6aa1806" method="post"
+          id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+
+        <div class="mc-field-group">
+            <label for="mce-FNAME">Your name </label>
+            <input type="text" value="" name="FNAME" class="text_form" id="mce-FNAME">
+
+            <label for="mce-EMAIL">Email Address </label>
+            <input type="email" value="" name="EMAIL" class="required email text_form" id="mce-EMAIL">
+        </div>
+        <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+        </div>
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_4dce7190eb00a58dc7f16adfa_a3d6aa1806"
+                                                               tabindex="-1" value=""></div>
+        <div class="clear button_form"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
+                                              class="button"></div>
+    </form>
+</div>
+
+<!--End mc_embed_signup-->
+
+<p>Thanks for reading all of this! If you don't want to subscribe to the list, I'll also keep you informed on
+this blog.</p>
+
+<p>Tags: <a href='tag_feenbox.html'>feenbox</a>, <a href='tag_web.html'>web</a>
+</p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/my-new-project-feenbox-feeds-on-your-inbox.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/my-new-project-feenbox-feeds-on-your-inbox.html'><span id='count-25914'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/my-new-project-feenbox-feeds-on-your-inbox.html",
+            dataType: "jsonp", success: function(data){ $("#count-25914").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="bile-is-not-freedom-of-speech-but-neither-is-censorship.html">
+Bile is not freedom of speech, but neither is censorship
+</a></h3>
+<!-- bashblog_timestamp: #201405161930.00# -->
+<div class="subtitle">May 16, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>Twitter&mdash;and most sites which support user comments&mdash;are filled with filth. Unfortunately, that's an indisputable
+rule of the internet. Some people are just unaware of the power of their words, and
+write comments that expose the worst of human nature, like the guy who 
+<a href="http://elpais.com/elpais/2014/05/16/inenglish/1400232016_588758.html">cheered the murder of a Spanish politician</a></p>
+
+<p>Despicable as that comment is, however, I think that police resources would be better used if going after actual criminals
+or corrupt politicians instead of angry teenagers. On the other hand, people should start learning that throwing bile
+on internet comments <a href="http://www.elmundo.es/elmundo/2013/06/14/espana/1371230608.html">may be freedom of speech</a> but also an offence of verbal threatening. Let's just start behaving
+like intelligent people and try neither to threaten others nor indict dumb twitter users.</p>
+
+<p>My point here is that 
+the internet was born free, and it is now turning into a "regular" business: <a href="https://news.ycombinator.com/item?id=7750036">money will pay quality of service</a>,
+<a href="http://elpais.com/elpais/2014/02/14/inenglish/1392391558_174426.html">online media will be regulated</a> as if hyperlinks and news excerpts were copyright infringement, and now all 
+internet comments will be treated as if they were uttered on the real world; at the main street or on a news outlet.</p>
+
+<p>That is not necessarily bad, <em>per se</em>. However, the people and lobbies regulating the net are the same people who 
+<a href="http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html">think cookies are a menace to user privacy</a> and have strong political and economical interests on putting strong
+leashes to users. The internet has been bypassing their establishment for about 20 years and now it's time to put an end to that.</p>
+
+<p>Should the internet be different from the rest of society? It's not a rhetorical question. However, there is no easy answer.
+The net has created new idiosyncrasies and, if we change the rules of the game, more things need to change. However, politicians
+don't understand&mdash;or don't want to&mdash;this concept. </p>
+
+<p>If they charge business for their QoS, then those business must be able to demand public internet providers 
+where there are monopolies
+or oligopolies. If a blog can be sued for copyright infringement, so must be TVs that feed from youtube users. The list goes on.</p>
+
+<p>The problem now is that it's too tempting for the establishment to regulate everything in their favor. And, given that they
+have the ability to do so, puts democracy to shame. That is, <a href="http://www.bbc.com/news/blogs-echochambers-27074746">if there is one</a>.</p>
+
+<p>As incredible as it sounds, the tinfoil-hat people were actually right. 
+What's more indignant, teenagers may pay large fines for hate speech while governments steal their naked pictures from their 
+webcams and companies take our tax money to turn it against our interests. </p>
+
+<p>Regrettably, for those who didn't know it, that is how
+the world has always worked. The internet was a small oasis that lasted a few years and gave us a taste of real freedom,
+for the good and the bad&mdash;Silk Road, CP, etc.</p>
+
+<p>What now? I think we should support organizations that <a href="https://www.eff.org">defend our rights</a>, 
+<a href="https://www.torproject.org">software that empowers us</a> instead of relying on the <em>bona fide</em> of our providers, and helping develop <a href="https://freenetproject.org">a new internet</a>,
+if that were the case.</p>
+
+<p>In Spain, we have a saying "hecha la ley, hecha la trampa". It means that the cheaters will always be one step ahead of the rules.
+Applied to the internet, that will be a good thing for users and freedom.</p>
+
+<p>Tags: <a href='tag_law.html'>law</a>, <a href='tag_web.html'>web</a>
+</p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/bile-is-not-freedom-of-speech-but-neither-is-censorship.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/bile-is-not-freedom-of-speech-but-neither-is-censorship.html'><span id='count-26119'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/bile-is-not-freedom-of-speech-but-neither-is-censorship.html",
+            dataType: "jsonp", success: function(data){ $("#count-26119").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="chat-wars.html">
+Chat wars
+</a></h3>
+<!-- bashblog_timestamp: #201405151447.00# -->
+<div class="subtitle">May 15, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<blockquote>
+  <p>Coming in each morning to see whether the client still worked with AOL was thrilling [...]
+One day, I came in to see this embedded in a message from the AOL server: "HI. -MARK." 
+It was a little communication from engineer to engineer, underneath the corporate, media, 
+and PR worlds that were arguing over us. I felt some solidarity with him even though we were on opposing sides.</p>
+</blockquote>
+
+<p><a href="https://nplusonemag.com/issue-19/essays/chat-wars/">A great story</a> from David Auerbach, 
+who was in the original MSN Messenger team, explaining reverse-engineering AIM's protocol
+to be able to interoperate with them.</p>
+
+<p>As someone who used Messenger for many years, the piece brought me back in time. Well written,
+interesting, and entertaining.</p>
+
+<p>Tags: <a href='tag_retro.html'>retro</a>, <a href='tag_programming.html'>programming</a>, <a href='tag_web.html'>web</a>
+</p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/chat-wars.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/chat-wars.html'><span id='count-20555'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/chat-wars.html",
+            dataType: "jsonp", success: function(data){ $("#count-20555").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="the-ignorant-eu-cookie-law.html">
+The ignorant EU cookie law
+</a></h3>
+<!-- bashblog_timestamp: #201403181829.00# -->
+<div class="subtitle">March 18, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>It is 2014, and many webmasters still don't know that there is <a href="http://ico.org.uk/for_organisations/privacy_and_electronic_communications/the_guide/cookies">a new EU law</a> which regulates cookies
+and other data stored in user computers. This is part of a noble effort to protect user privacy, which, well,
+I personally support. </p>
+
+<p>Unfortunately, <strong>the actual law is technically incompetent and does nothing for
+user privacy</strong> while placing a lot of responsibility on webmasters and costing them a lot of time and money.</p>
+
+<p>Put it another way, this law wants to protect users by forcing spoon merchants to inform clients about the 
+chance of being harmed by a spoon while ignoring knife, drug or gun merchants. It's useless.</p>
+
+<p>This uselessness and absolute ignorance of how the Internet works is costing EU webmasters a lot of time
+and money. In my case, I counted them, about ten hours. For large companies, it
+can be a lot more.</p>
+
+<p>Why am I against this law? Why do I say it is useless? </p>
+
+<h4>It doesn't protect user privacy</h4>
+
+<p>Cookies are not the only way to track us. 
+Modern methods use just Javascript (i.e. the Facebook 'like' button) and leave no data on the user's browser.</p>
+
+<p>Furthermore, the browser itself can be used to uniquely identify you. <a href="https://panopticlick.eff.org">Test it</a></p>
+
+<p>What's worse, it says nothing about doing analytics with personal data, like the IP. </p>
+
+<p>And how could we forget the fact that it is the governments themselves <a href="http://www.theguardian.com/world/2014/feb/27/gchq-nsa-webcam-images-internet-yahoo">who are spying on users</a>? 
+How on Earth need cookies legislation if the UK and US just steal pictures from our webcams, data from
+our emails and information from our text messages?</p>
+
+<p>Our legislators must be absolutely ignorant or absolute hypocrites to regulate cookies while governments spy on us.
+I'm not sure which one is worse.</p>
+
+<h4>Cookie management was solved 20 years ago</h4>
+
+<p>Let's assume that the previous reason wasn't valid. Let's assume cookies were a real menace to user privacy.</p>
+
+<p>Well, this problem was solved since IE4, when browsers invented the cookie warning popup window.</p>
+
+<p>Managing cookies in the browser is the best idea, for many reasons:</p>
+
+<ul>
+<li>It is a central tool to manage cookies.</li>
+<li>Display a common interface for all cookie warnings. With the current law, every webpage displays the
+notification with a different style and location: on top, on the bottom, on a side, on a popup. Visitors don't
+know where to find it.</li>
+<li>We should trust user software instead of website policies. What if a website was using cookies
+to track me? Should I trust them? Would it solve anything that they had to pay a fine if they have already
+stolen my data? Concerned people should use trusted browsers, and hardened open-source operating systems, 
+if possible. To state an example, Facebook would earn more money by breaking this law and spying on us with cookies
+than the fine it would have to pay if they get caught.</li>
+</ul>
+
+<h4>It confuses users</h4>
+
+<p>I did a quick survey with some non-technical people, asking them if they had seen this "cookies notice".
+They said they had. I then asked them if they did understand what it meant. They didn't. </p>
+
+<p>Modern UXs have overwhelmed us with notification windows, up to a point that we just click on "dismiss" without
+even looking at them. Well, we should read the text, but the truth is that many people don't. Instead of arguing
+over what should be done, let's try to avoid contributing to the too-many-notifications problem, and just
+solve them on the browser.</p>
+
+<p>By the way, I bet that the most clicked button on IE6 was the "Accept all cookies, do not bother me again" checkbox.</p>
+
+<h4>It costs people a lot of pain and money</h4>
+
+<p>Let's imagine there are a million websites in the EU. Let's imagine every webmaster takes, in average, 8 hours
+to adapt each to the new cookie laws. Let's imagine the average webmaster cost is 50&euro;/hr</p>
+
+<p>This useless law has costed EU companies and individuals 400 million euros. Nice way to impulse the internet economy.</p>
+
+<h4>Different countries have different requirements</h4>
+
+<p>In the UK, it is enough to provide a notice to tell users that the website uses cookies. </p>
+
+<p>About ten years ago,
+browser developers decided to remove the UX label that notified the user when cookies were received because
+they thought there was not much to show. Now we have to implement them again, <em>on a per-site basis</em>. Outstanding, given that
+the cookie is set anyway.</p>
+
+<p>Bad as it is, in Spain, a website can't set cookies unless the user accepts them, either by 
+scrolling or clicking a link. At least, well, the user is "protected" by default, even though the 
+technical solution is harder.</p>
+
+<h4>Helping the community</h4>
+
+<p>Angry as I am right now for having wasted ten hours of my life implementing a useless law, I thought
+the least I could do, besides writing a rage post, was to share my solution.</p>
+
+<p><a href="https://github.com/cfenollosa/eu-cookie-law">You can go to Github</a> and download the sample I prepared. It's the same code that you can see running here 
+if you noticed the banner. It might not be the best, but at least it gives webmasters a starting idea, 
+and no-PHP, 100% HTML+javascript routine to run all Analytics and cookie-dependent code.</p>
+
+<p>To summarize my implementation, it consists of a javascript file which handles the cookie banner, sets the actual
+cookie when the user gives consent, and also manages some exceptions. Unlike most of the solutions I found, which
+only display the banner, this code does actually handle cookies.</p>
+
+<p>Check it out, and please, feel free to send pull requests and discuss its issues.</p>
+
+<h4>Final thoughts</h4>
+
+<p>I think my points are quite valid, and this is actually a useless and annoying law that serves nothing
+and costs money. If the regulators had consulted a competent panel, they would have learned that the cookie law
+does not serve their noble intention of protecting users.</p>
+
+<p>The root problem, again, is that our politicians don't have the slightest idea of how the internet works. These are
+the same guys that <a href="http://savetheinternet.eu">now must decide on the fate of the internet as we know it</a>.</p>
+
+<p>I don't know about you, but I lost all my hopes long ago.</p>
+
+<p><em>Did my code save you any time and money? Please <a href="https://supporters.eff.org/donate">donate it to the EFF</a>.</em></p>
+
+<p>Tags: <a href='tag_law.html'>law</a>, <a href='tag_web.html'>web</a>
+</p>
+</p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html'><span id='count-3366'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html",
+            dataType: "jsonp", success: function(data){ $("#count-3366").html("(" + data.count + ")"); }}); </script>
+</div>
+<div id="footer">CC by-nc-nd 2008-2016 <a href="http://cfenollosa.com">Carlos Fenollosa</a> &mdash; <a href="mailto:cf&#64;cfenollosa&#46;com">cf&#64;cfenollosa&#46;com</a><br/>
+Generated with <a href="https://github.com/cfenollosa/bashblog">bashblog</a>, a single bash script to easily create blogs like this one<br/>
+<a href="../cookies.html">Cookies policy</a> &mdash; <a href="the-ignorant-eu-cookie-law.html">Learn why this cookies law is ignorant</a></div>
+</div></div>
+</body></html>

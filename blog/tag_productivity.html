@@ -1,0 +1,761 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,600' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <script data-js="root" src="../js/jquery.js"></script>
+    <script data-js="root" src="../js/consent.js"></script>
+
+    <!-- blog stuff -->
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to this page..." href="http://feeds.feedburner.com/WaitingForTheJobsToFinish" />
+	<link rel="stylesheet" href="main.css" type="text/css" />
+	<link rel="stylesheet" href="blog.css" type="text/css" />
+    <!-- /blog stuff -->
+<title>Carlos Fenollosa &#x2014; Blog &mdash; Posts tagged "productivity"</title>
+<meta name='twitter:card' content='summary' />
+<meta name='twitter:site' content='@cfenollosa' />
+<meta name='twitter:title' content='Carlos Fenollosa &#x2014; Blog &mdash; Posts tagged "productivity"' />
+<meta name='twitter:description' content=" A simple script to postpone your own email   January 14, 2016 &mdash;  Carlos Fenollosa    I somewhat use email as a task manager. Honestly, I believe we all do. We process emails in the inbox, then archive or delete them when we are done with them." />
+</head><body>
+
+<div id="cookieBanner">
+    <div id="cookieBannerClose"><a href="javascript:;">x</a></div>
+    This website uses third party cookies exclusively to collect analytics data.
+    If you continue browsing or close this notice, you will accept their use.
+    The EU now requires all sites to display this banner which confuses users
+    and does nothing, actually, to improve your privacy.<br/>
+    <div id="cookieBannerActions">
+        <a class="noconsent" href="http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html">Read more on why this law is ignorant</a> &mdash; 
+        <a class="noconsent" href="http://cfenollosa.com/cookies.html">Learn about this website's cookies</a> &mdash; 
+        <a class="denyConsent noconsent" href="javascript:;">Disallow cookies</a>
+    </div>
+</div>
+
+
+<div class="headerbig"><div class="head">
+	<div class="headerleft">
+		<img data-img="root" src="../img/cfenollosa-small.png" alt="Carlos Fenollosa" class="foto" />
+	</div>
+
+	<div class="headerright">
+        <div id="headername">
+            <h1 class="nomargin name">Carlos Fenollosa</h1>
+
+            <div class="description">
+                <div class="position">Engineer, developer, entrepreneur</div>
+            </div>
+        </div>
+
+        <div class="add" id="contact">
+            <a href="mailto:cf@cfenollosa.com">cf@cfenollosa.com</a> <i class="fa fa-envelope fa-fw"></i><br/>
+            <a href="http://twitter.com/cfenollosa">@cfenollosa</a> <i class="fa fa-twitter fa-fw"></i><br/>
+            Barcelona area <i class="fa fa-map-marker fa-fw"></i>
+        </div>
+
+        <div class="clear"></div>			
+	</div> <!-- headerright -->
+<div class="clear"></div>
+</div></div> <!-- header && headerholder -->
+
+
+<div id="navbar" class="bound">
+    <div data-id="idblog" class="navitem navitem-first navitem-current"><a href="index.html">Blog</a></div>
+    <div data-id="idabout" class="navitem"><a href="../about.html">About</a></div>
+    <div data-id="idfunnypapers" class="navitem"><a href="../funnypapers/index.html">Funny papers</a></div>
+    <div data-id="idpuput" class="navitem"><a href="http://puput.io">Puput</a></div>
+    <div class="navitem"><a href="http://github.com/cfenollosa">Github</a></div>
+    <div data-id="idlinkedin" class="navitem navitem-last"><a href="https://www.linkedin.com/in/cfenollosa">LinkedIn</a></div>
+    <div class="clear"></div>
+</div>
+<div id="divbodyholder">
+<div class="headerholder"><div class="header">
+<div id="title">
+<h1 class="nomargin"><a class="ablack" href="http://cfenollosa.com/blog/index.html">Carlos Fenollosa &#x2014; Blog</a></h1>
+<div id="description">Thoughts on science and tips for researchers who use computers</div>
+</div></div></div>
+<div id="divbody"><div class="content">
+<h3><a class="ablack" href="a-simple-script-to-postpone-your-own-email.html">
+A simple script to postpone your own email
+</a></h3>
+<!-- bashblog_timestamp: #201601141736.00# -->
+<div class="subtitle">January 14, 2016 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>I somewhat use email as a task manager. Honestly, I believe we all do. We process emails in the inbox, then archive or delete them when we are done with them.</p>
+
+<p>However, keeping track of emails that need a follow-up on a specific date can be difficult.</p>
+
+<p>Around 2011 I wrote a script to perform that task. It is a very simple IMAP parser that searches for a folder with today's date and moves all its contents to a special folder named "Today".</p>
+
+<p>Let me tell you my email workflow. I understand that not everybody works in the same way, but maybe you can get some ideas to improve your email handling.</p>
+
+<p>My email folder structure looks like this. The interesting part is in bold.</p>
+
+<pre>
+Inbox
+\_ Mailing lists
+\_ Project folders
+\_ ...
+<strong>
+\_ Deadlines
+     \_ Today
+     \_ Tomorrow
+     \_ 2016-01-19
+     \_ 2016-02-02
+     ...
+     \_ 2017-08-01
+</strong>
+</pre>
+
+<p>I follow the GTD methodology, which essentially states that tasks should either be done on the spot, delegated, or deferred. Thus, my inbox is exclusively for new tasks. A couple of times a day I process incoming email and, like most of us, either delete it, reply to it, forward it or &mdash;this is the interesting part&mdash; move it to one of the "Deadlines" folders.</p>
+
+<p>Instead of using the inbox as the "email task manager", I use a folder named "Today". I've tried both alternatives, and I find that it works best for me. Since it separates new tasks from tasks I've already processed, I can work my entire day on "Today" and totally forget about the Inbox, even if new email is arriving.</p>
+
+<p>The "Tomorrow" folder is just a shortcut so that I don't need to create a new folder with tomorrow's date every day.</p>
+
+<p>As you may have guessed, the script runs once a day in a crontab, at 6 AM, and moves all mail from "Tomorrow" and the folder with tomorrow's date to "Today". That's it. And that "simple trick", as fishy marketers like to say, saves me a lot of time and headaches every day.</p>
+
+<p>There is currently a commercial alternative, <a href="http://www.boomeranggmail.com">Boomerang</a>, which you may find interesting if you aren't comfortable with programming. I haven't used it, so I can't comment on that. In any case, I usually prefer writing a small script rather than using a third-party service.</p>
+
+<p>Update: <a href="https://github.com/kapravel/snoozegmail">this script</a> by Alex Kapravelos does something very similar, 
+and it integrates with Google Apps Scripts.</p>
+
+<p><a href="https://gist.github.com/cfenollosa/79c22e2ecbb2bdfee15b">Here it is, as a Gist</a>. 
+The code is definitely not the best in the world, but it works. Feel free to use it, modify it (BSD license), give feedback and leave comments.</p>
+
+<p>I hope that you can introduce some ideas from this methodology to your daily workflow. it can be as useful as it's been for me.</p>
+
+<script src="https://gist.github.com/cfenollosa/79c22e2ecbb2bdfee15b.js"></script>
+
+<p>Tags: <a href='tag_software.html'>software</a>, <a href='tag_tricks.html'>tricks</a>, <a href='tag_productivity.html'>productivity</a></p>
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/a-simple-script-to-postpone-your-own-email.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/a-simple-script-to-postpone-your-own-email.html'><span id='count-15855'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/a-simple-script-to-postpone-your-own-email.html",
+            dataType: "jsonp", success: function(data){ $("#count-15855").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="simplicity.html">
+Simplicity
+</a></h3>
+<!-- bashblog_timestamp: #201407160857.00# -->
+<div class="subtitle">July 16, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p><a href="http://www.marco.org/2014/07/15/confessions-of-an-ex-developer">Marco</a> pointed out today to <a href="http://mattgemmell.com">Matt Gemmell</a>'s blog, 
+and I've been reading some of his <a href="http://mattgemmell.com/best">best</a> articles.</p>
+
+<p>I highly recommend his <em>On productivity</em> section, especially <a href="http://mattgemmell.com/simplicity/">Simplicity</a>,
+which I can really relate to.</p>
+
+<p>He's a very talented writer, so if you have some time, read his <em>Personal essays</em> section, which is very
+emotive.</p>
+
+<p>Tags: <a href='tag_productivity.html'>productivity</a>, <a href='tag_life.html'>life</a>
+</p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/simplicity.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/simplicity.html'><span id='count-8718'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/simplicity.html",
+            dataType: "jsonp", success: function(data){ $("#count-8718").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="my-favorite-podcasts.html">
+My favorite podcasts
+</a></h3>
+<!-- bashblog_timestamp: #201407092125.00# -->
+<div class="subtitle">July 09, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>Listening to podcasts is a very interesting way to fill your empty time, especially while 
+doing tasks that don't require your full attention, such as cleaning, eating or commuting.</p>
+
+<p>Being a podcaster myself (<a href="http://damelavoz.es">Dame la voz</a>, <a href="http://yendor.es">El Amuleto de Yendor</a>) I think it is 
+great for the community to share our interests and let us discover new shows that people 
+we listen to recommend.</p>
+
+<p>Of course, this list is tailored to my tastes. It is not a journalistic piece; I am not 
+neutral. For example, you will see that the topics are heavily biased towards tech, startups and self-improvement.
+Unfortunately, I can't recommend other stuff since this is what I listen to!</p>
+
+<p>I also appreciate concision; there is a lot to listen and little time, so the less rambling and
+the shortest, the better.</p>
+
+<p>A final disclaimer; 
+if any of the hosts mentioned here were to read this, which I find unlikely,
+please understand this post as honest opinion,
+constructive critique, and feel totally free to contact me if you'd like to discuss anything.
+As mentioned, I'm a podcaster myself and not every opinion I get is positive; however, the fiercest
+critiques&mdash;if respectful&mdash;are the best, because they help you improve. The best seasons
+at <a href="http://yendor.es">El Amuleto de Yendor</a> came after our worst; we sat down, read all the harsh
+comments, and restructured the show and our attitude. We ended up getting our best critiques ever.</p>
+
+<p>To summarize, if you are on this list, I admire you.</p>
+
+<h4>Podcasts I love</h4>
+
+<p>What can I say? The content is great; the episodes are well-planned; listening to them
+is a good investment of my time. I would pay for these, and in some cases,
+they have <em>helped me earn money</em> or become a better person. Yep, they are that good.</p>
+
+<p><strong>The Tim Ferriss Show</strong></p>
+
+<p><a href="http://fourhourworkweek.com/category/the-tim-ferriss-show/">Blog</a> - <a href="https://itunes.apple.com/us/podcast/the-tim-ferriss-show/id863897795?mt=2">iTunes</a></p>
+
+<p>Tim started his podcast just a few months ago, and boy, what had we been missing.</p>
+
+<p>His show is a series of interviews with very interesting people related to the
+self-improvement topic. But what I like the most is how he spends some minutes getting his interviewee comfortable
+and then asks the right questions. I can't imagine how much preparation he needs before
+each episode.</p>
+
+<p>He's the first of this post and for a reason. I can't think of any other podcast that, in
+so few episodes, has made me go "wow!" as many times.</p>
+
+<p>Even if some of the titles don't seem attractive because of the topic or the interviewee,
+just go and listen to them for fifteen minutes. You'll be glad you did.</p>
+
+<p><strong>Kalzumeus</strong></p>
+
+<p><a href="http://www.kalzumeus.com/category/podcasts/">Blog</a> - <a href="https://itunes.apple.com/us/podcast/kalzumeus-software-podcasts/id560734474?mt=2">iTunes</a></p>
+
+<p>Patrick / patio11 would be your regular programmer and internet commenter if it weren't because
+he spends an insane amount of time explaining what he has learned from his projects and sharing
+tips and advice with random strangers on the internet.</p>
+
+<p>If you are planning to make money on the internet, you know, with your business and products
+or services, then you must listen to Patrick's podcast.</p>
+
+<p><strong>Ramit Sethi</strong></p>
+
+<p><a href="https://www.youtube.com/user/ramitsethi">Videos</a></p>
+
+<p>Technically, Ramit does not have a podcast, but you can subscribe to its video feed and even extract
+the audios from the videos since the images are not that important.</p>
+
+<p>His content is exceptionally great. It is obvious how he makes a living teaching other people to be
+successful. He knows the "what"s and the "how"s and he's a great speaker and an expert on persuasion.</p>
+
+<p>From getting a raise to convincing customers, he presents a wide range of techniques, and more importantly,
+which are the psychological principles that govern them. Every video is a gold nugget, if not only for the
+information it provides, but because it distills small drops of how us people think and react.</p>
+
+<h4>Podcasts I like</h4>
+
+<p>I listen to every show, enjoy them greatly, and thrive when my podcasts app tells me there's
+a new episode. The difference between these and the former? I guess that would be quality;
+you can differentiate between shows on which the hosts spent a lot of hours and talent,
+and shows that are just enjoyable, useful and funny, but just not five stars.</p>
+
+<p>However, that's not necessarily bad, since not every producer thinks spending a lot of time
+preparing a podcast is worth it. I'm actually one of those: top quality is not my goal. Thus,
+I can't blame others for that. Just listen and enjoy.</p>
+
+<p><strong>Accidental Tech Podcast</strong></p>
+
+<p><a href="http://atp.fm">Blog</a> - <a href="https://itunes.apple.com/us/podcast/accidental-tech-podcast/id617416468">iTunes</a></p>
+
+<p>ATP is my go-to podcast. It is funny, opinionated, has John Siracusa (read below), and a good
+balance between the three hosts. </p>
+
+<p>Marco is happy and mildly isolated from the business world;
+Casey is a typical cubicle programmer like most of us, and John has enough experience both
+in life and computers that he is always spot on and brilliant.</p>
+
+<p>If you only listen to one "computing podcast", and don't mind a high percentage of Apple content, 
+let this be it.</p>
+
+<p><strong>The business of freelancing</strong></p>
+
+<p><a href="http://brennandunn.com/category/podcast/">Blog</a> - <a href="https://itunes.apple.com/us/podcast/the-business-of-freelancing/id567557176?mt=2">iTunes</a></p>
+
+<p>Brennan takes the lead of Patrick&mdash;actually; I don't know who was first&mdash; and teaches
+startup business. </p>
+
+<p>The thing is that Kalzumeus is published very sporadically while Brennan is more regular. While I still
+think that Patrick's content is a bit better, The Business of Freelancing is an excellent
+substitute while we wait for Patrick to publish.</p>
+
+<h4>Podcasts I listen selectively</h4>
+
+<p>I'd like to listen to every one of these but, unfortunately, my time is limited.
+Does this mean I don't enjoy them? Absolutely not! Usually, they just cover a wider
+range of topics than my current interests.</p>
+
+<p><strong>The talk show</strong></p>
+
+<p><a href="http://daringfireball.net/thetalkshow/">Blog</a> - <a href="https://itunes.apple.com/es/podcast/the-talk-show-with-john-gruber/id528458508?mt=2">iTunes</a></p>
+
+<p>Gruber's podcast is great and his analysis, though a bit biased&mdash;hey, who isn't?&mdash;
+is usually spot on. He's one of the people I go listen to just after an Apple keynote. While
+others still sing that "Apple's declining since Jobs passed" mantra, John cuts through the
+bullshit with data and reasoned opinions.</p>
+
+<p>Other days he talks about baseball or friends I don't know, so well, I just skip those.</p>
+
+<p><strong>Startups for the rest of us</strong></p>
+
+<p><a href="http://www.startupsfortherestofus.com">Blog</a> - <a href="https://itunes.apple.com/us/podcast/startups-for-the-rest-of-us/id366931951?mt=2">iTunes</a></p>
+
+<p>If they didn't publish so often I'd listen to every show. I used to, but right now I just
+read the summary and select those which apply to my actual business situation. For me, this
+show is like the Wikipedia of startups: you don't need to read it all, just use it as a reference. And that's what I do.
+They're the reference of startups tips.</p>
+
+<p><strong>Anything John Siracusa appears on</strong> </p>
+
+<p><a href="http://hypercritical.co/about/appearances/">List</a></p>
+
+<p>I just love how John explains stuff.
+He always knows how to explain anything in order to make properly his point clear. I think his 
+opinions are the most rational, well-founded you can listen to in a show. If he can't
+get a clear idea, then he has no opinion. </p>
+
+<p>That is just fantastic for the listener, because you can trust
+his explanations, understand them, and decide for yourself. I can't count how many times 
+I've been able to form my own opinion on a topic by just listening at John's.</p>
+
+<h4>Podcasts I used to listen to</h4>
+
+<p>"Oh, here come the bad podcasts," you may think. STOP!</p>
+
+<p>I used to love these for some time, but now I don't follow them anymore.
+Sometimes it's because another more interesting podcast took its place or because they don't 
+apply anymore to my situation.</p>
+
+<p><strong>Quit!</strong></p>
+
+<p><a href="http://5by5.tv/quit">Blog</a> - <a href="https://itunes.apple.com/us/podcast/quit!/id581627214">iTunes</a></p>
+
+<p>Quit! is the first freelance-related show I listened to. It planted the freedom seed in me,
+and help me remove and rationalize some of the fears which are associated to jumping from
+a 9-5 job into your own business.</p>
+
+<p>The problem is that after some shows and after that seed grew the podcast was no longer
+attractive for me. It is not a problem of the format, the hosts or the content, just that
+once you learn the basics&mdash;because they taught you, no less&mdash;then the show gets
+boring. </p>
+
+<p>People call in to ask about the same questions, and the answers are always the same.
+Sometimes even Dan is noticeably bored by the callers. But, what can you do?
+There are only as many topics to cover, and after a while, they get old;
+how much money do I need as a cushion; where
+will I work; is it a good idea to work weekends on side projects.</p>
+
+<p>This podcast is a must for 9-5 people who want to start their own business. Before the
+"I don't know how" phase, which gets covered with <em>Kalzumeus</em> and <em>Startups for the rest of us</em>, 
+one needs to pass the "I'm not sure if I want to do this" phase. Quit! is for those people.</p>
+
+<p>Dan should not be worried about me anymore.</p>
+
+<p><strong>This Week in Tech</strong></p>
+
+<p><a href="http://twit.tv/show/this-week-in-tech/">Blog</a> - <a href="https://itunes.apple.com/us/podcast/this-week-in-tech-mp3/id73329404">iTunes</a>
+Let me start by paying my respects to Leo, the best host I know. I want to be like him.
+Truth be told, I listened to TWIT every week until ATP started.</p>
+
+<p>ATP is fresh, while TWIT sounds grumpy. ATP is usually positive while TWIT focuses
+on the negative. TWIT has been on the air for a while, and it's a business, while ATP
+isn't.</p>
+
+<p>They are two similar shows but very different in most aspects. It so happens that I prefer ATP.</p>
+
+<p><strong>The Vergecast</strong></p>
+
+<p><a href="http://www.theverge.com/video/the-vergecast">Blog</a> - <a href="https://itunes.apple.com/us/podcast/the-vergecast/id430333725?mt=2">iTunes</a></p>
+
+<p>The Verge is a tech website that, unlike others, has good editors and good content. The podcast
+is exactly that: tech news and a bit of opinion.</p>
+
+<p>If you like shows which cover current news, this is one of the best. I usually prefer analysis
+and opinions.</p>
+
+<p><strong>Back to work</strong></p>
+
+<p><a href="http://5by5.tv/b2w">Blog</a> - <a href="http://itunes.apple.com/podcast/back-to-work/id415535037?partnerId=30&amp;siteID=GfpxbBXXpXE-y3gfJGyOQcSr2tOpkzD12A">iTunes</a></p>
+
+<p>Everybody, including me, loves Merlin and Dan, but I just can't understand this show. More than
+60% is crazy talk and anecdotes, and every once in a while, they discuss productivity tricks. Regrettably,
+in many episodes I would get nervous, thinking "is this episode going to be one of
+these crazy ones?", hoping I wouldn't end an hour and a half later feeling that I hadn't actually
+learned anything.</p>
+
+<p>It's a bit ironic that a podcast about productivity takes a lot of its listener's time. 
+As a matter of fact, if
+somebody made a monthly digest of Back to work including only the productivity content, I'd listen to it in a heartbeat. </p>
+
+<h4>That's it!</h4>
+
+<p>If you are a podcast listener, I hope you give any of these a chance. They are all great shows; listen
+to a few episodes and decide which is best for you. And please use the comments to recommend me new shows!
+I'd love that.</p>
+
+<p>Tags: <a href='tag_productivity.html'>productivity</a>, <a href='tag_links.html'>links</a>
+</p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/my-favorite-podcasts.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/my-favorite-podcasts.html'><span id='count-28587'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/my-favorite-podcasts.html",
+            dataType: "jsonp", success: function(data){ $("#count-28587").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="no-time-how-did-we-get-so-busy.html">
+No time. How did we get so busy?
+</a></h3>
+<!-- bashblog_timestamp: #201405200912.00# -->
+<div class="subtitle">May 20, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p><a href="http://www.newyorker.com/arts/critics/books/2014/05/26/140526crbo_books_kolbert?currentPage=all">Excellent piece</a>
+by Elizabeth Kolbert on busy time. <a href="https://news.ycombinator.com/item?id=7769610">The HN comments</a> are up to 
+the article.</p>
+
+<p>This topic also brings me to the workcrastination mentioned on <a href="http://fourhourworkweek.com">the four hour workweek</a>
+which I also mention in <a href="http://cfenollosa.com/blog/tips-to-work-from-home.html">tips to work from home</a>. We are
+humans and kind of feel empty when we have nothing to do, plus being busy is an excellent, accepted social excuse
+to get out of undesired work.</p>
+
+<p>Eliminatint excess work from life requires a difficult mindset change.
+I have always been busy, and liked it, but now I'm trying to work less, more efficiently, and be
+fine with it. Let's see if it's worth the effort.</p>
+
+<p>Tags: <a href='tag_productivity.html'>productivity</a>
+</p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/no-time-how-did-we-get-so-busy.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/no-time-how-did-we-get-so-busy.html'><span id='count-5377'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/no-time-how-did-we-get-so-busy.html",
+            dataType: "jsonp", success: function(data){ $("#count-5377").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="tips-to-work-from-home.html">
+Tips to work from home
+</a></h3>
+<!-- bashblog_timestamp: #201405071039.00# -->
+<div class="subtitle">May 07, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>Much has been said about working from home, but I usually enjoy these kind of articles,
+so here's my contribution to the productivity-tip bandwagon.</p>
+
+<h4>Environment</h4>
+
+<p>Your first goal should be to develop new routines but, to do so, the work environment is key. </p>
+
+<p>The absolutely most important thing is ergonomics, and the main contributing factor is a good chair.
+There is no need to spend 500&euro; on a fancy chair, but don't work on a garden plastic one. Go
+and buy a nice office chair with armrests and a good lumbar region support.</p>
+
+<p>If you don't get a regulable height desktop, make sure that the one you use isn't too tall. You will notice
+this quickly; if your elbows are placed on the armrests, and your wrists on the table, but your shoulders 
+are in pain, it means that the table is too high. Dining tables are usually too high for the average person
+because they are designed so that the plate is not too far from your mouth, but that doesn't work
+for a computer.</p>
+
+<p>Try to create an environment as close as possible to an office. This means paper trays, binders, pens, and so,
+but also avoiding other distractions like magazines, food, toys, etc.</p>
+
+<p>Occasionally you'll want to work on the sofa after lunch, at the balcony on a sunny day or on the kitchen
+counter while making sure your dinner doesn't burn in the oven. That's fine, but it shouldn't be the norm.
+No matter how many startup movies you've seen, desks are important.</p>
+
+<p>Having a specific work desk or "office room" will also help you separate work from leisure. Nowadays we do most of our leisure
+on a computer, but working from home can be very absorbing. As a rule of thumb, try not to work unless you are
+at the office, and try not to eat or have fun there. It will help your brain separate both things.</p>
+
+<p>If you're a computer geek, there is not much I can tell you about the benefits of two monitors, a mechanical
+keyboard and a good mouse. Always do some research before buying a monitor, especially if you come from the Mac
+world and are used to their wonderful displays. Most cheap LCDs are fine, but if you do a lot of design you'll notice
+that the colors and pixel quality aren't the same. That's not necessarily bad, since most users will also use a cheap LCD, so
+you'll get a closer result to what they will see.</p>
+
+<p>You do not need to rush and buy everything on the first day, but remember: pain is not "normal". If your body hurts
+while working, and it didn't hurt before, consider changing your environment.</p>
+
+<p>The take home message seems to be <em>spend a lot of money</em>, and that is 50% true. The other 50% is <em>be comfortable at
+your office</em>. If working brings you physical or psychological pain, you will find every reason not to do it.</p>
+
+<h4>Routines</h4>
+
+<p>Routines, at first, can be forced with good planning. But what to plan? </p>
+
+<p><strong>Wake up early</strong>. I can not overstate the importance of this. If you wake late, your brain will be on that comfy
+<em>it's late, the whole day is wasted, I'll do it tomorrow</em> mode. DO NOT LET IT!</p>
+
+<p>Some people say they work better at night. In my own experience, while true, that can be changed over a period of time
+and will bring more benefits. Try both for some weeks and choose the best for you.</p>
+
+<p><strong>Exercise</strong>. Everybody recommends that, but I'll be a bit more specific.
+Depending on your energy, routines, and schedule, try to either exercise first thing in the morning or before lunch. It's better to do it
+before the afternoon, because if you leave it for later, you'll spend the whole evening wondering when you need to finish
+work in order to have time to exercise. Also, there are a ton of benefits to exercise early, like increased energy
+and better hunger control. There is nothing worse than exercising before dinner, then eating a lot because you're starving,
+and then going to bed too tired/aching to sleep and with a full belly.</p>
+
+<p><strong>Get dressed to work</strong>. I sometimes cheat a bit and don't get dressed in the morning, because I exercise before lunch and
+don't want to put on clean clothes before showering. However, that's another benefit to exercising in the morning; it will
+force you to shower and put on new clothes. </p>
+
+<p>Being dressed at home is a good thing. First of all, you're ready to go out if somebody calls. "Hey, let's go to the bar", "Nah,
+I'm on my pajamas, would need to shower and change...". That should never happen. Also, if you work from home you will probably need
+to go out shopping or running errands. Being ready helps to avoid procrastinating from that kind of work.</p>
+
+<p>Second, you'll never have the temptation to go to bed for a nap. Never enter your bed during the day! You might get into a deep
+sleep and wake up two hours afterwards, either with a headache or worse, too refreshed to sleep well that night. Naps should always be taken 
+on a sofa or armchair, sitting down comfortably and with an alarm set to 10-15 minutes, to allow your body and brain to rest but not enter a REM sleep.</p>
+
+<p><strong>Allow yourself fun time</strong>. If you wake at 7 and go to sleep at 23, you don't want to be working 16 hours a day, minus meals.
+Having too long workdays contributes to heavy procrastination. Set yourself strict deadlines and stop working after 7-8 hours every day.</p>
+
+<p>That will leave you between 3-5 extra hours every day. Try to find new routines you like, now that you have the time! 
+Play videogames, read a book, go outside for a walk, watch TV, paint, go sunbathing, whatever. You're at home and you don't need to act busy in front
+of anybody. More on this below.</p>
+
+<p>When at home, routines are different and more flexible than in an office. Try to plan as many as possible and they'll turn into habits, which
+is a good thing.</p>
+
+<h4>Planning</h4>
+
+<p>Even if you have a boss, you will be responsible for planning your time. This is what I do:</p>
+
+<p>Every Sunday evening I allocate an hour to plan next week's work and review the current week's outcome (next section).</p>
+
+<p>I open my calendar and create mandatory tasks. Those are meals, appointments, meetings, etc.</p>
+
+<p>Afterwards, I plan my routines. A workout hour before lunch every day, playing video games twice a week, reading for an hour
+after lunch every day, except on Mondays, because I watch Game of Thrones, etc. You get the idea.</p>
+
+<p>Then I set work hours, between 7-8 every day. I fill those with tasks from my projects. I prioritize important
+tasks and do them first thing in the morning. I also know that I am more productive in the late evening, so I usually schedule maintenance
+tasks from after reading until mid-evening.</p>
+
+<p>Observe your body and brain and don't lie to yourself. Plan realistically.</p>
+
+<p>Finally, I don't plan weekends, but I trust myself not to waste them anyway. If you can't &mdash;nothing to be ashamed of&mdash; plan them too.</p>
+
+<p>All schedules may and will be interrupted with unexpected work, but the mere act of planning your day and knowing what is the
+next task that you need to do is a great tool against procrastination and deterrents.</p>
+
+<p>This is, more or less, a summary of the <a href="http://gettingthingsdone.com">GTD methodology</a>. If you haven't done so, please go and read Allen's book. It should be
+a required reading in all schools. If you prefer to plan your tasks daily instead of weekly, that's fine. Allocate 15 minutes at the 
+end of every workday to plan tomorrow's work, and then don't check email until next day's allocated time. As stated before, that shouldn't be
+until you have been working for 2-3 hours in the morning.</p>
+
+<p>After all this planning, we will need to regularly review it, not to feel bad about what we didn't do, but to adjust ourselves to
+reality.</p>
+
+<h4>Accountability</h4>
+
+<p>As said in the last sentence, we are only accountable to ourselves. We want to learn more about how we work, so it is a good idea
+to track your time. </p>
+
+<p>I use <a href="http://toggl.com">toggl</a> for time tracking, though some people don't like tracking every minute of your day. At least you should
+write down your weekly goals and review if you have completed or advanced them.</p>
+
+<p>On Sundays, just before planning next week, I run through a quick summary of the current one. Did I do what I was supposed to do? If not, why? How
+did I spend my time? If you only track your goals, you won't probably identify your main time wasters. Being honest is a good exercise and
+a useful tool to detect and eliminate them. When you check Facebook for more than a quick glimpse, track it. If you're bored and go to Reddit, 
+track for how long. </p>
+
+<p>Planning and accounting are the two main tools to help you develop your own routines, tailored to your energy cycles and home environment.
+Remember that, again, they are just a tool, and don't feel too bad if it turns out that some week hasn't been as productive as you expected.
+Use the data to correct your next planning, and try to schedule more realistically.</p>
+
+<p>The trick is to plan according to what you have learned will happen, and not according to what you wish would happen.</p>
+
+<p><a href="http://www.iwillteachyoutoberich.com">Ramit</a> is always insisting on the importance of testing, and that's what you should do. After all, 
+reading advice about other people's routines should be interpreted as a source of ideas to test, not as something written in stone.</p>
+
+<h4>You're working</h4>
+
+<p>If you share your space with another person, it may be tempting for them to suggest that you do housework because you spend all day there
+and they may be at a workplace. That is not fair.</p>
+
+<p>However, it wouldn't be fair either to avoid housework at all. I suggest to play smartly.</p>
+
+<p>For example, you're in a good position to do shopping and run errands, since you can shop when nobody else is there and avoid queues.</p>
+
+<p>Allocate an hour of housework for every hour your partner is committing to, of course. However, you don't need to do it at the same time.
+If you're productive in the evenings but your partner is there and wants to do some cleaning, suggest to split the rooms, and do your part
+after lunch or when you feel like procrastinating. Trust me, when you have to call that stupid client, nothing will look as attractive
+as sweeping the patio.</p>
+
+<p>Consider hiring cleaning services. If you're not familiar with the concept of <a href="http://www.smbc-comics.com/?id=2839">opportunity cost</a>, 
+read a bit on the subject. Paying 10&euro; an hour and earning 50&euro; an hour is a net gain of 40&euro;</p>
+
+<p>The same goes for kids; consider paying a kindergarten for some hours so that you can work quietly and without
+interruptions. If you plan is to earn money working at home you can't spend the whole day watching your kid. We all know
+that the point of having kids is to raise them ourselves, but keep a balance between being a housewife/husband and earning money.</p>
+
+<h4>Avoiding procrastination</h4>
+
+<p>I have two good rules to avoid procrastination:</p>
+
+<ol>
+<li><strong>Procrastinate actively</strong>. That is, if you don't feel like working, don't try to work. Feeling tired? Go take a 15-minute nap. 
+Want to check Facebook? Do it. Don't feel bad about it. However, try to stop procrastinating after some time. Set an alarm.</li>
+<li><strong>Don't plan heavy work at those times that you know you won't do it</strong>. For me, it's after lunch. I know I can't work,
+so I watch some shows or read a book for an hour. If I feel sleepy, I sleep. Otherwise, I read.</li>
+</ol>
+
+<p>If you want to read the ultimate guidelines on avoiding procrastination and, what's worse, workcrastination,
+that is, being busy for the sake of it, check out <a href="http://fourhourworkweek.com">The 4-Hour Workweek</a>. Some spoilers:</p>
+
+<ul>
+<li>Don't check email that often</li>
+<li>Do important tasks first thing in the morning</li>
+<li>Eliminate one useless time-consuming habit every two weeks</li>
+</ul>
+
+<p>A final trick that works for me: 30 seconds of exercise puts me in a very motivated mood. If I don't feel like working but there is
+a deadline near, I'll jump out of the chair and run up and down the stairs a couple times, or do some pushups and squats. 30 seconds
+is enough, you don't need to be tired, just make your heart beat a bit faster and release endorphins. Try it!</p>
+
+<h4>Social life</h4>
+
+<p>Try not to be all day alone. This highly depends on each character, but if you live alone and work from home,
+do something outside. Have breakfast or lunch at a cafeteria, go to the gym, go grab a beer with friends after work.</p>
+
+<p>It's not unhealthy to spend most of your day at home. What's unhealthy is to spend a lot of days without going out and
+talking to other people.</p>
+
+<h4>Enjoy it</h4>
+
+<p>Working at home has many advantages. Freedom, limited and honest accountability, and more importantly, the lack of facades.
+There is no point in crucifying yourself or forcing to follow office guidelines. </p>
+
+<p>Just let me summarize this article in four quick bullet points:</p>
+
+<ol>
+<li>Work your environment to your advantage, make it comfortable to work at home, separate work from leisure.</li>
+<li>Be honest about your productivity, schedule smartly, account, test yourself, don't be busy just for the sake of it.</li>
+<li>Opportunity cost. Pay for services which are cheaper than your earning rate. </li>
+<li>Enjoy office freedom; go outside to read on a sunny day, shop at 3pm when shops are empty, play video games, learn
+a new language or how to play an instrument.</li>
+</ol>
+
+<p>Tags: <a href='tag_productivity.html'>productivity</a>
+</p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/tips-to-work-from-home.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/tips-to-work-from-home.html'><span id='count-25346'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/tips-to-work-from-home.html",
+            dataType: "jsonp", success: function(data){ $("#count-25346").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="cloud-tools-google-docs-is-now-good-enough.html">
+Cloud tools: Google Docs is now good enough
+</a></h3>
+<!-- bashblog_timestamp: #201110261000.00# -->
+<div class="subtitle">October 26, 2011 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>We've recently been bombarded with the concept of "the cloud". Every company is using it now as an
+advertising term, so it's losing a bit of its semantic value. But what does it really mean?</p>
+
+<p>Cloud computing means a lot of things, from distributed computing to distributed storage, ubiquitous
+documents and collaborative work. Basically, if your data is stored somewhere on the net, you
+can access it from everywhere and, optionally, work simultaneously with collaborators, then
+it's "on the cloud".</p>
+
+<p>There are many cloud applications, but today I want to bring some attention to one which is mature enough for
+everyday use: <a href="http://docs.google.com">Google Docs</a>. It's so good that I've been using it
+for many years now, and there have been only a few occasions where I had to go back to use a
+local software to create a document. Those have been very specific cases where I needed to produce
+high-quality leaflets or presentations which need professional software.</p>
+
+<p>Talking about professional, the quality of GDocs is, at least, <i>good enough</i>. At most, it is
+excellent. The spreadsheets is probably the most basic product, but the documents and presentations are
+great and they can perfectly be used for any serious work.</p>
+
+<p>However, the highest advantage of using a cloud product is collaboration. There are some "revision"
+tools for MS Word which are good, but nothing beats collective editing of a document at the same time and
+rolling back to a previous version like a wiki. Collaborative document edition is definitely Google Docs's
+strongest point.</p>
+
+<p>Obviously, there are drawbacks. The biggest ones are the inability to access your data when there is no
+internet or a server error&mdash;Google is known for its stability, but it sometimes crashes, believe me&mdash;
+and the lack of features compared to a desktop solution like Libreoffice/Openoffice or MS Office. Quick tip:
+remember to activate Google Doc's "offline access" to get a local copy of your documents even if the internet
+goes out.</p>
+
+<p>A controverted point is that of privacy. Some institutions force workers to use local tools because
+of intellectual property or industrial secret reasons. If that's the case, end of the story,
+but keep in mind that once a document leaves the local mail servers all privacy is lost, e.g. one of
+the collaborators has a different email server like gmail or those of another University.</p>
+
+<p>In a scientific environment it is still common to send documents to different people by email,
+then merging the changes manually and usually losing some of the revisions because of the document mess.
+That needs to stop. While the final version will probably be edited
+with a desktop software, there is no reason for a manuscript not to be produced with collaborative, "cloud"
+tools.</p>
+
+<p>My advice here would be to give Google Docs a try, because it has changed a lot since its inception
+and it is nowadays an excellent editor, a backup solution, an ubiquitous server and a collaborative
+platform which will save you a lot of time and hassles.</p>
+
+<p>Tags: <a href="tag_productivity.html">productivity</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/cloud-tools-google-docs-is-now-good-enough.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/cloud-tools-google-docs-is-now-good-enough.html'><span id='count-29166'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/cloud-tools-google-docs-is-now-good-enough.html",
+            dataType: "jsonp", success: function(data){ $("#count-29166").html("(" + data.count + ")"); }}); </script>
+</div>
+<div id="footer">CC by-nc-nd 2008-2016 <a href="http://cfenollosa.com">Carlos Fenollosa</a> &mdash; <a href="mailto:cf&#64;cfenollosa&#46;com">cf&#64;cfenollosa&#46;com</a><br/>
+Generated with <a href="https://github.com/cfenollosa/bashblog">bashblog</a>, a single bash script to easily create blogs like this one<br/>
+<a href="../cookies.html">Cookies policy</a> &mdash; <a href="the-ignorant-eu-cookie-law.html">Learn why this cookies law is ignorant</a></div>
+</div></div>
+</body></html>

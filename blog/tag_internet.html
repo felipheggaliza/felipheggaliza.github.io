@@ -1,0 +1,959 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,600' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <script data-js="root" src="../js/jquery.js"></script>
+    <script data-js="root" src="../js/consent.js"></script>
+
+    <!-- blog stuff -->
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to this page..." href="http://feeds.feedburner.com/WaitingForTheJobsToFinish" />
+	<link rel="stylesheet" href="main.css" type="text/css" />
+	<link rel="stylesheet" href="blog.css" type="text/css" />
+    <!-- /blog stuff -->
+<title>Carlos Fenollosa &#x2014; Blog &mdash; Posts tagged "internet"</title>
+<meta name='twitter:card' content='summary' />
+<meta name='twitter:site' content='@cfenollosa' />
+<meta name='twitter:title' content='Carlos Fenollosa &#x2014; Blog &mdash; Posts tagged "internet"' />
+<meta name='twitter:description' content=" Bots lack metaphors, and that is their biggest asset   May 17, 2016 &mdash;  Carlos Fenollosa    Bots are the hot topic this 2016. They need no presentation, so I'm not going to introduce them. Let's get to the point.  We can all agree that bots are" />
+</head><body>
+
+<div id="cookieBanner">
+    <div id="cookieBannerClose"><a href="javascript:;">x</a></div>
+    This website uses third party cookies exclusively to collect analytics data.
+    If you continue browsing or close this notice, you will accept their use.
+    The EU now requires all sites to display this banner which confuses users
+    and does nothing, actually, to improve your privacy.<br/>
+    <div id="cookieBannerActions">
+        <a class="noconsent" href="http://cfenollosa.com/blog/the-ignorant-eu-cookie-law.html">Read more on why this law is ignorant</a> &mdash; 
+        <a class="noconsent" href="http://cfenollosa.com/cookies.html">Learn about this website's cookies</a> &mdash; 
+        <a class="denyConsent noconsent" href="javascript:;">Disallow cookies</a>
+    </div>
+</div>
+
+
+<div class="headerbig"><div class="head">
+	<div class="headerleft">
+		<img data-img="root" src="../img/cfenollosa-small.png" alt="Carlos Fenollosa" class="foto" />
+	</div>
+
+	<div class="headerright">
+        <div id="headername">
+            <h1 class="nomargin name">Carlos Fenollosa</h1>
+
+            <div class="description">
+                <div class="position">Engineer, developer, entrepreneur</div>
+            </div>
+        </div>
+
+        <div class="add" id="contact">
+            <a href="mailto:cf@cfenollosa.com">cf@cfenollosa.com</a> <i class="fa fa-envelope fa-fw"></i><br/>
+            <a href="http://twitter.com/cfenollosa">@cfenollosa</a> <i class="fa fa-twitter fa-fw"></i><br/>
+            Barcelona area <i class="fa fa-map-marker fa-fw"></i>
+        </div>
+
+        <div class="clear"></div>			
+	</div> <!-- headerright -->
+<div class="clear"></div>
+</div></div> <!-- header && headerholder -->
+
+
+<div id="navbar" class="bound">
+    <div data-id="idblog" class="navitem navitem-first navitem-current"><a href="index.html">Blog</a></div>
+    <div data-id="idabout" class="navitem"><a href="../about.html">About</a></div>
+    <div data-id="idfunnypapers" class="navitem"><a href="../funnypapers/index.html">Funny papers</a></div>
+    <div data-id="idpuput" class="navitem"><a href="http://puput.io">Puput</a></div>
+    <div class="navitem"><a href="http://github.com/cfenollosa">Github</a></div>
+    <div data-id="idlinkedin" class="navitem navitem-last"><a href="https://www.linkedin.com/in/cfenollosa">LinkedIn</a></div>
+    <div class="clear"></div>
+</div>
+<div id="divbodyholder">
+<div class="headerholder"><div class="header">
+<div id="title">
+<h1 class="nomargin"><a class="ablack" href="http://cfenollosa.com/blog/index.html">Carlos Fenollosa &#x2014; Blog</a></h1>
+<div id="description">Thoughts on science and tips for researchers who use computers</div>
+</div></div></div>
+<div id="divbody"><div class="content">
+<h3><a class="ablack" href="bots-lack-metaphors-and-that-is-their-biggest-asset.html">
+Bots lack metaphors, and that is their biggest asset
+</a></h3>
+<!-- bashblog_timestamp: #201605171214.18# -->
+<div class="subtitle">May 17, 2016 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>Bots are the hot topic this 2016. They need no presentation, so I'm not going to introduce
+them. Let's get to the point.</p>
+
+<p>We can all agree that bots are an interesting idea. However, 
+there's this debate regarding whether 
+bots are going to be the user interface of the future.</p>
+
+<p>Many critics argue against a future where bots rule user interaction. Some are philosophical,
+others are somehow short-sighted, and many are just contrarian <em>per se</em>.</p>
+
+<p>I'm not saying they're
+wrong, but they overlook some strong arguments that we should have learned by observing the history of computing.</p>
+
+<h4>What computer history taught us</h4>
+
+<p>The most important thing we learned since the 70s is that 
+people do not want quicker and faster interfaces, they want <em>better</em> interfaces. </p>
+
+<p>In the 80s, during the GUI revolution, they had critics too. GUI detractors claimed that
+<a href="http://www.sitepoint.com/real-history-gui/">the GUI was just a gimmick</a>, or that
+<a href="https://en.wikipedia.org/wiki/No_true_Scotsman">real computer users</a> preferred the command line.
+We should know better by now.</p>
+
+<p>Critics were right in some points: GUIs weren't faster or more potent than the command line. However, this wasn't the winning argument.</p>
+
+<p>GUIs won because the general public will always prefer a tool that is easier to use and understand
+than one which is more powerful but harder to use.</p>
+
+<h4>Are bots a command line?</h4>
+
+<p>See how there is a simile, but in fact, bots are the exact opposite from a command line.</p>
+
+<p>Bot critics equate bots with CLIs and thus reach the conclusion that they are a step backward compared to GUIs.
+The main argument is that bots do not have discoverability, that is, users will not know what they're capable
+of since they don't have a menu with the available options. Whenever you're presented with a blank sheet, how
+to start using it?</p>
+
+<p>However, I believe this comparison is wrong. People don't have a post-it note
+on their forehead stating their <em>available commands</em>, but we manage to work together, don't we?</p>
+
+<p>We've been learning how to interact with people our whole lives; that's the point
+of living in society. When we walk into a coffee shop, we don't need an instruction manual to know
+how to ask for an espresso, or the menu, or request further assistance from the barista.</p>
+
+<p>Bots can present buttons and images besides using text so, at the very least, they can emulate a traditional GUI.
+This is not a killer feature but contributes to refute the <em>discoverability</em> criticism and provide
+a transition period for users.</p>
+
+<h4>Bots lack metaphors, and that is their biggest asset</h4>
+
+<p>Bots will win because they speak natural language, even if it is only a dumbed down version.
+Their goal, at least in the beginning, is to specialize in one use case: ordering a pizza, requesting weather information,
+managing your agenda. 
+After all, 90% of your interactions with your barista can be reduced to about ten sentences.</p>
+
+<p>Being able to use natural language means there is no learning curve. And, for once in the history
+of computing, users will be able to use a UI that lacks what all other UIs required to function: metaphors.</p>
+
+<p>This is critical since metaphors are what regular people hate about computers.</p>
+
+<p>Who cares if one needs to press seventy buttons to order a pizza with a bot instead of just three with an app. People
+will use the product which is easier to use, not the one which saves them more keystrokes--not to mention
+that you can send commands with your voice. Didn't we learn from GUIs?</p>
+
+<h4>The death of the metaphor</h4>
+
+<p>Every metaphor has been moving both hardware and software towards a more human way of working.</p>
+
+<p>Files, folders, commands, the mouse, windows, disk drives, applications, all these have
+been bright ideas that emerged at some point and then died when the next thing appeared. We even tried to 
+<a href="https://en.wikipedia.org/wiki/Skeuomorph#Digital_skeuomorphs">style apps with leather and linen, buttons and switches</a>
+to make them more understandable and relatable to the real world.</p>
+
+<p>By definition, metaphors are a compromise. Both users and developers have a love-hate relationship with them, as they have been
+necessary to operate computers, but they also impose a barrier between thought and action. </p>
+
+<p>Thanks to metaphors, this <a href="https://en.wikipedia.org/wiki/Altair_8800">metallic thing which made funny noises and whose lights blinked continuously in 1975</a>
+has now evolved to a very easy to use smartphone. But that smartphone still clearly is a computer, with buttons, windows, and text boxes.</p>
+
+<p>Bots, if done correctly, may be the end of the computing metaphor.</p>
+
+<h4>Metaphors have an expiration date</h4>
+
+<p>This is not intrinsic of computers.</p>
+
+<p>At some point in time, a watch was a metaphor for counting time. We designed a device with a hand pointing to numbers from 1 to 12
+and we matched it to the sun cycle.
+Advances in technology and culture have converted it in a fashion item and, while it still bears a metaphoric value, both four-year-olds
+and ninety-year-olds can use it without much thinking.</p>
+
+<p>It's like driving: once you master it, your brain operates the car in the background. Your eyes still look at the road, but unless there
+is any unexpected issue, your conscious mind does not need to be driving.</p>
+
+<p>I feel like the computing world, in general, is mature enough for this. Bots are a natural progression. They will not replace everything,
+like bicycles do not replace trucks. For most people, however, <em>interacting with a computer as they do with a person is indeed the clincher</em></p>
+
+<p>Ultimately, a tool is just a means to an end, and people
+want to do things, not mess with tools. Some of us engineers do, but we're in the minority.</p>
+
+<h4>Can we foresee the future?</h4>
+
+<p>So, why bots and not another UI?</p>
+
+<p>I haven't reached this conclusion myself, strong as some arguments may be. I just
+follow the trend that thinkers have created. </p>
+
+<p>The future is written in cyberpunk novels and philosophical AI movies, in music, in cinema. Not in blogs, not in
+engineer forums, not in the mind of some visionary CEO.</p>
+
+<p>People will use what people want, and the best demand creation machine is imagination, in the form of 
+art and mass media.</p>
+
+<p>What people will want is what artists have represented:
+<em>futuristic VR and human-like --but not too human-looking-- software</em></p>
+
+<p>And now for the final question. 
+Chat bots and expert systems have been around <a href="https://en.wikipedia.org/wiki/ELIZA">since the 1960s</a>, 
+so why is now the right time?</p>
+
+<h4>All paths lead to Rome</h4>
+
+<p>First and foremost, now is the right time because we <em>believe</em> it
+is. Everything is pushing towards chat UIs: big players, money, startups, the media. </p>
+
+<p>Marketing and news articles can make people like things, hate things, and love things.
+People are told that they will be able to talk to their computers, and they've been baited
+with Siris and Alexas. Those are not perfect, but hint of a better future.</p>
+
+<p>Consumers imagine a plan for a better future and generate demand. And demand is the driver of innovation.
+That's why in tech, self-fulfilled prophecies work, and predictions can be 
+<a href="http://farm8.staticflickr.com/7010/6635615985_633d660428_o.jpg">incredibly accurate</a> even
+<a href="http://www.wired.com/2014/05/victorian-postcards-predict-future/">over hundreds of years</a></p>
+
+<p>At a technical level, both hardware and software are advanced enough for real-time audio and text
+processing with natural language. APIs are everywhere, and some IA problems which were too hard ten years ago 
+have been solved by either
+<a href="http://www.aculab.com">commercial packages</a> or <a href="https://github.com/tesseract-ocr">free software libraries</a></p>
+
+<p>Finally, the customer's computing environment is as close to bots as it can be.
+Chat apps are <a href="http://www.fiercedeveloper.com/story/report-chat-apps-dominate-social-usage-and-time-spent/2014-11-27">the most used feature of a smartphone</a> because they're straightforward and personal.
+People write or talk, and they get text or audio back. Not buttons, not forms, just a text box and a sentence.</p>
+
+<p>My contrarian side feels a bit odd by tagging along the current big wave, 
+but both rationally and by intuition I really do believe that now is the right moment. And I feel that I had to share
+my reasons.</p>
+
+<p>For what it's worth, I'm putting my money where my mouth is, developing bots <a href="http://paradoxa.io">at Paradoxa</a>.
+Who knows what will happen anyway. Undeniably, nobody has a crystal ball. </p>
+
+<p>But isn't trying to predict the future enjoyable? Just imagining it is half the fun.</p>
+
+<p>Tags: <a href='tag_internet.html'>internet</a>, <a href='tag_startups.html'>startups</a>, <a href='tag_AI.html'>AI</a></p>
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/bots-lack-metaphors-and-that-is-their-biggest-asset.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/bots-lack-metaphors-and-that-is-their-biggest-asset.html'><span id='count-15529'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/bots-lack-metaphors-and-that-is-their-biggest-asset.html",
+            dataType: "jsonp", success: function(data){ $("#count-15529").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="why-the-centralization-of-the-internet-is-a-bad-idea.html">
+Why the centralization of the Internet is a bad idea
+</a></h3>
+<!-- bashblog_timestamp: #201602291523.00# -->
+<div class="subtitle">February 29, 2016 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>You probably know that the Internet was born as a military project. That its goal was to have a computer network that survived a nuclear attack. Therefore, the pipes that make the Internet work are scattered through all the world. Every computer is connected to each other in a grid, more or less.</p>
+
+<p>In theory, it’s easy: to go from computer A to C, go to B. If B is down, you can probably be routed through D and F and reach C nonetheless. To learn which is the best route, you ask a router. Apply recursively, and that’s the Internet!</p>
+
+<p>However, the Internet is a technology, not an application. The applications we use are email, the Web, the Usenet, etc. Many popular services are nothing else than an API running on the Web. And most are centralized: to use Gmail you need to connect to the Gmail server. Makes sense, right?</p>
+
+<p>In fact, that is not necessarily so; it has traditionally been the exact opposite, especially with email.</p>
+
+<p>Email, along with web pages, it is the last bastion of decentralization on the Internet. You can install some software and send a message from your email server to another on the other side of the world without any meddling from third party servers — routers aside.</p>
+
+<p>Most users don’t do that, though. Centralized systems are convenient. Managing a private server is complicated, and it forces you to have a computer running 24/7 at home, or rent one. Why should you handle this? Let the professionals do it, and end users can connect to centralized servers when they need to access a service.</p>
+
+<p>There is a decentralized Facebook, called Diaspora, and a decentralized Twitter called Twister. BitTorrent is a decentralized file sharing system, Aether is a decentralized discussion forum, and there is even a decentralized currency called Bitcoin.</p>
+
+<p>With them, you can have your data on your personal computer, or a machine you trust, and send specific pieces to your friends computers, without going through a central server. These services aren’t very popular at the moment, but due to increasing espionage, data selling, moderation abuse and others, their usage will probably increase, and pave the way for similar solutions soon.</p>
+
+<p>Let’s get back to email for a minute because, unfortunately, its decentralization is jeopardized by a few powerful actors. There are strong reasons to trust big email providers, especially to avoid spam and fraud. Sadly, some of the measures used to filter potentially harmful emails also hurt small, honest servers, who see how their emails get rejected or delivered directly to the spam folder.</p>
+
+<p>I’ve experimented with email servers since I was in college. Back in 2001, you could install an MTA and start sending emails without much trouble. However, for recent projects like Puput, installing and maintaining the email server has been nightmarish.</p>
+
+<p>We are preparing the details for a future post, but to summarize, after installing postfix, no fewer than eight steps were required to get our emails successfully delivered into our users inboxes.</p>
+
+<p>Both startups and the big players offer email delivery services, and I admit that had it not been for my obstinacy, we probably would’ve used some of them.</p>
+
+<p>However, being as we are a bit old-school, used that your server could be a first-class node of the internet, that proved to us a serious ethical dilemma. Either you succumb to using one of the few “trusted email servers” or you essentially risk getting banned from delivering your own email. It is not yet blackmail, but it’s close.</p>
+
+<p>I don’t want to be dishonest, there are genuine reasons for this. Trying to recentralize email may probably be just a measure to combat spam. <em>Probably</em>. Because when the big players have such large incentives to kill their competition and become The One Email Provider in the world, each barrier counts. It is not far-fetched to think that, at least, there are conflicts of interest among these big players.</p>
+
+<p>Some sysadmins capitulate and end up using XYZ Apps for Business, surrendering a bit of the Internet’s decentralization to that company. Again, it makes sense, both technical and economical. Don’t reinvent the wheel. But every small decision we take contributes to create the world we want to live in.</p>
+
+<p>Being a monopoly is tempting, and XYZ already has a history of embracing services like the Usenet, chat and RSS to kill them shortly afterward and force users to move to their proprietary solutions. In the 90s, XYZ was Microsoft. Nowadays, it is the formerly not evil company — ironic value of this left to the reader’s criterion.</p>
+
+<p>With the de-facto death of Jabber, email and The Web are essentially the only popular services that you can still run from your private box and interact with the outside world. IM and social networks have been taken over by a dozen of centralized and isolated services; we can’t let email suffer the same fate.</p>
+
+<p>Maybe the future of communications is just around the corner. When all devices are permanently connected to the Internet in a robust way, we will probably carry an <em>internet node</em> in our pocket. Meanwhile, we will keep using just an <em>internet access device</em> and reaching a central server to get our data, trusting that this machine doesn’t misuse it.</p>
+
+<p><em>This post was originally posted on <a href="https://medium.com/@puput_io/why-the-centralization-of-the-internet-is-a-bad-idea-a79d698a37f3">Puput blog</a></em></p>
+
+<p>Tags: <a href='tag_internet.html'>internet</a></p>
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/why-the-centralization-of-the-internet-is-a-bad-idea.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/why-the-centralization-of-the-internet-is-a-bad-idea.html'><span id='count-20732'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/why-the-centralization-of-the-internet-is-a-bad-idea.html",
+            dataType: "jsonp", success: function(data){ $("#count-20732").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="whats-up-with-disliking-liking.html">
+What's up with disliking Liking?
+</a></h3>
+<!-- bashblog_timestamp: #201601101258.00# -->
+<div class="subtitle">January 10, 2016 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>Twitter recently changed their faves for likes with much controversy and bashing Facebook's Likes is already a meme. What's up with disliking Liking?</p>
+
+<p>Are we more narcissistic than ever? Maybe we are. Public image has always been important for two groups: public figures and teenagers. </p>
+
+<p>I find myself lucky to have been a teenager in a world without social media. Otherwise, everyone could have been my adolescent cringe-inducing posts that were lost in private ICQ and MSN chats.</p>
+
+<p>People need to feel important, and the new coolness ranking is social media Likes. Years ago, it was (paper) facebook notes and signatures. That's how the world works now, and we can only react to it, not change it.</p>
+
+<p>Us adults tend to frown upon a teen posting a vaguely suggestive picture for their friends to Like but can't seem to enjoy a vacation unless we're sure all our coworkers are green with envy at our beach pictures. We can't start eating until everyone has uploaded a pic of its dish to Instagram as if waiting till mom finishes her prayer. </p>
+
+<p>Technology is always ahead of society. It takes some time for people to adjust to new customs. We added "texting" to the list of things that are rude while dining at a table, then allowed some exceptions for important messages. We considered that leaving a meeting for a phone call is unprofessional, then accepted that people can have legitimate reasons.</p>
+
+<p>Some will eat their dishes cold for some &hearts;s; others will unhealthily link their self-esteem to a particular threshold of Likes, and people will publicly mourn their dead in exchange for some sympathy.</p>
+
+<p>In the end, liking somebody's content is a way of showing that you care about that person. Sympathy makes us human. Some will argue that private things should be kept hidden, but what's wrong if broadcasting their lives make people happy?</p>
+
+<p>Everyone has their individual reasons for providing a Like or not; likewise, they are free to choose whether to publicize a personal event or not. Those who advertise all their illnesses on Facebook are no different than grandmas who go to the park and compete with other grandmas in the so-called ailment Olympics.</p>
+
+<p>People need sympathy; Likes is just the channel that we use in the 2010s to provide it.</p>
+
+<p>Tags: <a href='tag_internet.html'>internet</a>, <a href='tag_life.html'>life</a></p>
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/whats-up-with-disliking-liking.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/whats-up-with-disliking-liking.html'><span id='count-16506'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/whats-up-with-disliking-liking.html",
+            dataType: "jsonp", success: function(data){ $("#count-16506").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="puput-mail-without-internet.html">
+Puput, mail without internet
+</a></h3>
+<!-- bashblog_timestamp: #201512211725.00# -->
+<div class="subtitle">December 21, 2015 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>Here's my new project: <a href="http://puput.io">Puput</a>, a service which lets you
+listen to your email when you have no internet.</p>
+
+<p>I honestly think it's pretty cool, the project has a strong R+D component for which we filed a patent,
+and it has lots of potential to <a href="http://puput.io/slack.html">integrate into IMs like Slack</a>
+and close the communication gap for people who are offline.</p>
+
+<p>It's free, so please be my guest and give it a try! It's surprisingly awesome to be able to listen
+to your email when you're abroad without an internet connection.</p>
+
+<p>Even though we have been absorbing a lot of startups-related material these last months,
+nothing will prepare you for a real product launch. Everybody says it, and I agree: </p>
+
+<ul>
+<li>The last 20% of the work consumes us 80% of the time. That is, UI, UX, the website,
+and the marketing strategy</li>
+<li>Selling is hard.</li>
+<li>Selling is even harder when you first invent a new technology and then try to find 
+use cases for it. Yes, the <em>lean startup</em> recommends doing the opposite, it is a common
+first timer mistake :(</li>
+<li>I'll say it again, do product/market fit first, then start coding.</li>
+<li>Raising money is nearly impossible in the Spanish startup scene. Obviously we're nobodies, but
+I've also talked to many other founders, with great products, thousands of clients and 
+two-digit monthly growth, who find it incredibly frustrating to raise even 200k&euro;</li>
+<li>Launch day is scary so you find excuses not to launch. Adding more features is one of them. Establish
+hard deadlines and try to respect them as much as possible.</li>
+<li>It turns out it isn't that scary anyways, in fact, getting users and attention is difficult at first.
+<em>Dying from success</em> is unrealistically represented in sites like HN, it doesn't apply to 99% of the startups.</li>
+</ul>
+
+<p>Anyway, launching a product is hard, teaches you many things about the world, and makes you
+respect people who have done it successfully. </p>
+
+<p>Cheers to all first time founders.</p>
+
+<p>Tags: <a href='tag_internet.html'>internet</a>, <a href='tag_software.html'>software</a>, <a href='tag_startups.html'>startups</a>, <a href='tag_projects.html'>projects</a></p>
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/puput-mail-without-internet.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/puput-mail-without-internet.html'><span id='count-30786'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/puput-mail-without-internet.html",
+            dataType: "jsonp", success: function(data){ $("#count-30786").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="think-of-the-terrorists-is-the-new-think-of-the-children.html">
+"Think of the terrorists" is the new "Think of the children"
+</a></h3>
+<!-- bashblog_timestamp: #201507111323.00# -->
+<div class="subtitle">July 11, 2015 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<blockquote>
+  <p>If I am prime minister, I will make sure that it is a comprehensive piece of legislation that makes sure we do not allow terrorists safe space to communicate with each other. That is the key principle: do we allow safe spaces for them to talk to each other? I say no, we don't, and we should legislate accordingly.</p>
+
+<p><em>&mdash;David Cameron</em></p>
+</blockquote>
+
+<p>What infuriates me the most is that is such a blind, selfish, first world argument. It implies freedom of speech is granted, ubiquitous, and irreversible, so those who want extra protection must be criminals. Mr. Cameron's statement also assumes that there is no middle ground, and all technologies that can be misused by some party should be illegal. You know, the Hitler-croquettes theorem: since Hitler liked croquettes, croquettes must be bad.</p>
+
+<p>In some countries, the Government can kill you for your political views. Your neighbors can also kill you for what you are&mdash;gay, for example. Ill-named "activists" can kill you for private beliefs that don't affect other people, like your stance on abortion. Mafias can kill you for badmouthing. And these all happen in first world countries, can you imagine the rest of the world?</p>
+
+<p>Requesting those people to abandon the tool that is currently saving their lives in exchange for <a href="https://www.reddit.com/r/india/comments/3csl2y/wikileaks_releases_over_a_million_emails_from/csyjuw6">the vague promise of finding terrorists</a> is a false dichotomy. I can understand uneducated people considering this topic as black and white. But a Prime Minister? That's a supreme level of blindness. </p>
+
+<p>Mr. Cameron and others surely understand how the world works. They know that hackings, theft, revolutions, and coups d'etat exist, and those who once were righteous, legal and legitimate may be prosecuted. Something being <em>legal</em> or <em>punishable</em> can quickly change, it is not written in stone, and definitely not universal.</p>
+
+<p>Imagine a Christian in 2011 Syria. They lead an ordinary life, have a job, a Facebook, they send funny memes to their friends, they communicate online. Being a Christian something we can agree is a legitimate and harmless belief and, according to 2011 Syria's laws, legal.</p>
+
+<p>Now meet ISIS. In just a year they have conquered a large portion of the territory and changed some laws considerably. Forbidding Christians in Syria to use encryption is, with Mr. Cameron's words, <em>not allowing people a safe space to communicate with each other</em>, and exposing them to ISIS. You see, in some cases, <em>banning encryption helps terrorists</em>.</p>
+
+<p>That is not a paradox. Encryption is a tool, like a knife, a chainsaw or a Bic pen. Banning a tool has consequences, and arguing at a fallacy level with something as serious as the lives of people is deeply insulting.</p>
+
+<p>We need encryption, period. Personal communications must be private, period. We can discuss the transparency/secrecy balance for governments, but that is a topic for another day.</p>
+
+<p>Governments must find some other way of fighting crime than just exposing everybody naked to make it easier to pick the bad apples.</p>
+
+<p>Encryption is saving lives of gays, Muslims, activists, individuals who are threatened. It is allowing Mr. Cameron to send private texts to their wife without The Sun intercepting them. It is what avoids ISIS to spy on the UK Ministry of Defence intelligence. Does he really not realize that? Is he not that bright? Is he ill-advised? Is he just a hypocrite?</p>
+
+<p>Encryption is avoiding that in a massive wirelessly connected world anybody can listen to what everybody else is saying in any part of the planet. <em>Do we allow safe spaces for people to talk to each other? I say yes, we do, and we should legislate accordingly</em></p>
+
+<blockquote>
+  <p>When it comes to privacy and accountability, people always demand the former for themselves and the latter for everyone else</p>
+
+<p><em>&mdash;David Brin</em></p>
+</blockquote>
+
+<p>Tags: <a href='tag_law.html'>law</a>, <a href='tag_internet.html'>internet</a></p>
+
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/think-of-the-terrorists-is-the-new-think-of-the-children.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/think-of-the-terrorists-is-the-new-think-of-the-children.html'><span id='count-9553'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/think-of-the-terrorists-is-the-new-think-of-the-children.html",
+            dataType: "jsonp", success: function(data){ $("#count-9553").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="making-podcasts-mainstream.html">
+Making podcasts mainstream
+</a></h3>
+<!-- bashblog_timestamp: #201503061854.00# -->
+<div class="subtitle">March 06, 2015 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>There is no better companion for a long trip than a podcast. Familiar voices talking
+about familiar topics, listened on demand. Definitely better than turning the radio on
+and following some random program that's scheduled for that day at that time.</p>
+
+<p>I've been podcasting since 2005 and my numbers have always been modest. 
+I know I'm not that good, it's my hobby and it makes me happy. However, I've always
+wondered why people are turning away from the audio format, since it was so popular during
+the radio days. Maybe there was nothing better back then? Given the choice, nowadays 
+the audience will prefer images, text and video over audio.</p>
+
+<p>Now, I'd like to test the viability of podcasting as a format.</p>
+
+<h4>A game of numbers</h4>
+
+<p>In the US there are some shows which are more popular than ever, and
+even mid-range podcasters can produce with regularity and getting a fair number of sponsors.
+On the other hand, in Spain, I'd say 80% of the population doesn't know
+what a podcast is. <em>They've never even heard the word</em>. </p>
+
+<p>For most of us, our audience is a niche. That usually means it's less abundant but more committed.
+Listeners are more vocal, participative, and opinionated than a general audience. They're sincere
+and give honest feedback. However, there is an audience ceiling for podcasters; depending
+on the topic, your downloads peak may never surpass 10k-50k people. </p>
+
+<p>There is still something that has yet not been tried here, to 
+start a podcast with a radio superstar. In the US most senior podcasters are ex-radio hosts.
+Maybe if a popular host can publicly quit and announce that they'll start their own show, that
+could attract some audience to the format.</p>
+
+<p>We find ourselves with a textbook "chicken or egg" problem. How can professionals
+jump to solo podcasting if it is impossible to earn a living?
+They can't quit their day job and work 9-5 preparing a show, either daily or weekly. There is just
+not enough money in the equation.</p>
+
+<p>In my opinion, it is not really a technical issue. The days of needing to explain
+what a RSS is are long gone, thanks to iTunes, podcast apps and embedded audio players.
+I know a lot of non-tech people
+who listen to radio shows on the internet; that's what podcasting is for them. <em>Off-schedule
+radio listening, plus some really bad amateurs</em>. They are probably not wrong.</p>
+
+<p>We won't know
+until some professional host tries to close the gap and see if audience trickles down
+to us amateurs. But who will be the first? Who will open the can of worms, um, sponsors,
+for them to see that podcasting is an acceptable medium to advertise on?</p>
+
+<p>I started podcasting when I was 20 and it was&mdash;still is&mdash;a hobby. But my time
+is now more valuable, and while it's ok for hobbies to cost money, it is difficult to justify
+the hours it would take to emulate a professional effort and polished product. 
+Simply put, if a podcaster
+can't earn a few hundreds of bucks a month to contribute to their regular income, it will never
+become more than a hobby.</p>
+
+<h4>Interactivity</h4>
+
+<p>I was mentioning before that niche audiences tend to be more cooperative.
+They give valuable feedback and fill the comment forms on our web pages.</p>
+
+<p>Well, at least until the age of social media. Now everything has changed.</p>
+
+<p>It used to be that you had a podcast, published it on your blog/website, and people
+left some comments. Now the tables have turned; the audience wants to leave the same 
+comments, only on <em>their own</em> website. Which, for the overwhelming majority, <em>is Twitter</em>.</p>
+
+<p>It makes some sense. People apparently prefer a crippled comment system, which not only has
+a character limit, but also makes it impossible to follow multiple branches of a debate.
+In reality, that system allows them to treasure all of the user opinions on a single place,
+which is their Twitter profile, akin to a personal website.</p>
+
+<p>We&mdash;notice the first person plural&mdash;love the idea
+that someone else may browse our Twitter profile to learn our cool interests and read
+our witty criticisms of other people's work. That just doesn't happen, however.</p>
+
+<p>Another interesting feature is that every time one at-mentions an author,
+they get notified and get to see your face on a profile picture and maybe drop a quick 'thanks', 
+creating a feeling of self-importance.
+In blogs, you never know if your comment is even read. </p>
+
+<p>That sounded a bit sarcastic but it's why Twitter has hundreds of millions of users; they
+are hoping for a retweet from their idols, big or small.</p>
+
+<p><em>Here's my business card: Name, email, Twitter. Email is too serious, send me a tweet</em>. 
+So we do that, and Twitter has become a global identity.
+Not Facebook, not about.me, not OpenID, not Google Plus. Our Twitter handle is our online
+persona, we use it to network with strangers, so we want to use it as much as possible.</p>
+
+<p>I really see the rationale behind it. It's literally our internet username. There is no
+other website since the dawn of the internet that has managed to be used as a global
+identification system, and many have tried really hard.</p>
+
+<p>And, like that, Twitter killed the blog comments.</p>
+
+<p>So, what now? Well, now we adapt to this new situation, simple as that. On the positive side,
+it has increased comment quantity, even if at the huge expense of quality. And, in a world
+where a podcast debating politics only used to get 0.1% of its audience to comment, that may
+be a good thing.</p>
+
+<h4>Discoverability</h4>
+
+<p>You know what else Twitter is killing? Organic search and directories. Content discovery is
+now done via social media, and that definitely is a good thing. An audience of 10 committed listeners
+who are referred by a friend who knows their taste is worth 1000 random visits from Google.
+Those 1000 visits will never even listen to a minute of your audio. They'll think, <em>"bah,
+it's not text/video"</em> and close the browser tab.</p>
+
+<p>Generalizing, there are two kinds of audio listeners, the ones who have a podcast app
+with their favorite shows and have integrated podcast listening into their daily workflows, like 
+running or commuting, and the rest. That majority are casual listeners, who aren't used
+to consume content in an audio format. It's not that they don't have the time;
+some people will block half their morning to watch a Minecraft
+show on Youtube, but won't listen to a 40-minute podcast on their way to school.</p>
+
+<p><em>Unless?</em></p>
+
+<p>Well, unless they really like it. There's no trick here, people only do stuff that either makes
+them feel good, or they get paid for. </p>
+
+<p>How to get people to quickly check out our 90-minute podcast? They can't just skim audio as 
+if it were text. </p>
+
+<p>Here's where micro podcasts may help. 
+A micro podcast could be defined as an audio file with the following characteristics:</p>
+
+<ul>
+<li>Self contained, i.e. not an excerpt or a slice of a full show</li>
+<li>No longer than 5-7 minutes</li>
+<li>Has the same quality of a full show, including audio production and contents</li>
+</ul>
+
+<p>My theory is that there is excellent podcast content, but unlike text and video, it is very
+difficult for a potential listener to decide if they are going to like it. Thus, they
+don't make the investment of listening to a couple long episodes to make that decision.</p>
+
+<p>I'm currently experimenting with a podcast-in-a-tweet. It's like a regular micro podcast, but
+the main distribution channel is Twitter. The audio is actually hosted somewhere, but my marketing
+strategy is 100% focused on Twitter.</p>
+
+<p>That's ideal because it appears in front of the
+audience exactly at a point when they are predisposed 
+to consume content, since they are in fact browsing Twitter. Furthermore, they
+don't need to leave the page or perform another action, like subscribing or downloading a file.</p>
+
+<p><em>Click and listen</em>. Since the episode is very short, the user is still there, in front of
+a text box, when the show finishes. That directly
+invites the audience to participate and share while they are still inclined to do so, as opposed
+to long podcasts which are consumed in a scenario where the listener is unable to interact,
+like driving or jogging.</p>
+
+<p>Us podcasters may succeed if we can lure the general audience 
+into becoming sporadic audio consumers. Then we should fight to make them regular podcast listeners,
+but not before.
+We have to get the format out of the way, at least 
+initially, and push our best content as digestible pills.</p>
+
+<div style="text-align: center">******</div>
+
+<p>I don't know if that will work, it's a wild bet. Right now, since I just started, most of my audience
+still listens from a podcast app. I guess that old habits die hard, and a person who
+consumes many shows has little incentive to change their workflow. For them, the micropodcast
+is in the same category as a regular one, and treat is as such.</p>
+
+<p>Let's try to reach out of our regular audience, the ones who don't have a podcast app.
+In a few months from now, and thanks to Twitter's new analytics, I'd love to see that the number
+of casual listeners surpasses the number of subscribers. My goal is not that they end up
+subscribing to the show, but rather to see a huge spike of social-driven listeners 
+when a brilliant episode is produced, similar to what happens when awesome content
+is published in other formats.</p>
+
+<p>If you are a podcaster or a listener, I'd love to hear your opinion.
+I really want to see people who never cared for audio listening to micro podcasts. That'd be
+an enormous achievement.</p>
+
+<p><em>If you understand Spanish, you can follow my podcasts at <a href="http://cf5m.com">5 minutos con Carlos 
+Fenollosa</a> and <a href="http://damelavoz.es">Dame la voz</a>, and recall 
+episodes of the now defunct <a href="http://yendor.es">El Amuleto de Yendor</a>.</em></p>
+
+<p>Tags: <a href='tag_internet.html'>internet</a>, <a href='tag_podcasting.html'>podcasting</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/making-podcasts-mainstream.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/making-podcasts-mainstream.html'><span id='count-26872'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/making-podcasts-mainstream.html",
+            dataType: "jsonp", success: function(data){ $("#count-26872").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="you-are-not-late.html">
+You are not late
+</a></h3>
+<!-- bashblog_timestamp: #201410121021.00# -->
+<div class="subtitle">October 12, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<blockquote>
+  <p>Can you imagine how awesome it would have been to be an entrepreneur in 1985 when almost any dot com 
+name you wanted was available? All words; short ones, cool ones. All you had to do was ask for the one you wanted</p>
+
+<p>[...]</p>
+
+<p>But, but... here is the thing. In terms of the internet, nothing has happened yet. The internet is still at the beginning of its beginning. If we could climb into a time machine and journey 30 years into the future, and from that vantage look back to today, we'd realize that most of the greatest products running the lives of citizens in 2044 were not invented until after 2014</p>
+</blockquote>
+
+<p><a href="http://kk.org/thetechnium/2014/08/you-are-not-late/">You are not late</a></p>
+
+<p>Tags: <a href='tag_internet.html'>internet</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/you-are-not-late.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/you-are-not-late.html'><span id='count-19324'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/you-are-not-late.html",
+            dataType: "jsonp", success: function(data){ $("#count-19324").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="hey-nsa-as-you-sow-so-shall-you-reap.html">
+Hey NSA, as you sow, so shall you reap
+</a></h3>
+<!-- bashblog_timestamp: #201409252033.00# -->
+<div class="subtitle">September 25, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>It looks like <a href="https://www.techdirt.com/articles/20140923/07120428605/law-enforcement-freaks-out-over-apple-googles-decision-to-encrypt-phone-info-default.shtml">the new "encrypted by default" policy on smartphones is freaking out
+law enforcement agencies</a>.
+Honestly, what were they expecting? They have been abusing laws and courts for so long that we 
+are starting to take measures <em>to let private companies protect us from our governments</em>. How twisted is that, huh?</p>
+
+<p>"When I see a police officer now, instead of protected, I feel threatened." That's a bit demagogic but bears
+some truth. People seem to have interiorized that concept and we now prefer to have some privacy, regardless
+of what police think. Yes, we are so busy caring for
+our safety that we don't give a crap if that interferes with the FBI &mdash;probably necessary&mdash;
+counterterrorism work.</p>
+
+<p>But wait, is that true? I mean, isn't that reasoning a bit flawed? Are people stupid or careless?</p>
+
+<p>When you think about it for a minute, there is a crucial point. Who is more likely to have resources to circumvent
+police investigations? Of course, professional criminals. That's why you can't make a backup of your DVDs, but
+pirates can. Professionals always find a way, it's regular citizens who have no means to protect themselves.</p>
+
+<p><a href='img/029-registros.png'><img src='img/029-registros.thumb.png' width="712px"></a></p>
+
+<p>This is a comic I made in 2005 (click to zoom). </p>
+
+<p>It says, "The EU wants to keep a record of phone calls, SMS and emails
+as a security measure against terrorism." Then, an Al-Qaeda terrorist who's planning to bomb the twin towers
+starts using carrier pigeons. Both his phone and computer are wired to the CIA, but that's of no use now.</p>
+
+<p>As time told, they passed that law, and now everyone's communications are under police eyes. It's ironic, but
+nowadays the communications protocol which is the most protected by law is... postal mail.</p>
+
+<p>In the end, it is a false sense of security. We have to give our laptop password to a random guy on an airport
+and let him check our email and pictures while real terrorists have a decoy encrypted partition. They can
+manage all the hassle, we can't, so they win.</p>
+
+<p>Or better, they will carry paper documents in a briefcase. Expect next decades' spy films to stop portraying criminals
+as cyberpunk hackers and go back to the 50's analogic look. In the age of Apple Watches, nobody will suspect that a Casio watch
+hides a microfilm with the schematics for a bomb.</p>
+
+<p>Tags: <a href='tag_internet.html'>internet</a>, <a href='tag_law.html'>law</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/hey-nsa-as-you-sow-so-shall-you-reap.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/hey-nsa-as-you-sow-so-shall-you-reap.html'><span id='count-23156'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/hey-nsa-as-you-sow-so-shall-you-reap.html",
+            dataType: "jsonp", success: function(data){ $("#count-23156").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="allowing-strangers-247-access-to-you.html">
+Allowing strangers 24/7 access to you
+</a></h3>
+<!-- bashblog_timestamp: #201409021023.00# -->
+<div class="subtitle">September 02, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p><a href="http://www.marco.org/2014/08/29/wirecutter-resolved">Marco posted about some internet drama</a> and I found
+the second part of the post quite enlightening.</p>
+
+<blockquote>
+  <p>We allow people access to us 24/7. We're always in public, constantly checking 
+an anonymous comment box, trying to explain ourselves to everyone, and trying 
+to win unwinnable arguments with strangers who don’t matter in our lives at all.</p>
+</blockquote>
+
+<p>That is exactly spot on, and that is why I always recommend disabling all notifications on your phone
+except for a few important people on Whatsapp. Otherwise, any random person on the internet can
+ruin your day at any time with an offensive comment on any public website.</p>
+
+<p>Tags: <a href='tag_internet.html'>internet</a>, <a href='tag_life.html'>life</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/allowing-strangers-247-access-to-you.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/allowing-strangers-247-access-to-you.html'><span id='count-13483'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/allowing-strangers-247-access-to-you.html",
+            dataType: "jsonp", success: function(data){ $("#count-13483").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="email-is-still-the-best-thing-on-the-internet.html">
+Email Is Still the Best Thing on the Internet
+</a></h3>
+<!-- bashblog_timestamp: #201408151158.00# -->
+<div class="subtitle">August 15, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p><a href="http://www.theatlantic.com/technology/archive/2014/08/why-email-will-never-die/375973/?single_page=true">Nice piece by Alexis C. Madrigal</a>
+on why the email will live long and strong for many years to come. Furthermore, I agree with thim
+that all these startups trying to replace it with some other proprietary protocol are pretty much
+doomed.</p>
+
+<p>IM didn't kill the email and it has been around since the nineties; phone messengers have
+taken some of its market quota and use cases, but THE messaging protocol is still email.</p>
+
+<p>Who knows, maybe in five years I have to eat my words. Meanwhile, I'm positive that it was
+a good choice of a protocol for <a href="http://feenbox.com">feenbox</a></p>
+
+<p>Tags: <a href='tag_feenbox.html'>feenbox</a>, <a href='tag_internet.html'>internet</a>
+</p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/email-is-still-the-best-thing-on-the-internet.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/email-is-still-the-best-thing-on-the-internet.html'><span id='count-24915'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/email-is-still-the-best-thing-on-the-internet.html",
+            dataType: "jsonp", success: function(data){ $("#count-24915").html("(" + data.count + ")"); }}); </script>
+<h3><a class="ablack" href="spanish-media-just-shot-themselves-in-the-foot----or-maybe-in-the-head.html">
+Spanish media just shot themselves in the foot -- or maybe in the head
+</a></h3>
+<!-- bashblog_timestamp: #201407241825.00# -->
+<div class="subtitle">July 24, 2014 &mdash; 
+Carlos Fenollosa
+</div>
+<!-- text begin -->
+
+<p>In Spain we have an old proverb, <em>La avaricia rompe el saco</em>. Literally <em>"greed bursts the sack"</em>;
+it means that if you fill a purse with too many coins
+it will break and you will end up with none.</p>
+
+<div class="separator"></div>
+
+<p>This week, the Spanish Congress passed a law with two main goals:</p>
+
+<ul>
+<li>Ban torrenting sites, i.e. that is link-only sites (not content hosts), which is a totally different topic.</li>
+<li>Make social aggregators pay media publishers for the use of news excerpts.</li>
+</ul>
+
+<p>More details can be found on <a href="http://es.gizmodo.com/espana-aprueba-la-ley-de-propiedad-intelectual-y-el-pol-1609066353">this Gizmodo article</a></p>
+
+<p>If this weren't so serious I'd say that news lobbies pressing against the <a href="http://en.wikipedia.org/wiki/Right_to_quote">right to quote</a>, you know, the one their business is based on, is <em>ironic</em>.</p>
+
+<p>But this is so outrageously hypocritical that it's not ironic, it's immoral and vomitive. 
+Disgusting. Greedy to the extreme. This is a capital crime against ethics.</p>
+
+<p>So why did they just do that?</p>
+
+<div class="separator"></div>
+
+<p>Last year, <a href="http://www.reuters.com/article/2013/02/07/us-europe-google-idUSBRE9160ZM20130207">Google was forced to pay French publishers</a>
+for use of their content.
+Spanish publisher lobby AEDE (lack of link intended) saw here a huge opportunity: let's do the same and get free money from Google.</p>
+
+<p>Google is so big that's it's an easy target. <a href="http://www.xataka.com/analisis/cronica-de-la-historia-del-mayor-robo-a-internet-jamas-perpetrado">Demagogy is so simple</a>; <em>Google is a tech giant that does fiscal
+engineering to avoid paying taxes and profits from our content</em>. Yes, that's true. But Google does
+exactly what these publishers do: curate what others say and provide citations to strengthen and validate their job.</p>
+
+<p>But then, Google's natural reaction would have been, <em>"You don't want my traffic? Wish granted! Next time, be careful 
+what you wish"</em>. However, AEDE had anticipated this, so with the new law content providers <strong>can't opt out</strong> 
+by not linking to AEDE's affiliated media. F*ck off genie, we wished for infinite wishes!</p>
+
+<p>It's so effortless to lobby in a corrupt and manipulated environment <a href="http://www.huffingtonpost.es/pilar-portero-y-ana-canil/como-aprobar-la-ley-de-propiedad_b_5610404.html">where politicians don't even know what a link is</a>.</p>
+
+<div class="separator"></div>
+
+<p>But wait, there's more.</p>
+
+<p>Once you start considering the implications of <em>having to pay to hyperlink</em>, things get worse. 
+<a href="http://coalicionprointernet.com/wp-content/uploads/2014/07/20140703_Analisis-economico-de-la-modificacion-de-la-LPI_Afi.pdf">A study</a> conducted by <a href="http://coalicionprointernet.com">Coalici&oacute;n Prointernet</a>, a lobby against this law, states the 
+obvious:</p>
+
+<ul>
+<li>It has not been proved that content aggregation limits the editor's earnings. Of course; it's the opposite, it
+actually drives them more traffic&mdash;<a href="http://gallir.wordpress.com/2014/07/22/un-apunte-personal-rapido-sobre-el-canon-aede/">300M yearly visits</a>, according to an admin of one of those sites.</li>
+<li>There is no basis to establish an inalienable compensation towards media editors and, if it were any,
+this new legislation is not the best way to go.</li>
+<li>The new law reduces legal security for Spanish internet companies.</li>
+<li>Media aggregation is necessary and positive from a "freedom of speech" standpoint.
+Unavailability of aggregators can drive small publishers to extinction and leave users without
+an important tool to diversify their media consumption.</li>
+</ul>
+
+<p>Please read and think about the last point again, because it is very, very important. </p>
+
+<div class="separator"></div>
+
+<p>Let's summarize what is happening here:</p>
+
+<p>Big media editors AEDE, most of which pro-government, in collusion with the corrupt Spanish politicians have managed a masterstroke which they think will:</p>
+
+<ol>
+<li>Get them free money</li>
+<li>Destroy the discoverability of smaller media competitors, usually critical with the government</li>
+<li>Hinder the future of Spanish internet tech business, their main competitor</li>
+<li>Get more exposure, since readers won't have access to media agreggation and will resort to reading just one or two outlets</li>
+</ol>
+
+<p>In reality, what is likely to happen is:</p>
+
+<ol>
+<li><a href="http://www.xataka.com/analisis/cronica-de-la-historia-del-mayor-robo-a-internet-jamas-perpetrado">Google will close Google News Spain</a>, no big problem</li>
+<li>Spanish media aggregators will move their business abroad and won't contribute taxes to the country</li>
+<li>Tech enterpreneurs will realize that Spain is a shitty country to invest money on</li>
+<li>Without Google, the aggregators, and thanks to the increasing <a href="http://www.elconfidencial.com/tecnologia/2014-03-18/los-medios-aede-pierden-1-7-millones-de-visitas-desde-el-boicot-de-meneame_103436/">user boycott to AEDE media</a>, those editors will lose traffic and money.</li>
+</ol>
+
+<div class="separator"></div>
+
+<p>This is so, so sad.</p>
+
+<p>It is clear that traditional media companies are suffering because of the internet revolution and 
+need to fight in some way. However, they are cutting their own nose to spite the face. And, in the way,
+they are denying others a right, not a banal one, but the right to quote, which news business is built on.</p>
+
+<p>I honestly think that traditional media is absolutely necessary even today. They are the ones who report, research,
+discover, analyze and interpret what's happening in the world. Specially in Spain, where we don't have
+these modern US internet-only media
+companies which don't just feast on press releases but do real journalism.</p>
+
+<p>This is not a cry against traditional media. People, most of all, need them. But people also need 
+aggregators to contrast different views on news. Aggregators need media because it's impossible to talk
+about news without a headline and an excerpt to reveal what's going on. And media, most of all, needs 
+aggregators and people to survive in today's world.</p>
+
+<p>Now the law has been passed. Though it needs to be ratified in the Senate, it is a pantomime
+because the majorities are the same as in Congress and also Congress has the last word even if the Senate
+votes against it (take that, Montesquieu!). What will media editors do when they start losing money
+and realize the harm they have done to themselves, the Government, Spanish media consumers and the Spanish
+tech industry?</p>
+
+<p>Next time you think somebody is stupid, remember that the Spanish press just got in a war with Google,
+Facebook and Twitter because they want them to stop linking to their content.</p>
+
+<p>Crazy world we live in, huh?</p>
+
+<p>Tags: <a href='tag_law.html'>law</a>, <a href='tag_internet.html'>internet</a>, <a href='tag_news.html'>news</a></p>
+
+
+
+
+
+
+
+
+<!-- text end -->
+<p id='twitter'><a href='http://twitter.com/intent/tweet?url=http://cfenollosa.com/blog/spanish-media-just-shot-themselves-in-the-foot----or-maybe-in-the-head.html&text=&lt;Type your comment here but please leave the URL so that other people can follow the comments&gt;&via=cfenollosa'>Comments? Tweet</a> 
+<a href='https://twitter.com/search?q=http://cfenollosa.com/blog/spanish-media-just-shot-themselves-in-the-foot----or-maybe-in-the-head.html'><span id='count-1570'></span></a>&nbsp;</p>
+<script type="text/javascript">$.ajax({type: "GET", url: "https://cdn.api.twitter.com/1/urls/count.json?url=http://cfenollosa.com/blog/spanish-media-just-shot-themselves-in-the-foot----or-maybe-in-the-head.html",
+            dataType: "jsonp", success: function(data){ $("#count-1570").html("(" + data.count + ")"); }}); </script>
+</div>
+<div id="footer">CC by-nc-nd 2008-2016 <a href="http://cfenollosa.com">Carlos Fenollosa</a> &mdash; <a href="mailto:cf&#64;cfenollosa&#46;com">cf&#64;cfenollosa&#46;com</a><br/>
+Generated with <a href="https://github.com/cfenollosa/bashblog">bashblog</a>, a single bash script to easily create blogs like this one<br/>
+<a href="../cookies.html">Cookies policy</a> &mdash; <a href="the-ignorant-eu-cookie-law.html">Learn why this cookies law is ignorant</a></div>
+</div></div>
+</body></html>
