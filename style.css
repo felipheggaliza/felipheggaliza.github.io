@@ -71,7 +71,7 @@ ul {
 #text-foto {
     position: absolute;
     bottom: 20px;
-    left: 380px;
+    left: 360px;
     color: white;
     font-weight: bold;
     background: rgb(0, 0, 0); /* fallback color */
@@ -367,7 +367,7 @@ table.rating {
     -moz-border-radius: 4px;
     border-radius: 4px;
     color: white !important;
-    background-color: #336750;
+    background-color: #336799;
     padding-left: 12px;
     padding-right: 12px;
     padding-top: 6px;
