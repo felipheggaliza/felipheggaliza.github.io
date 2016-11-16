@@ -45,7 +45,7 @@
 
 <div id="navbar" class="bound">
     <div data-id="idhome" class="navitem"><a href="index.html">Home</a></div>
-    <div data-id="idcurrent" class="navitem navitem-current"><a href="">Current Research</a></div>
+    <div data-id="idcurrent" class="navitem navitem-current"><a href="">LAXIS</a></div>
     <div data-id="idhumanoid" class="navitem navitem-first"><a href="./pdf/Relatorio_Final_Humanoid.pdf">Dynamic Walking</a></div> 
     <div data-id="idcmu" class="navitem"><a href="http://riss.ri.cmu.edu/wp-content/uploads/2015/12/Journal-RISS2015.pdf">Research at CMU</a></div>
     <div data-id="idrobofei" class="navitem"><a href="http://fei.edu.br/robofei/">RoboFEI Team</a></div>
@@ -53,93 +53,30 @@
     <div class="clear"></div>
 </div>
 
-
-
-
 <div class="bound">
+    <h3>LAXIS - Dispositivo Autoestabilizador (Self-stabilizing device) <br></h3>
 
+<h2>Abstract</h2>
+<p>Inspired by the advancement of technology and the widespread use of the concept of devices called "Gimbal" in military initiatives, rocket engines, ships, submarines, aircraft, photographs and professional filming, the group grow an interest on developing a device capable to stabilize objects orientation in a dynamically way - focusing on improving the quality of videos recorded by cameras and smartphones. Motors attached to the camera structure continuously control the rotation of three orthogonal axis, correcting the position variations and maintaining an immobile image. This technology is being currently improved -and its cost reduced - making it a product increasingly accessible for other purposes.</p>
+<p>For the operation of these devices is essential to know the camera orientation in its three axis, which can be obtained through the use of sensors such as accelerometers and gyroscopes. This project uses a IMU (Inertial Measurement Unit) sensor, in which a microcontroller which the final orientation of the system and sends distinct signals to the three brushless motors. The control strategy used in the development of this project is an PID controller implemented in C language, thus enabling the use of this project as a platform research and testing others control methods.</p>
 
-<!-- slides -->
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-
-<div class="w3-content" style="max-width:800px;position:relative">
-
-
-
-<div class="w3-display-container mySlides" align="center">
-					
-					<a href="http://fei.edu.br/robofei/videos.html">
-						<img src="./img/small_size.jpg" height="510"/>
-						<div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-							Robot Soccer
-						</div>
-					</a>
-
-					</div>
-				
-<div class="w3-display-container mySlides" align="center">
-					
-					<a href="./pdf/Relatorio_Final_Humanoid.pdf">
-						<img src="./img/Newton.png" height="510"/>
-						<div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-							Humanoid Walking
-						</div>
-					</a>
-</div>
-
-<div class="w3-display-container mySlides" align="center">
-					
-					<a href="http://riss.ri.cmu.edu/wp-content/uploads/2015/10/2015-RISS-Poster-Feliphe-Gonclaves.pdf">
-						<img src="./img/mantis.jpg" height="510"/>
-						<div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-							The Praying Mantis
-						</div>
-					</a>
-</div>					
-
-<div class="w3-display-container mySlides" align="center">
-					
-					<a href="http://riss.ri.cmu.edu/wp-content/uploads/2015/10/2015-RISS-Poster-Feliphe-Gonclaves.pdf">
-						<img src="./img/mantiscad.jpg" height="420"/>
-						<div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-							The Mantis Robot
-						</div>
-					</a>
-</div>	
-
-<a class="w3-btn-floating" style="position:absolute;top:45%;left:0" onclick="plusDivs(-1)"><</a>
-<a class="w3-btn-floating" style="position:absolute;top:45%;right:0" onclick="plusDivs(1)">></a>
-</div>
- 
- <h3>Contact</h3>
+<div align="center">
+    <iframe width="760" height="515" src="https://www.youtube.com/embed/VG-JJ4cJ6dw" frameborder="0" allowfullscreen></iframe>
     
-    <p>You can contact me <a href="mailto:feliphe.ggaliza@gmail.com">by mail.</p>
-
-
 </div>
 
-<script>
-var slideIndex = 1;
-showDivs(slideIndex);
+ <p></P>
+ <h3 align="center"> Undergraduate Final Project Thesis </h3>
+ <p></P>
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
+<embed src="./pdf/TCC_LAXIS_Dispositivo_Autoestabilizador.pdf" width="800" height="1000" type='application/pdf'>
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
-}
-</script>
+ </div>
 
     
-   
+
+
+    
 </div>
 <div id="footer">
     <p>Content &copy 2016 by <a href="https://github.com/felipheggaliza/felipheggaliza.github.io">Feliphe Gon&ccedilalves Galiza.</a><br>
