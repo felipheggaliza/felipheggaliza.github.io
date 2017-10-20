@@ -12,18 +12,6 @@
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	
 	<title>Feliphe Gon&ccedilalves Galiza</title>
-	
-	<script>
-	
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-83026534-1', 'auto');
-		ga('send', 'pageview');
-	</script>
-	
 		
 </head>
 
@@ -56,7 +44,7 @@
 
 
 <div id="navbar" class="bound">
-    <div data-id="idhobbies" class="navitem"><a href="">Hobbies</a></div>
+    <div data-id="idhobbies" class="navitem"><a href="">Blog</a></div>
     <div data-id="idabout" class="navitem navitem-current"><a href="about.html">About</a></div>
     <div data-id="idprojects" class="navitem navitem-first"><a href="projects.html">Projects</a></div> 
     <div data-id="idlattes" class="navitem"><a href="http://lattes.cnpq.br/7809202155930528">Lattes</a></div>
@@ -77,12 +65,73 @@
 	
 	<p>Back in my home country, I have developed research on <a href="./pdf/Relatorio_Final_Humanoid.pdf">Modeling and Optimization of Dynamic Gait for Humanoid Robots</a>. I also finished my <a href="./pdf/TCC_LAXIS_Dispositivo_Autoestabilizador.pdf">Undergrad Final Project</a> Right now I am a Master's candidate in Digital Signal Processing at the <a href="http://www5.usp.br/english/?lang=en">University of Sao Paulo</a>.</p>
 
- <p></P>
- <h3 align="center"> Curriculum vitae </h3>
- <p></P>
 
-<embed src="./pdf/Feliphe - Resume_v10_EN.pdf" width="800" height="1000" type='application/pdf'>
+<!-- slides -->
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="numbertext">Small Size League - Robot Soccer</div>
+    <img src="./img/small_size.jpg" style="width:100%">
+   <!-- <div class="text-center">Small Size League - Robot Soccer</div> -->
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">Humanoid Gait Optimization</div>
+    <img src="./img/humanoid_modeling.jpg" style="width:100%">
+  <!--  <div class="text-center">Humanoid Gait Optimization</div> -->
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">6-DOF Inverse Kinematics of a Praying Mantis Robot</div>
+    <img src="./img/mantis.jpg" style="width:100%">
+  <!--  <div class="text-center">6-DOF Inverse Kinematics of a Praying Mantis Robot</div> -->
+  </div>
+  
+   <div class="mySlides fade">
+    <div class="numbertext">6-DOF Inverse Kinematics of a Praying Mantis Robot</div>
+    <img src="./img/mantiscad.jpg" style="width:100%">
+   <!--   <div class="text-center">6-DOF Inverse Kinematics of a Praying Mantis Robot</div> -->
+  </div>
+
+  <!--
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+-->
+</div>
+
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 4000); // Change image every 4 seconds
+}
+
+</script>
     
 <h3>Contact</h3>
     
@@ -93,7 +142,7 @@
 </div>
 <div id="footer">
     <p>Content &copy 2016 by <a href="https://github.com/felipheggaliza/felipheggaliza.github.io">Feliphe Gon&ccedilalves Galiza.</a><br>
-	Template design by <a href="https://github.com/cfenollosa/bashblog">Carlos Fenollosa</a></p>
+	Template design forked from <a href="https://github.com/cfenollosa/bashblog">Carlos Fenollosa</a></p>
 	</p>
 </div>
 
